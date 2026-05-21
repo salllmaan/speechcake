@@ -18,6 +18,7 @@ export default function MobileAppSection() {
   return (
     <section className="w-full bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1080px] mx-auto">
+        <div className="overflow-hidden rounded-3xl border border-[#EDEDEA] bg-[#FCFCFB] p-8 sm:p-12 lg:p-16">
         <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 lg:gap-16 items-center">
 
           {/* Content — left */}
@@ -47,16 +48,17 @@ export default function MobileAppSection() {
           </div>
 
           {/* Mockup — right */}
-          <div className="order-1 lg:order-2">
+          <div className="-mb-8 order-1 sm:-mb-12 lg:order-2 lg:-mb-16 lg:self-end">
             <Image
-              src="/assets/landing-page/hero-data-collection.avif"
+              src="/assets/final/landing-page/mobile-app.png"
               alt="AbleSpace mobile app"
               width={700}
               height={490}
-              className="max-w-full"
+              className="block max-w-full"
             />
           </div>
 
+        </div>
         </div>
       </div>
     </section>

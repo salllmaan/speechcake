@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import SectionChip from "@/components/SectionChip";
 import CTAButton from "@/components/CTAButton";
 
@@ -19,6 +19,12 @@ const TABS = [
   { label: "Medicaid Billing",              icon: "/assets/landing-page/tab/billing.svg",                     mockup: "/assets/landing-page/hero-data-collection.avif" },
 ];
 
+const CHIP_LABELS = [
+  "Trusted by 20,000+ Sped Ed Professionals",
+  "10,000+ Progress Notes Generated",
+  "10 Million Data Points Logged",
+];
+
 const SCHOOL_LOGOS = Array.from({ length: 8 }, (_, i) => ({
   src: `/assets/logos/social-strip-logo-${i + 1}@2x.avif`,
   alt: `School logo ${i + 1}`,
@@ -26,7 +32,20 @@ const SCHOOL_LOGOS = Array.from({ length: 8 }, (_, i) => ({
 
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState(0);
+  const [chipIndex, setChipIndex] = useState(0);
+  const [chipVisible, setChipVisible] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setChipVisible(false);
+      setTimeout(() => {
+        setChipIndex((i) => (i + 1) % CHIP_LABELS.length);
+        setChipVisible(true);
+      }, 300);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   function scroll(dir: "left" | "right") {
     scrollRef.current?.scrollBy({ left: dir === "left" ? -200 : 200, behavior: "smooth" });
@@ -38,7 +57,7 @@ export default function HeroSection() {
 
         {/* Chip */}
         <div className="flex justify-center mb-4 sm:mb-5">
-          <SectionChip label="Trusted by 20,000+ Sped Ed Professionals" />
+          <SectionChip label={CHIP_LABELS[chipIndex]} visible={chipVisible} />
         </div>
 
         {/* Headline */}

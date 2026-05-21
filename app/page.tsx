@@ -7,6 +7,7 @@ import ForSchoolsSection from "@/components/ForSchoolsSection";
 import EverythingYouNeedSection from "@/components/EverythingYouNeedSection";
 import MobileAppSection from "@/components/MobileAppSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import ImpactSection from "@/components/ImpactSection";
 import FAQSection from "@/components/FAQSection";
 import SecuritySection from "@/components/SecuritySection";
 import Footer from "@/components/Footer";
@@ -28,6 +29,7 @@ export default function Home() {
         <EverythingYouNeedSection />
         <MobileAppSection />
         <TestimonialsSection />
+        <ImpactSection />
         <FAQSection />
         <SecuritySection />
       </main>

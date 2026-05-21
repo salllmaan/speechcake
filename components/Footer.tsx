@@ -49,10 +49,9 @@ const LINKS = [
 ];
 
 const COMPLIANCE_BADGES = [
-  { src: "/assets/logos/social-strip-logo-1@2x.avif", alt: "HIPAA Compliant" },
-  { src: "/assets/logos/social-strip-logo-2@2x.avif", alt: "Student Privacy Pledge" },
-  { src: "/assets/logos/social-strip-logo-3@2x.avif", alt: "TrustArc" },
-  { src: "/assets/logos/social-strip-logo-4@2x.avif", alt: "FERPA" },
+  { src: "/assets/landing-page/Hipaa.avif", alt: "HIPAA Compliant" },
+  { src: "/assets/landing-page/ferpa.avif", alt: "FERPA Compliant" },
+  { src: "/assets/landing-page/iso.avif", alt: "ISO 27001 Certified" },
 ];
 
 export default function Footer() {
