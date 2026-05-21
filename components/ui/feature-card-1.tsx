@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 interface AnimatedFeatureCardProps
   extends Omit<
     React.HTMLAttributes<HTMLDivElement>,
-    "onAnimationStart" | "onAnimationEnd" | "onDrag" | "onDragStart" | "onDragEnd"
+    "onAnimationStart" | "onAnimationEnd" | "onDrag" | "onDragStart" | "onDragEnd" | "title"
   > {
   tag: string;
   title?: React.ReactNode;
