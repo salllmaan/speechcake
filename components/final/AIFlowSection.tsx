@@ -2,44 +2,49 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import SectionChip from "@/components/SectionChip";
+import { SparklesText } from "@/components/ui/sparkles-text";
 import { cn } from "@/lib/utils";
 
 type Step = {
   title: string;
   content: string;
+  iconSrc: string;
   srcImage: string;
   srcAlt: string;
 };
 
 const STEPS: Step[] = [
   {
-    title: "Collect data while you work",
+    title: "Progress Notes",
     content:
-      "Tap-fast logging during sessions, automatic service-time tracking, and accommodations captured inline. No after-hours catch-up.",
+      "Ablespace AI generates draft progress notes for each student — customized to their goals and ready to review, edit, and share.",
+    iconSrc: "/assets/icons/tablet-pen.svg",
     srcImage: "/assets/landing-page/hero-iep-data-tracking.avif",
-    srcAlt: "Logging IEP goal data during a session",
+    srcAlt: "Ablespace AI drafting a progress note for a student goal",
   },
   {
-    title: "Let Ablespace AI write the draft",
+    title: "Worksheets & Assessments",
     content:
-      "Progress notes, behavior summaries, and IEP goals drafted from the data you just tracked. Seconds, not Sundays.",
-    srcImage: "/assets/landing-page/hero-ablespace-ai.avif",
-    srcAlt: "Ablespace AI drafting a progress note",
-  },
-  {
-    title: "Review on your terms",
-    content:
-      "Edit any sentence, change the tone, regenerate with a different prompt. Nothing leaves your account until you approve it.",
+      "Generate standards-aligned worksheets that match each student's goals and interests — in seconds, not hours.",
+    iconSrc: "/assets/icons/ai-sheets.svg",
     srcImage: "/assets/landing-page/ai-section-hero.png",
-    srcAlt: "Reviewing and editing an AI-drafted note",
+    srcAlt: "AI-generated worksheet matched to a student's IEP goals",
   },
   {
-    title: "Ship to families and districts",
+    title: "IEP Goals & Present Levels",
     content:
-      "Sharable progress reports, defensible documentation for IEP meetings, clean exports for Medicaid claims.",
+      "Draft standards-aligned SMART IEP goals and present level statements tailored to each student's needs. Defensible, personalized, and ready to refine.",
+    iconSrc: "/assets/icons/certificate-01.svg",
+    srcImage: "/assets/landing-page/hero-ablespace-ai.avif",
+    srcAlt: "Ablespace AI suggesting an IEP goal aligned to state standards",
+  },
+  {
+    title: "Strategies and Insights",
+    content:
+      "AbleSpace AI surfaces each student's strengths and struggles from your data — and suggests evidence-based strategies.",
+    iconSrc: "/assets/icons/ai-beautify.svg",
     srcImage: "/assets/landing-page/hero-collaboration.avif",
-    srcAlt: "Sharing a finalized report with the team",
+    srcAlt: "Insights panel highlighting student progress patterns",
   },
 ];
 
@@ -85,24 +90,25 @@ export default function AIFlowSection() {
     <section className="w-full bg-white pt-16 pb-16 sm:pt-24 sm:pb-24 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1080px]">
         <div className="mb-12 text-center sm:mb-16">
-          <div className="mb-4 flex justify-center">
-            <SectionChip
-              label="How Ablespace AI works"
-              iconSrc="/assets/icons/ai-content-generator-01.svg"
-              variant="neutral"
-            />
-          </div>
           <h2 className="text-balance text-[32px] sm:text-4xl lg:text-[48px] font-extrabold text-[#111111] leading-[1.2] tracking-tight">
-            From data collection to ready-to-share, automated.
+            <SparklesText
+              text="AbleSpace AI."
+              colors={{ first: "#BCBAEF", second: "#BCBAEF" }}
+              sparklesCount={4}
+              duration={1.5}
+              className="font-[family-name:var(--font-playfair-display)] font-bold italic text-[#AF58C9]"
+            />
+            <br />
+            Built for Special Education.
           </h2>
           <p className="mx-auto mt-3 max-w-[640px] text-base sm:text-lg font-medium text-[#666666] leading-relaxed">
-            Four steps that take the documentation work off your plate without taking your hands off the wheel.
+            Special educators spend hours every week on documentation that Ablespace AI can handle in seconds. That time belongs with your students.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-stretch md:gap-10">
           {/* Steps */}
-          <div className="space-y-3">
+          <div className="flex flex-col gap-3">
             {STEPS.map((step, i) => {
               const isActive = activeIndex === i;
               const progress = isActive ? (elapsed / AUTO_ADVANCE_MS) * 100 : 0;
@@ -115,7 +121,7 @@ export default function AIFlowSection() {
                   className="block w-full text-left"
                 >
                   <StepCard
-                    number={i + 1}
+                    iconSrc={step.iconSrc}
                     title={step.title}
                     content={step.content}
                     isActive={isActive}
@@ -127,16 +133,14 @@ export default function AIFlowSection() {
           </div>
 
           {/* Stacked images */}
-          <div className="relative h-96 w-full overflow-hidden rounded-2xl border border-[#EDEDEA] bg-[#FAFAF9] md:h-[500px]">
+          <div className="relative min-h-[400px] w-full overflow-hidden rounded-2xl border border-[#EDEDEA] bg-[#FAFAF9] md:min-h-0 md:self-stretch">
             {STEPS.map((step, i) => (
               <div
                 key={step.title}
                 className={cn(
-                  "absolute inset-0 transform-gpu motion-safe:transition-all motion-safe:duration-500 motion-safe:ease-out",
-                  activeIndex === i ? "scale-100" : "scale-[0.92]",
-                  activeIndex > i ? "translate-y-full" : "translate-y-0",
+                  "absolute inset-0 transform-gpu motion-safe:transition-opacity motion-safe:duration-500 motion-safe:ease-out",
+                  activeIndex === i ? "opacity-100" : "pointer-events-none opacity-0",
                 )}
-                style={{ zIndex: STEPS.length - i }}
                 aria-hidden={activeIndex !== i}
               >
                 <Image
@@ -158,13 +162,13 @@ export default function AIFlowSection() {
 }
 
 function StepCard({
-  number,
+  iconSrc,
   title,
   content,
   isActive,
   progress,
 }: {
-  number: number;
+  iconSrc: string;
   title: string;
   content: string;
   isActive: boolean;
@@ -173,17 +177,36 @@ function StepCard({
   return (
     <div
       className={cn(
-        "transform-gpu rounded-2xl border transition-all duration-300",
+        "h-full transform-gpu rounded-2xl border bg-white transition-all duration-300",
         isActive
-          ? "border-[#EDEDEA] bg-[#FAFAF9]"
-          : "scale-[0.97] border-transparent opacity-50 saturate-0",
+          ? "border-[#E8E8E5] shadow-[0_1px_2px_rgba(17,17,17,0.04),0_8px_24px_-12px_rgba(17,17,17,0.08)]"
+          : "border-[#EDEDEA]",
       )}
     >
-      <div className="flex w-full items-center gap-4 p-5">
-        <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-md bg-[#F0EFEB] text-[13px] font-semibold text-[#7C7572]">
-          {number}
+      <div className="flex w-full items-center gap-4 px-5 py-4">
+        <span
+          className={cn(
+            "inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-colors",
+            isActive ? "bg-[#F4ECFB]" : "bg-[#F5F5F4]",
+          )}
+        >
+          <Image
+            src={iconSrc}
+            alt=""
+            width={20}
+            height={20}
+            className={cn(
+              "size-5 transition-opacity",
+              isActive ? "opacity-100" : "opacity-70",
+            )}
+          />
         </span>
-        <h3 className="text-left text-[17px] sm:text-lg font-semibold text-[#111111]">
+        <h3
+          className={cn(
+            "text-left text-[16px] sm:text-[17px] font-semibold transition-colors",
+            isActive ? "text-[#111111]" : "text-[#3A3A3A]",
+          )}
+        >
           {title}
         </h3>
       </div>

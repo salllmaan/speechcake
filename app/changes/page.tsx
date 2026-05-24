@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 
 import HeroSection from "@/components/final/HeroSection";
 import TrustedBySection from "@/components/final/TrustedBySection";
-import IEPDataCollectionSection from "@/components/final/IEPDataCollectionSection";
+import IEPDataCollectionSection from "@/components/changes/IEPDataCollectionSection";
 import NotesSection from "@/components/final/NotesSection";
 import AIFlowSection from "@/components/final/AIFlowSection";
 import FeaturesMarquee from "@/components/final/FeaturesMarquee";
@@ -22,7 +22,7 @@ const featureIcon = (src: string, alt: string) => (
   <Image src={src} alt={alt} width={24} height={24} className="m-auto size-6" />
 );
 
-export default function FinalHome() {
+export default function ChangesHome() {
   return (
     <>
       <Navbar />

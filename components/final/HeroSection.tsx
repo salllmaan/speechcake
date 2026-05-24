@@ -74,12 +74,12 @@ export default function HeroSection() {
               colors={{ first: "#BCBAEF", second: "#BCBAEF" }}
               sparklesCount={4}
               duration={1.5}
-              className="font-bold italic"
+              className="font-[family-name:var(--font-eb-garamond)] font-bold italic text-[#AF58C9]"
             />{" "}&nbsp;IEP Tracking
             <br />
             for Special Education Teams
           </h1>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-[#666666] leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-[#666666] leading-relaxed max-w-3xl mx-auto">
             Track goals, service minutes, and accommodations in one place — and let AbleSpace automate your progress reports, Medicaid billing, and assessments.
           </p>
         </div>

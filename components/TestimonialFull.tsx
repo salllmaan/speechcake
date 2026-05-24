@@ -20,7 +20,7 @@ export default function TestimonialFull({ quote, name, role }: Props) {
         </div>
 
         {/* Quote */}
-        <blockquote className="text-2xl sm:text-3xl lg:text-[36px] font-bold italic text-[#5E5C5B] leading-[1.3] tracking-tight mb-8">
+        <blockquote className="text-xl sm:text-[26px] lg:text-[32px] font-bold italic text-[#5E5C5B] leading-[1.3] tracking-tight mb-8">
           "{quote}"
         </blockquote>
 
