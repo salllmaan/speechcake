@@ -2,13 +2,13 @@ import Image from "next/image";
 
 import Navbar from "@/components/Navbar";
 
-import HeroSection from "@/components/final/HeroSection";
+import HeroSection from "@/components/changes/HeroSection";
 import TrustedBySection from "@/components/final/TrustedBySection";
 import IEPDataCollectionSection from "@/components/changes/IEPDataCollectionSection";
-import NotesSection from "@/components/final/NotesSection";
-import AIFlowSection from "@/components/final/AIFlowSection";
+import NotesSection from "@/components/changes/NotesSection";
+import AIFlowSection from "@/components/changes/AIFlowSection";
 import FeaturesMarquee from "@/components/final/FeaturesMarquee";
-import FinalCTASection from "@/components/final/FinalCTASection";
+import FinalCTASection from "@/components/changes/FinalCTASection";
 import { Features as SchoolsDistrictsFeatures } from "@/components/blocks/features-6";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import { Hero45 } from "@/components/blocks/shadcnblocks-com-hero45";
@@ -24,7 +24,7 @@ const featureIcon = (src: string, alt: string) => (
 
 export default function ChangesHome() {
   return (
-    <>
+    <div className="typescale-changes">
       <Navbar />
       <main className="relative z-10 bg-white">
         <HeroSection />
@@ -33,7 +33,7 @@ export default function ChangesHome() {
         <Hero45
           chipLabel="Everything in one place"
           chipIconSrc="/assets/icons/star.svg"
-          heading="Real-Time Team Collaboration"
+          heading="Real-Time Collaboration"
           subtitle="Teachers, paraprofessionals, and specialists — all collecting data in one place, in real time. No catch-up, no gaps."
           imageSrc="/assets/final/landing-page/collaboration-hero.png"
           imageAlt="Real-time team collaboration"
@@ -68,9 +68,6 @@ export default function ChangesHome() {
           </div>
         </section>
         <NotesSection />
-        <FeaturesMarquee />
-        <TestimonialsSection />
-        <FAQSection />
         <FeatureGrid
           chipLabel="More Than Goal Tracking"
           chipIconSrc="/assets/icons/star.svg"
@@ -124,11 +121,14 @@ export default function ChangesHome() {
             },
           ]}
         />
+        <TestimonialsSection />
+        <FAQSection />
         <FinalCTASection />
+        <FeaturesMarquee />
       </main>
       <div className="sticky bottom-0 z-0">
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

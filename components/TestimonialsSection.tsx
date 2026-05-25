@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
           <h2 className="text-balance text-[32px] sm:text-4xl lg:text-[48px] font-extrabold text-[#111111] leading-[1.2] tracking-tight mb-3">
             Trusted by special education teams.
           </h2>
-          <p className="mx-auto max-w-[640px] text-base sm:text-lg font-medium text-[#666666] leading-relaxed">
+          <p className="mx-auto max-w-[720px] text-base sm:text-lg font-medium text-[#666666] leading-relaxed">
             Thousands of teachers, SLPs, OTs, and coordinators run their caseloads on AbleSpace every day.
           </p>
         </div>
