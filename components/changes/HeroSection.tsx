@@ -79,7 +79,7 @@ export default function HeroSection() {
             <br />
             for Special Education Teams
           </h1>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-[#666666] leading-relaxed max-w-[720px] mx-auto">
+          <p className="mt-3 sm:mt-4 text-lg text-[#666666] leading-relaxed max-w-[720px] mx-auto">
             Track goals, service minutes, and accommodations in one place — and let AbleSpace automate your progress reports, Medicaid billing, and assessments.
           </p>
         </div>

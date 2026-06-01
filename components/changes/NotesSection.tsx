@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import SectionChip from "@/components/SectionChip";
-import AppStoreButtons from "@/components/AppStoreButtons";
-import IEPSyncCard from "@/components/changes/IEPSyncCard";
+import AppStoreButtons from "@/components/changes/AppStoreButtons";
+import AINoteCard from "@/components/changes/AINoteCard";
+import IEPSyncNarrow from "@/components/changes/IEPSyncNarrow";
 
 const MOBILE_FEATURES = [
   {
@@ -34,7 +35,7 @@ export default function NotesSection() {
           <h2 className="text-[32px] sm:text-4xl lg:text-[48px] font-extrabold text-[#111111] leading-[1.2] tracking-tight mb-3">
             Documentation and more...
           </h2>
-          <p className="text-base sm:text-lg font-medium text-[#666666] leading-relaxed max-w-[720px] mx-auto">
+          <p className="text-lg font-medium text-[#666666] leading-relaxed max-w-[720px] mx-auto">
             From AI-assisted notes and daily logs to a secure family dashboard — one connected workspace that keeps your team, your students, and their families aligned.
           </p>
         </div>
@@ -46,18 +47,21 @@ export default function NotesSection() {
             {/* Card 1: AI-assisted session notes (NARROW) */}
             <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 lg:h-[360px] border-[#F2F2F1] bg-[#FAFAF9] shadow-none">
               <CardContent className="pt-6">
-                <div className="relative z-10 space-y-2">
-                  <h2 className="text-lg font-semibold text-[#111111]">AI-assisted session notes</h2>
-                  <p className="text-base text-[#9A938F]">Write notes faster with AI-powered suggestions, refinements, and reusable templates tailored to your workflow.</p>
-                </div>
-                <div className="mx-auto mt-4 flex justify-center">
+                <div className="flex flex-col space-y-4">
                   <Image
-                    src="/assets/final/landing-page/iep-data-collection-card-1.png"
-                    alt="AI-assisted session notes"
-                    width={640}
-                    height={480}
-                    className="w-60 h-auto object-contain"
+                    src="/assets/icons/ai-content-generator-01.svg"
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="size-6"
                   />
+                  <div className="relative z-10 space-y-2">
+                    <h2 className="text-lg font-semibold text-[#111111]">AI-assisted session notes</h2>
+                    <p className="text-base text-[#9A938F]">Write notes faster with AI-powered suggestions, refinements, and reusable templates tailored to your workflow.</p>
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <AINoteCard />
                 </div>
               </CardContent>
             </Card>
@@ -66,15 +70,13 @@ export default function NotesSection() {
             <Card className="relative col-span-full overflow-hidden lg:col-span-4 lg:h-[360px] border-[#F2F2F1] bg-[#FAFAF9] shadow-none">
               <CardContent className="grid pt-6 sm:grid-cols-2 lg:h-full">
                 <div className="relative z-10 flex flex-col space-y-4">
-                  <div className="relative flex aspect-square size-12 rounded-full border border-[#EDEDEA] before:absolute before:-inset-2 before:rounded-full before:border before:border-[#F5F5F5]">
-                    <Image
-                      src="/assets/icons/user-lock-01.svg"
-                      alt=""
-                      width={24}
-                      height={24}
-                      className="m-auto size-6"
-                    />
-                  </div>
+                  <Image
+                    src="/assets/icons/user-lock-01.svg"
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="size-6"
+                  />
                   <div className="space-y-2">
                     <h2 className="text-lg font-semibold text-[#111111]">Family Dashboard</h2>
                     <p className="text-base text-[#9A938F]">Give families secure, real-time visibility into goals, daily progress, and updates — with controls over exactly what they see.</p>
@@ -96,15 +98,13 @@ export default function NotesSection() {
             <Card className="relative col-span-full overflow-hidden lg:col-span-4 lg:h-[360px] border-[#F2F2F1] bg-[#FAFAF9] shadow-none">
               <CardContent className="grid pt-6 sm:grid-cols-2 lg:h-full">
                 <div className="relative z-10 flex flex-col space-y-4">
-                  <div className="relative flex aspect-square size-12 rounded-full border border-[#EDEDEA] before:absolute before:-inset-2 before:rounded-full before:border before:border-[#F5F5F5]">
-                    <Image
-                      src="/assets/icons/notebook-02.svg"
-                      alt=""
-                      width={24}
-                      height={24}
-                      className="m-auto size-6"
-                    />
-                  </div>
+                  <Image
+                    src="/assets/icons/notebook-02.svg"
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="size-6"
+                  />
                   <div className="space-y-2">
                     <h2 className="text-lg font-semibold text-[#111111]">Daily Logs</h2>
                     <p className="text-base text-[#9A938F]">Capture daily observations, behaviors, and session highlights in a simple log that builds into a complete picture over time.</p>
@@ -122,27 +122,12 @@ export default function NotesSection() {
               </CardContent>
             </Card>
 
-            {/* Card 4: Goal-linked documentation (NARROW) */}
+            {/* Card 4: IEP System Integration (NARROW) */}
             <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 lg:h-[360px] border-[#F2F2F1] bg-[#FAFAF9] shadow-none">
               <CardContent className="pt-6">
-                <div className="relative z-10 space-y-2">
-                  <h2 className="text-lg font-semibold text-[#111111]">Goal-linked documentation</h2>
-                  <p className="text-base text-[#9A938F]">Attach notes directly to goals, objectives, students, or sessions for clear and searchable progress tracking.</p>
-                </div>
-                <div className="mx-auto mt-4 flex justify-center">
-                  <Image
-                    src="/assets/final/landing-page/iep-data-collection-card-2.png"
-                    alt="Goal-linked documentation"
-                    width={640}
-                    height={480}
-                    className="w-60 h-auto object-contain"
-                  />
-                </div>
+                <IEPSyncNarrow />
               </CardContent>
             </Card>
-
-            {/* Card 5: IEP System Integration */}
-            <IEPSyncCard />
 
             {/* Card 6: AbleSpace on the GO! */}
             <Card className="relative col-span-full overflow-hidden border-[#F2F2F2] shadow-none">

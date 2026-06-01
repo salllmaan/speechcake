@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/changes/Navbar";
 
 import HeroSection from "@/components/changes/HeroSection";
 import TrustedBySection from "@/components/final/TrustedBySection";
@@ -9,14 +9,14 @@ import NotesSection from "@/components/changes/NotesSection";
 import AIFlowSection from "@/components/changes/AIFlowSection";
 import FeaturesMarquee from "@/components/final/FeaturesMarquee";
 import FinalCTASection from "@/components/changes/FinalCTASection";
-import { Features as SchoolsDistrictsFeatures } from "@/components/blocks/features-6";
+import { Features as SchoolsDistrictsFeatures } from "@/components/changes/SchoolsDistrictsFeatures";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
-import { Hero45 } from "@/components/blocks/shadcnblocks-com-hero45";
+import { CollaborationHero } from "@/components/changes/CollaborationHero";
 import TestimonialFull from "@/components/TestimonialFull";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
+import TestimonialsSection from "@/components/changes/TestimonialsSection";
+import FAQSection from "@/components/changes/FAQSection";
 import Footer from "@/components/Footer";
-import { FeatureGrid } from "@/components/ui/modern-feature-grid";
+import { FeatureGrid } from "@/components/changes/FeatureGrid";
 
 const featureIcon = (src: string, alt: string) => (
   <Image src={src} alt={alt} width={24} height={24} className="m-auto size-6" />
@@ -30,12 +30,12 @@ export default function ChangesHome() {
         <HeroSection />
         <TrustedBySection />
         <IEPDataCollectionSection />
-        <Hero45
+        <CollaborationHero
           chipLabel="Everything in one place"
           chipIconSrc="/assets/icons/star.svg"
           heading="Real-Time Collaboration"
           subtitle="Teachers, paraprofessionals, and specialists — all collecting data in one place, in real time. No catch-up, no gaps."
-          imageSrc="/assets/final/landing-page/collaboration-hero.png"
+          imageSrc="/assets/final/landing-page/collaboration-section-img.png"
           imageAlt="Real-time team collaboration"
           features={[
             {
@@ -63,7 +63,7 @@ export default function ChangesHome() {
         <AIFlowSection />
         <SchoolsDistrictsFeatures />
         <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-[1080px]">
+          <div className="mx-auto max-w-[1080px] px-16">
             <LogoCloud />
           </div>
         </section>

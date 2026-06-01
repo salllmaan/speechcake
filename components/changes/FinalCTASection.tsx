@@ -16,19 +16,13 @@ const ROTATING_WORDS = [
   "OTs",
   "BCBAs",
   "Paras",
-  "every Special Educator",
 ];
 
 export default function FinalCTASection() {
   return (
     <section className="w-full bg-white px-4 pb-16 pt-8 sm:px-6 sm:pb-24 sm:pt-12 lg:px-8">
       <div className="mx-auto max-w-[1080px]">
-        <div className="relative overflow-hidden rounded-3xl border border-[#EDEDEA] bg-gradient-to-b from-[#FBF6FD] via-white to-white px-6 py-14 sm:px-12 sm:py-20 lg:px-20 lg:py-24">
-          {/* Soft purple glow */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[420px] -translate-x-1/2 rounded-full bg-[#AF58C9]/12 blur-3xl sm:w-[640px]"
-          />
+        <div className="relative overflow-hidden rounded-3xl border border-[#EDEDEA] bg-white px-6 py-[72px] sm:px-12 lg:px-20">
 
           <div className="relative text-center">
             <div className="flex justify-center">
@@ -54,7 +48,7 @@ export default function FinalCTASection() {
               </span>
             </h2>
 
-            <p className="mx-auto mt-4 max-w-[720px] text-base sm:text-lg font-medium leading-relaxed text-[#666666]">
+            <p className="mx-auto mt-4 max-w-[720px] text-lg font-medium leading-relaxed text-[#666666]">
               Set up in minutes. Cancel anytime. No credit card required to start your free trial.
             </p>
 

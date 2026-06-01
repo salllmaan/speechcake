@@ -102,7 +102,7 @@ export default function AIFlowSection() {
             <br />
             Built for Special Education.
           </h2>
-          <p className="mx-auto mt-3 max-w-[720px] text-base sm:text-lg font-medium text-[#666666] leading-relaxed">
+          <p className="mx-auto mt-3 max-w-[720px] text-lg font-medium text-[#666666] leading-relaxed">
             Special educators spend hours every week on documentation that Ablespace AI can handle in seconds. That time belongs with your students.
           </p>
         </div>
