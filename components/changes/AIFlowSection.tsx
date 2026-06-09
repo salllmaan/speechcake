@@ -6,12 +6,13 @@ import { SparklesText } from "@/components/ui/sparkles-text";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { cn } from "@/lib/utils";
 
-type Step = {
+export type Step = {
   title: string;
   content: string;
   iconSrc: string;
-  srcImage: string;
-  srcAlt: string;
+  /** Active-step image. Leave empty to show a placeholder. */
+  srcImage?: string;
+  srcAlt?: string;
 };
 
 const STEPS: Step[] = [
@@ -20,16 +21,16 @@ const STEPS: Step[] = [
     content:
       "Ablespace AI generates draft progress notes for each student — customized to their goals and ready to review, edit, and share.",
     iconSrc: "/assets/icons/tablet-pen.svg",
-    srcImage: "/assets/final/landing-page/ablespace-ai-01.png",
-    srcAlt: "Ablespace AI drafting a progress note for a student goal",
+    srcImage: "/assets/final/landing-page/ablespace-ai-02.png",
+    srcAlt: "AI-generated worksheet matched to a student's IEP goals",
   },
   {
     title: "Worksheets & Assessments",
     content:
       "Generate standards-aligned worksheets that match each student's goals and interests — in seconds, not hours.",
     iconSrc: "/assets/icons/ai-sheets.svg",
-    srcImage: "/assets/final/landing-page/ablespace-ai-02.png",
-    srcAlt: "AI-generated worksheet matched to a student's IEP goals",
+    srcImage: "/assets/final/landing-page/ablespace-ai-01.png",
+    srcAlt: "Ablespace AI drafting a progress note for a student goal",
   },
   {
     title: "IEP Goals & Present Levels",
@@ -64,7 +65,19 @@ function usePrefersReducedMotion() {
   return reduced;
 }
 
-export default function AIFlowSection() {
+export default function AIFlowSection({
+  accent = "AbleSpace AI.",
+  heading = "Built for Special Education.",
+  subtitle = "Special educators spend hours every week on documentation that Ablespace AI can handle in seconds. That time belongs with your students.",
+  reverse = false,
+  steps = STEPS,
+}: {
+  accent?: string;
+  heading?: string;
+  subtitle?: string;
+  reverse?: boolean;
+  steps?: Step[];
+} = {}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [elapsed, setElapsed] = useState(0);
   const reducedMotion = usePrefersReducedMotion();
@@ -77,7 +90,7 @@ export default function AIFlowSection() {
 
   useEffect(() => {
     if (elapsed >= AUTO_ADVANCE_MS) {
-      setActiveIndex((i) => (i + 1) % STEPS.length);
+      setActiveIndex((i) => (i + 1) % steps.length);
       setElapsed(0);
     }
   }, [elapsed]);
@@ -92,25 +105,29 @@ export default function AIFlowSection() {
       <div className="mx-auto max-w-[1080px]">
         <div className="mb-12 text-center sm:mb-16">
           <h2 className="text-balance text-[32px] sm:text-4xl lg:text-[48px] font-extrabold text-[#111111] leading-[1.2] tracking-tight">
-            <SparklesText
-              text="AbleSpace AI."
-              colors={{ first: "#D2C2E7", second: "#D2C2E7" }}
-              sparklesCount={4}
-              duration={1.5}
-              className="font-[family-name:var(--font-playfair-display)] font-bold italic text-[#A484CE]"
-            />
-            <br />
-            Built for Special Education.
+            {accent && (
+              <>
+                <SparklesText
+                  text={accent}
+                  colors={{ first: "#D2C2E7", second: "#D2C2E7" }}
+                  sparklesCount={4}
+                  duration={1.5}
+                  className="font-[family-name:var(--font-playfair-display)] font-bold italic text-[#A484CE]"
+                />
+                <br />
+              </>
+            )}
+            {heading}
           </h2>
           <p className="mx-auto mt-3 max-w-[720px] text-lg font-medium text-[#666666] leading-relaxed">
-            Special educators spend hours every week on documentation that Ablespace AI can handle in seconds. That time belongs with your students.
+            {subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-stretch md:gap-10">
           {/* Steps */}
-          <div className="flex flex-col gap-3">
-            {STEPS.map((step, i) => {
+          <div className={cn("flex flex-col gap-3", reverse && "md:order-2")}>
+            {steps.map((step, i) => {
               const isActive = activeIndex === i;
               const progress = isActive ? (elapsed / AUTO_ADVANCE_MS) * 100 : 0;
               return (
@@ -135,14 +152,14 @@ export default function AIFlowSection() {
 
           {/* Stacked images */}
           <MagicCard
-            className="w-full rounded-2xl p-[2px] md:self-stretch"
+            className={cn("w-full rounded-2xl p-[2px] md:self-stretch", reverse && "md:order-1")}
             gradientFrom="#A484CE"
             gradientTo="#D2C2E7"
             gradientColor="#F4ECFB"
             gradientSize={300}
           >
             <div className="relative min-h-[400px] w-full overflow-hidden rounded-[14px] bg-[#FAFAF9] md:min-h-0 md:h-full">
-              {STEPS.map((step, i) => (
+              {steps.map((step, i) => (
                 <div
                   key={step.title}
                   className={cn(
@@ -151,14 +168,20 @@ export default function AIFlowSection() {
                   )}
                   aria-hidden={activeIndex !== i}
                 >
-                  <Image
-                    src={step.srcImage}
-                    alt={step.srcAlt}
-                    fill
-                    sizes="(min-width: 1024px) 480px, 100vw"
-                    className="rounded-[14px] object-cover"
-                    priority={i === 0}
-                  />
+                  {step.srcImage ? (
+                    <Image
+                      src={step.srcImage}
+                      alt={step.srcAlt ?? step.title}
+                      fill
+                      sizes="(min-width: 1024px) 480px, 100vw"
+                      className="rounded-[14px] object-cover"
+                      priority={i === 0}
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center rounded-[14px] border border-dashed border-[#D8D4CC] bg-[#F4F3EF] text-[13px] font-medium text-[#B0A99D]">
+                      Image
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

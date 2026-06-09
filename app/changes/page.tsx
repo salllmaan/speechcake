@@ -3,7 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/changes/Navbar";
 
 import HeroSection from "@/components/changes/HeroSection";
-import TrustedBySection from "@/components/final/TrustedBySection";
+import TrustedBySection from "@/components/changes/TrustedBySection";
 import IEPDataCollectionSection from "@/components/changes/IEPDataCollectionSection";
 import NotesSection from "@/components/changes/NotesSection";
 import AIFlowSection from "@/components/changes/AIFlowSection";

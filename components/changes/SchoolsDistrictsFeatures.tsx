@@ -35,7 +35,7 @@ export function Features() {
           <div className="pointer-events-none absolute -right-28 -top-28 aspect-video h-72 w-96 opacity-40 [background-size:12px_12px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_20%,transparent_100%)] sm:bg-[radial-gradient(#7C7572_1px,transparent_1px)]" />
           <div className="pointer-events-none absolute -left-28 -top-28 aspect-video h-72 w-96 opacity-40 [background-size:12px_12px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_20%,transparent_100%)] sm:bg-[radial-gradient(#7C7572_1px,transparent_1px)]" />
           <Image
-            src="/assets/final/landing-page/schools-and-districts.png"
+            src="/assets/changes/schools-and-districts-hero.png"
             alt="Schools and districts overview"
             width={1200}
             height={675}

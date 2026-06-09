@@ -84,11 +84,11 @@ export default function NotesSection() {
                 </div>
                 <div className="relative -mb-6 -mr-6 mt-6 flex items-stretch justify-start sm:mt-0 sm:pl-6">
                   <Image
-                    src="/assets/final/landing-page/iep-data-collection-card-4.png"
+                    src="/assets/changes/documentation-02.png"
                     alt="Family Dashboard"
                     width={640}
                     height={480}
-                    className="block h-full w-auto max-w-none object-left-top"
+                    className="block h-full w-auto max-w-none origin-bottom-left -translate-x-6 scale-95 object-left-top"
                   />
                 </div>
               </CardContent>
@@ -112,11 +112,11 @@ export default function NotesSection() {
                 </div>
                 <div className="relative -mb-6 -mr-6 mt-6 flex items-stretch justify-start sm:mt-0 sm:pl-6">
                   <Image
-                    src="/assets/final/landing-page/iep-data-collection-card-5.png"
+                    src="/assets/changes/documentation-03.png"
                     alt="Daily Logs"
                     width={640}
                     height={480}
-                    className="block h-full w-auto max-w-none object-left-top"
+                    className="block h-full w-auto max-w-none origin-bottom-left -translate-y-8 scale-90 object-left-top"
                   />
                 </div>
               </CardContent>

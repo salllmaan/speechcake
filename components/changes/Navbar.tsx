@@ -7,8 +7,8 @@ import {
   ChevronDownIcon,
   Bars3Icon,
   XMarkIcon,
+  ArrowRightIcon,
   ArrowTopRightOnSquareIcon,
-  InformationCircleIcon,
   ChatBubbleLeftRightIcon,
   EnvelopeIcon,
   PhoneIcon,
@@ -16,21 +16,73 @@ import {
 
 // ── data ──────────────────────────────────────────────────────────────────────
 
-const PRODUCT_ITEMS = [
-  { label: "IEP Audit",          desc: "Ensure student IEPs meet compliance standards.",    img: "/assets/navbar/product/iep-audit.svg",         href: "#" },
-  { label: "Data Types",         desc: "9+ types — prompts, task analysis, rating scales.", img: "/assets/navbar/product/data types.svg",         href: "#" },
-  { label: "Service Time",       desc: "Auto-track with smart attendance adjustments.",      img: "/assets/navbar/product/service-time.svg",       href: "#" },
-  { label: "Accommodations",     desc: "Track accommodations for inclusive learning.",        img: "/assets/navbar/product/accommodations.svg",     href: "#" },
-  { label: "Rotating Schedule",  desc: "Manage recurring service days with ease.",           img: "/assets/navbar/product/rotating-schedule.svg",  href: "#" },
-  { label: "Medicaid Billing",   desc: "Auto-generated notes ready for your IEP system.",   img: "/assets/navbar/product/billing.svg",            href: "#" },
-  { label: "Reports",            desc: "20+ auto-generated graphs for IEP meetings.",        img: "/assets/navbar/product/reports.svg",            href: "#" },
-  { label: "Collaboration",      desc: "Securely share data with your whole team.",          img: "/assets/navbar/product/user-square.svg",        href: "#" },
-];
+// Product dropdown — grouped into product categories (finalized IA).
+type ProductChild = { label: string; img: string; href: string };
+type ProductCategory = {
+  label: string;
+  desc: string;
+  img: string;
+  href: string;
+  /** Sub-features. If empty, the middle column shows a spotlight instead. */
+  children: ProductChild[];
+  /** Standalone categories show this image + blurb in the middle column. */
+  spotlightImage?: string;
+  spotlightBlurb?: string;
+};
 
-const PRODUCT_FOR_ITEMS = [
-  { label: "Learn More",       icon: InformationCircleIcon,      href: "#schools" },
-  { label: "Get a Quote",      icon: ChatBubbleLeftRightIcon,    href: "#" },
-  { label: "Schedule a Demo",  icon: ArrowTopRightOnSquareIcon,  href: "#" },
+const PRODUCT_CATEGORIES: ProductCategory[] = [
+  {
+    label: "IEP Tracking",
+    desc: "Data, Service time, Accommodations, and more in one workflow.",
+    img: "/assets/navbar/product/data types.svg",
+    href: "#",
+    children: [
+      { label: "Data Collection",  img: "/assets/navbar/product/data types.svg",        href: "/changes/features/data-collection" },
+      { label: "Service Time",      img: "/assets/navbar/product/service-time.svg",      href: "/changes/features/service-time" },
+      { label: "Accommodations",    img: "/assets/navbar/product/accommodations.svg",    href: "/changes/features/accommodations" },
+      { label: "Rotating Schedule", img: "/assets/navbar/product/rotating-schedule.svg", href: "/changes/features/rotating-schedule" },
+      { label: "Reports",           img: "/assets/navbar/product/reports.svg",           href: "/changes/features/reports" },
+      { label: "Collaboration",     img: "/assets/navbar/product/user-square.svg",       href: "/changes/features/collaboration" },
+    ],
+  },
+  {
+    label: "IEP Audit",
+    desc: "Review student IEPs for compliance, missing sections, and due date accuracy.",
+    img: "/assets/navbar/product/iep-audit.svg",
+    href: "/changes/features/iep-audit",
+    children: [],
+    spotlightBlurb: "Catch missing sections and looming due dates before they become compliance risks.",
+    spotlightImage: "/assets/changes/iep-data-collection-8.png",
+  },
+  {
+    label: "Medicaid Billing",
+    desc: "Generate billing-ready documentation and submission notes from session data.",
+    img: "/assets/navbar/product/billing.svg",
+    href: "/changes/features/medicaid-billing",
+    children: [],
+    spotlightBlurb: "Turn session data into compliant, submission-ready billing notes automatically.",
+    spotlightImage: "/assets/final/landing-page/iep-data-collection-billing.png",
+  },
+  {
+    label: "Resource Generation",
+    desc: "Goals, worksheets, materials, and more generated with AI.",
+    img: "/assets/navbar/product/reports.svg", // TODO: needs dedicated icon
+    href: "#",
+    children: [
+      { label: "Goal Generation",      img: "/assets/navbar/product/iep-audit.svg",  href: "#" }, // TODO: icon
+      { label: "Worksheet Generation", img: "/assets/navbar/product/data types.svg", href: "#" }, // TODO: icon
+      { label: "Materials Library",    img: "/assets/navbar/product/reports.svg",    href: "#" }, // TODO: icon
+    ],
+  },
+  {
+    label: "Family Management",
+    desc: "Keep families in the loop with secure, real-time visibility into progress.",
+    img: "/assets/navbar/product/user-square.svg",
+    href: "/changes/features/family-management",
+    children: [],
+    spotlightBlurb: "Give families secure, real-time visibility into goals, daily progress, and updates — you control exactly what they see.",
+    spotlightImage: "/assets/changes/documentation-02.png",
+  },
 ];
 
 const RESOURCES_ITEMS = [
@@ -48,7 +100,7 @@ const CONTACT_ITEMS = [
 ];
 
 const NAV_LINKS_BEFORE = [
-  { label: "Schools/Districts", href: "#schools" },
+  { label: "Schools/Districts", href: "/changes/schools-districts" },
 ];
 
 const NAV_LINKS_AFTER = [
@@ -128,64 +180,126 @@ function PanelDivider() {
 
 // ── Product dropdown ──────────────────────────────────────────────────────────
 
+// A trailing arrow that rests hidden and slides in on row hover — keeps the
+// resting state quiet, signals navigability on intent.
+function HoverArrow({ className = "" }: { className?: string }) {
+  return (
+    <ArrowRightIcon
+      className={`h-3.5 w-3.5 flex-shrink-0 -translate-x-1 text-[#C4BDB6] opacity-0 transition-all duration-200 ease-out group-hover:translate-x-0 group-hover:text-[#00A9F8] group-hover:opacity-100 ${className}`}
+    />
+  );
+}
+
 function ProductDropdown() {
   const { open, setOpen, onEnter, onLeave } = useHoverDropdown();
+  const close = () => setOpen(false);
+  const [active, setActive] = useState(0);
+  const cat = PRODUCT_CATEGORIES[active];
 
   return (
     <div className="relative" onMouseEnter={onEnter} onMouseLeave={onLeave}>
       <DropdownTrigger label="Product" open={open} />
 
       {open && (
-        <DropdownPanel>
-          {/* Left — items grid */}
-          <div className="flex-1 p-5">
-            <p className="text-[11px] font-semibold text-[#AAAAAA] uppercase tracking-wider mb-4 px-1">Product</p>
-            <div className="grid grid-cols-2 gap-1">
-              {PRODUCT_ITEMS.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#FCFBF7] transition-colors group"
-                >
-                  <div className="w-8 h-8 bg-white border border-[#F5F2E5] rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
-                    <MaskIcon src={item.img} size={18} />
+        <DropdownPanel width="w-[1000px]">
+          {/* Left — category list (hover to activate) */}
+          <div className="w-[360px] flex-shrink-0 p-3">
+            {PRODUCT_CATEGORIES.map((c, i) => (
+              <Link
+                key={c.label}
+                href={c.href}
+                onClick={close}
+                onMouseEnter={() => setActive(i)}
+                className={`group flex items-center gap-3 rounded-xl border px-3 py-3 transition-colors ${
+                  i === active
+                    ? "border-[#F6F6F6] bg-[#FCFCFB]"
+                    : "border-transparent hover:border-[#F6F6F6] hover:bg-[#FCFCFB]"
+                }`}
+              >
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-[#EDEDEA] bg-white">
+                  <MaskIcon src={c.img} size={18} />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-[15px] font-semibold leading-tight text-[#16181D]">{c.label}</span>
+                  <span className="mt-0.5 block text-[13px] leading-snug text-[#7C8089]">{c.desc}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Middle — active category's children, or a spotlight if standalone */}
+          <div className="min-w-0 flex-1 p-3">
+            {cat.children.length > 0 ? (
+              <div className="flex flex-col">
+                {cat.children.map((c, idx) => (
+                  <div key={c.label}>
+                    {idx > 0 && <div className="mx-3 h-px bg-[#F0EFEB]" />}
+                    <Link
+                      href={c.href}
+                      onClick={close}
+                      className="group flex items-center justify-between rounded-lg px-3 py-3.5 transition-colors hover:bg-[#FAFAF9]"
+                    >
+                      <span className="flex items-center gap-3">
+                        <MaskIcon src={c.img} size={18} />
+                        <span className="text-[15px] font-medium text-[#16181D]">{c.label}</span>
+                      </span>
+                      <ArrowRightIcon className="h-4 w-4 text-[#C4BDB6] transition-all duration-200 ease-out group-hover:translate-x-0.5 group-hover:text-[#00A9F8]" />
+                    </Link>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-[#2B2E33] leading-tight">{item.label}</p>
-                    <p className="text-xs text-[#5D636F] leading-snug mt-0.5">{item.desc}</p>
+                ))}
+              </div>
+            ) : (
+              <Link
+                href={cat.href}
+                onClick={close}
+                aria-label={`Explore ${cat.label}`}
+                className="group flex h-full flex-col overflow-hidden rounded-xl border border-[#F6F6F6] bg-[#FCFCFB]"
+              >
+                <div className="px-4 pt-5">
+                  <h3 className="text-[17px] font-semibold leading-tight text-[#16181D]">{cat.label}</h3>
+                  <p className="mt-2 max-w-[280px] text-[14px] leading-snug text-[#7C8089]">
+                    {cat.spotlightBlurb ?? cat.desc}
+                  </p>
+                  <span className="mt-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#F2F1ED] transition-all duration-200 ease-out group-hover:translate-x-0.5 group-hover:bg-[#E9E8E3]">
+                    <Image src="/assets/icons/arrow-right-04.svg" alt="" width={16} height={16} className="h-4 w-4" />
+                  </span>
+                </div>
+                {cat.spotlightImage && (
+                  <div className="relative mt-4 w-full flex-1">
+                    <Image src={cat.spotlightImage} alt={cat.label} fill className="object-contain object-bottom" />
                   </div>
-                </Link>
-              ))}
-            </div>
+                )}
+              </Link>
+            )}
           </div>
 
           <PanelDivider />
 
-          {/* Right — Schools/Districts card */}
-          <div className="w-80 p-5 flex flex-col">
-            <div className="bg-[#F9FBF8] border border-[#E9F0E6] rounded-lg p-6 flex-1 flex flex-col">
-              <h3 className="text-lg font-bold text-[#2E312D] leading-tight mb-2">Schools/Districts</h3>
-              <p className="text-xs text-[#575E55] leading-relaxed mb-4">
-                Ease the burden of paperwork on providers, and enhance compliance by leveraging the power of digital data.
-              </p>
-              <div className="flex flex-col gap-0.5 mt-auto">
-                {PRODUCT_FOR_ITEMS.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-white border border-transparent hover:border-[#E9F0E6] transition-all group"
-                  >
-                    <div className="flex items-center gap-2">
-                      <item.icon className="w-4 h-4 text-[#575E55]" />
-                      <span className="text-sm text-[#575E55] group-hover:text-[#2E312D] transition-colors">{item.label}</span>
-                    </div>
-                    <ArrowTopRightOnSquareIcon className="w-3.5 h-3.5 text-[#575E55] group-hover:text-[#2E312D] transition-colors" />
-                  </Link>
-                ))}
+          {/* Right — promo card + CTA links */}
+          <div className="flex w-[284px] flex-shrink-0 flex-col gap-3 p-4">
+            <Link
+              href="/changes/schools-districts"
+              onClick={close}
+              className="group flex flex-1 flex-col overflow-hidden rounded-2xl bg-[#FBF3E7]"
+            >
+              <div className="relative h-44 w-full">
+                <Image
+                  src="/assets/final/landing-page/schools-and-districts.png"
+                  alt="The AbleSpace admin dashboard showing district-wide data and providers"
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
-            </div>
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="text-[16px] font-bold leading-tight text-[#2E2A24]">Built for Schools &amp; Districts</h3>
+                <p className="mt-1.5 text-[12.5px] leading-snug text-[#6B6258]">
+                  Standardized, compliant workflows with district-wide visibility.
+                </p>
+                <span className="mt-auto ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/70 text-[#2E2A24] transition-all duration-200 ease-out group-hover:translate-x-0.5 group-hover:bg-white">
+                  <ArrowRightIcon className="h-4 w-4" />
+                </span>
+              </div>
+            </Link>
           </div>
         </DropdownPanel>
       )}
@@ -354,16 +468,27 @@ export default function Navbar() {
             </button>
             {mobileProductOpen && (
               <div className="pl-3 flex flex-col gap-0.5">
-                {PRODUCT_ITEMS.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="group flex items-center gap-2.5 px-3 py-2 text-sm text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    <MaskIcon src={item.img} size={16} />
-                    {item.label}
-                  </Link>
+                {PRODUCT_CATEGORIES.map((cat) => (
+                  <div key={cat.label}>
+                    <Link
+                      href={cat.href}
+                      className="group flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-[#2B2E33] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      <MaskIcon src={cat.img} size={16} />
+                      {cat.label}
+                    </Link>
+                    {cat.children.map((c) => (
+                      <Link
+                        key={c.label}
+                        href={c.href}
+                        className="block pl-[38px] pr-3 py-1.5 text-sm text-[#5D636F] hover:text-[#00A9F8] hover:bg-[#FAFAFA] rounded-md transition-colors"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
                 ))}
               </div>
             )}
@@ -380,7 +505,7 @@ export default function Navbar() {
 
             {/* Schools/Districts */}
             <Link
-              href="#schools"
+              href="/changes/schools-districts"
               className="px-3 py-2.5 text-sm text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
               onClick={() => setMobileOpen(false)}
             >
