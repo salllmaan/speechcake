@@ -104,7 +104,7 @@ const NAV_LINKS_BEFORE = [
 ];
 
 const NAV_LINKS_AFTER = [
-  { label: "Pricing", href: "#pricing" },
+  { label: "Pricing", href: "/changes/pricing" },
 ];
 
 // ── mask icon (tintable via CSS — default #707685, hover #00A9F8 on group hover) ─
@@ -542,7 +542,7 @@ export default function Navbar() {
             )}
 
             <Link
-              href="#pricing"
+              href="/changes/pricing"
               className="px-3 py-2.5 text-sm text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
               onClick={() => setMobileOpen(false)}
             >
