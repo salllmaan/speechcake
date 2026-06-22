@@ -86,11 +86,11 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
 ];
 
 const RESOURCES_ITEMS = [
-  { label: "Tutorials",  desc: "Step-by-step guides to get started fast.",    img: "/assets/navbar/resources/tutorials.svg",  href: "#", badge: null },
-  { label: "Blog",       desc: "Tips, updates, and special ed insights.",      img: "/assets/navbar/resources/blog.svg",        href: "#", badge: null },
-  { label: "FAQs",       desc: "Answers to the most common questions.",        img: "/assets/navbar/resources/faqs.svg",        href: "#", badge: null },
-  { label: "Courses",    desc: "Deep-dive learning for your whole team.",      img: "/assets/navbar/resources/courses.svg",     href: "#", badge: "Coming Soon" },
-  { label: "Reviews",    desc: "See what 20,000+ educators are saying.",       img: "/assets/navbar/resources/reviews.svg",     href: "#", badge: null },
+  { label: "Tutorials",  desc: "Step-by-step guides to get started fast.",    img: "/assets/navbar/resources/tutorials.svg",  href: "/changes/tutorials", badge: null },
+  { label: "Blog",       desc: "Tips, updates, and special ed insights.",      img: "/assets/navbar/resources/blog.svg",        href: "/changes/blog",      badge: null },
+  { label: "FAQs",       desc: "Answers to the most common questions.",        img: "/assets/navbar/resources/faqs.svg",        href: "/changes/faqs",      badge: null },
+  { label: "Courses",    desc: "Deep-dive learning for your whole team.",      img: "/assets/navbar/resources/courses.svg",     href: "#",                  badge: "Coming Soon" },
+  { label: "Reviews",    desc: "See what 20,000+ educators are saying.",       img: "/assets/navbar/resources/reviews.svg",     href: "/changes/reviews",   badge: null },
 ];
 
 const CONTACT_ITEMS = [
