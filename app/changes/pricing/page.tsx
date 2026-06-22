@@ -100,27 +100,16 @@ export default function PricingPage() {
             <div className="mb-5 flex justify-center">
               <SectionChip label="Pricing" iconSrc="/assets/icons/certificate-01.svg" variant="neutral" />
             </div>
-            <h1 className="text-balance text-[32px] font-extrabold leading-[1.15] tracking-tight text-[#111111] sm:text-4xl lg:text-[52px]">
-              Start free, scale with enterprise.
+            <h1 className="text-balance text-[32px] font-extrabold leading-[1.1] tracking-tight text-[#111111] sm:text-4xl lg:text-[52px]">
+              Start for{" "}
+              <span className="bg-gradient-to-r from-[#00A9F8] to-[#00A0EB] bg-clip-text text-transparent">FREE</span>
+              <br />
+              Scale with Enterprise
             </h1>
             <p className="mx-auto mt-4 max-w-[680px] text-lg leading-relaxed text-[#666666]">
               Digitize your special education workflows with the only caseload management tool that offers IEP goal
               tracking, reporting, service-time tracking, Medicaid billing, and more.
             </p>
-            <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="#"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#00A9F8] to-[#00A0EB] px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              >
-                Educators — Sign up for free
-              </Link>
-              <Link
-                href="/changes/schools-districts"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#F2F2F2] px-6 py-3 text-sm font-semibold text-[#7A716B] transition-colors hover:bg-[#ECECEC]"
-              >
-                Admins — Learn more
-              </Link>
-            </div>
           </div>
         </section>
 
