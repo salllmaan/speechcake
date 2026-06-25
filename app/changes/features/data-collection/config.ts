@@ -1,19 +1,19 @@
 import type { FeaturePageConfig } from "@/components/changes/feature/types";
 
 const config: FeaturePageConfig = {
-  name: "Data Types",
+  name: "Measurement Types",
 
   hero: {
-    chip: "10+ Data Types",
+    chip: "10+ Measurement Types",
     chipIconSrc: "/assets/icons/ai-content-generator-01.svg",
-    title: "IEP-Ready Data Types for Progress Tracking",
+    title: "IEP-Ready Measurement Types for Progress Tracking",
     subtitle:
-      "Every goal is unique — AbleSpace lets you track it your way with flexible, customizable data types built for IEP accuracy.",
+      "Every goal is unique — AbleSpace lets you track it your way with flexible, customizable measurement types built for IEP accuracy.",
     pills: ["Accuracy", "Task Analysis", "Rating Scales", "Custom Goals"],
     primaryCta: { label: "Sign Up for FREE", href: "#" },
     secondaryCta: { label: "Book a Demo", href: "#schools" },
     image: "/assets/changes/features/data-collection/hero.png",
-    imageAlt: "AbleSpace data type selection for an IEP goal",
+    imageAlt: "AbleSpace measurement type selection for an IEP goal",
   },
 
   trustedByText: "Trusted by more than 20,000 Special Education Professionals",
@@ -22,9 +22,9 @@ const config: FeaturePageConfig = {
     {
       chip: "Built for Real IEP Progress Tracking",
       chipIconSrc: "/assets/icons/ai-content-generator-01.svg",
-      title: "10+ Data Types",
+      title: "10+ Measurement Types",
       subtitle:
-        "Each data type is designed to fit a different goal measurement style.",
+        "Each measurement type is designed to fit a different goal.",
       layout: "grid",
       centered: true,
       cards: [
@@ -82,8 +82,23 @@ const config: FeaturePageConfig = {
           iconSrc: "/assets/icons/ai-sheets.svg",
         },
         {
+          title: "Partial Interval",
+          description: "Mark whether a behavior occurred at any point during each timed interval.",
+          iconSrc: "/assets/icons/calendar-02.svg",
+        },
+        {
+          title: "Whole Interval",
+          description: "Mark whether a behavior lasted for the entire length of each timed interval.",
+          iconSrc: "/assets/icons/calendar-setting-02.svg",
+        },
+        {
+          title: "Rate",
+          description: "Measure how often a behavior occurs per unit of time, such as responses per minute.",
+          iconSrc: "/assets/icons/ai-beautify.svg",
+        },
+        {
           title: "Custom Goal",
-          description: "Combine multiple data types and create tailored tracking solutions that match how you actually work.",
+          description: "Combine multiple measurement types and create tailored tracking solutions that match how you actually work.",
           iconSrc: "/assets/icons/ai-content-generator-01.svg",
         },
       ],

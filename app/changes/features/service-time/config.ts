@@ -86,7 +86,7 @@ const config: FeaturePageConfig = {
           imageLarge: true,
         },
         {
-          title: "Automatic Minute Calculations",
+          title: "Automatic Service Calculations",
           description: "Service minutes update automatically based on attendance and session duration.",
           iconSrc: "/assets/icons/tablet-pen.svg",
           image: "",

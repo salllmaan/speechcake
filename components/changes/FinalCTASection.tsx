@@ -35,7 +35,7 @@ export default function FinalCTASection() {
 
             <h2 className="mt-5 text-balance text-[32px] sm:text-4xl lg:text-[52px] font-extrabold leading-[1.1] tracking-tight text-[#111111]">
               <span className="inline-flex flex-wrap items-baseline justify-center gap-x-3">
-                <span>Build for</span>
+                <span>Built for</span>
                 <WordListSwap
                   texts={ROTATING_WORDS}
                   rotationInterval={2200}

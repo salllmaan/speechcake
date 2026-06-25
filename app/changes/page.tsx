@@ -39,19 +39,19 @@ export default function ChangesHome() {
           imageAlt="Real-time team collaboration"
           features={[
             {
-              icon: featureIcon("/assets/icons/security-lock.svg", ""),
-              title: "HIPAA/FERPA compliant data sharing",
-              description: "Share student data securely with every member of the team — paraprofessionals and assistants included.",
+              icon: featureIcon("/assets/icons/ai-sheets.svg", ""),
+              title: "One Student Record for the Entire Team",
+              description: "Goal data, session notes, accommodations, attendance, and service logs stay in one shared record — so everyone works from the same information.",
             },
             {
               icon: featureIcon("/assets/icons/user-sharing.svg", ""),
-              title: "Role-based access",
-              description: "Control exactly what each team member can view and edit.",
+              title: "Include Every Member of the Team",
+              description: "Teachers, therapists, paraprofessionals, assistants, and administrators can contribute data based on their role while maintaining HIPAA and FERPA compliance.",
             },
             {
-              icon: featureIcon("/assets/icons/user-settings-01.svg", ""),
-              title: "Centralized Team Overview",
-              description: "The Collaborators Dashboard gives you a complete overview of your team.",
+              icon: featureIcon("/assets/icons/security-lock.svg", ""),
+              title: "Turn Team Activity Into Accountability",
+              description: "Track who delivered services, collected data, and updated records with complete visibility and audit trails.",
             },
           ]}
         />

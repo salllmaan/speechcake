@@ -26,7 +26,7 @@ export default function DataCollectionPage() {
             <div className="mx-auto max-w-[1080px] px-16">
               <LogoCloud
                 items={[
-                  "10+ Data Types",
+                  "10+ Measurement Types",
                   "One-Tap Logging",
                   "Works Offline",
                   "Auto-Organized",

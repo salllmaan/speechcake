@@ -40,7 +40,7 @@ export const DATA_TRACKING_SHOWCASE: ShowcaseSection = {
     "AbleSpace uses AI to streamline IEP goal tracking. Collect data with a single click, organize it automatically, and ensure nothing slips through the cracks.",
   cards: [
     {
-      title: "Collect Data with 9+ Data Types",
+      title: "Collect Data with 10+ Data Types",
       description: "Track IEP goals using Task Analysis, Prompts, Rating Scales, and more.",
       iconSrc: "/assets/icons/ai-content-generator-01.svg",
       image: "/assets/final/landing-page/iep-data-collection-card-2.png",

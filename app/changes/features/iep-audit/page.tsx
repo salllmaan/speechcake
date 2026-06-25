@@ -34,12 +34,12 @@ export default function IEPAuditPage() {
             {
               title: "Custom Rule Builder",
               description:
-                "Create custom rules for specific audit criteria. Edit or update existing rules anytime.",
+                "Coming soon — create custom rules for specific audit criteria, then edit or update them anytime.",
               image: "",
             },
             {
               title: "Priority Levels",
-              description: "Set rule priority (High, Medium, Low).",
+              description: "Assign priority levels (High, Medium, or Low) to rules and organize suggestions based on their relative importance.",
               textOnly: true,
             },
             {

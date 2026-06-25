@@ -28,7 +28,7 @@ const config: FeaturePageConfig = {
         {
           title: "Audit-Ready Reports",
           description:
-            "Generate detailed reports and graphs to monitor how accommodations are implemented over time and ensure compliance with IEP goals.",
+            "Track accommodation implementation and generate audit-ready accommodation reports for IEP compliance and team oversight.",
           iconSrc: "/assets/icons/ai-sheets.svg",
           image: "",
           imageContain: true,

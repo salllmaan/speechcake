@@ -33,10 +33,10 @@ export default function NotesSection() {
             />
           </div>
           <h2 className="text-[32px] sm:text-4xl lg:text-[48px] font-extrabold text-[#111111] leading-[1.2] tracking-tight mb-3">
-            Documentation and more...
+            Your team, your families, your IEP system — all connected
           </h2>
           <p className="text-lg font-medium text-[#666666] leading-relaxed max-w-[720px] mx-auto">
-            From AI-assisted notes and daily logs to a secure family dashboard — one connected workspace that keeps your team, your students, and their families aligned.
+            AI-assisted notes, daily logs, a secure family dashboard, and two-way IEP sync — one workspace that keeps everyone aligned without the back-and-forth.
           </p>
         </div>
 

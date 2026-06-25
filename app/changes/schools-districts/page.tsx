@@ -190,6 +190,11 @@ export default function SchoolsDistrictsPage() {
               title: "District-Wide Rollout",
               description: "Standardized, compliant workflows for every school, with the visibility and control admins need.",
             },
+            {
+              iconSrc: "/assets/icons/notebook-02.svg",
+              title: "Activity Logs",
+              description: "Track who delivered services, collected data, and updated records — a complete activity history for accountability and audits.",
+            },
           ]}
         />
 

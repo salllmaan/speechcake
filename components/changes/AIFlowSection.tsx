@@ -43,7 +43,7 @@ const STEPS: Step[] = [
   {
     title: "Strategies and Insights",
     content:
-      "AbleSpace AI surfaces each student's strengths and struggles from your data — and suggests evidence-based strategies.",
+      "AbleSpace surfaces student's struggles and strengths via informative graphs and summarized performance metrics.",
     iconSrc: "/assets/icons/ai-beautify.svg",
     srcImage: "/assets/landing-page/hero-collaboration.avif",
     srcAlt: "Insights panel highlighting student progress patterns",

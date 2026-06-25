@@ -33,7 +33,7 @@ export default function ServiceTimePage() {
               {
                 title: "Detect Missing Minutes",
                 content:
-                  "AI highlights students who are falling behind scheduled service requirements before compliance becomes an issue.",
+                  "Enable users to monitor service time entries from a dedicated tab and refine results using customizable filters.",
                 iconSrc: "/assets/icons/calendar-setting-02.svg",
               },
               {

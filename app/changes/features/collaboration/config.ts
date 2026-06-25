@@ -57,10 +57,11 @@ const config: FeaturePageConfig = {
         {
           title: "Role-Based Permissions",
           description:
-            "Assistants can help with scheduling, note-taking, or data entry, but have limited access to sensitive information — keeping student privacy intact.",
+            "Control what each team member can view and edit — assistants can support scheduling and data entry without accessing sensitive data.",
           iconSrc: "/assets/icons/user-lock-01.svg",
           image: "/assets/changes/documentation-02.png",
           imageAlt: "Role-based permission controls",
+          imageContain: true,
           span: 3,
         },
         {

@@ -3,6 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import SectionChip from "@/components/SectionChip";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { AnimatedList } from "@/components/magicui/animated-list";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import MasteryForecast from "@/components/changes/illustrations/MasteryForecast";
+import PaperGraphLoop from "@/components/changes/illustrations/PaperGraphLoop";
+import PhaseChange from "@/components/changes/illustrations/PhaseChange";
 import { Iphone } from "@/components/magicui/iphone";
 import ProgressChart from "@/components/changes/ProgressChart";
 import CardStack from "@/components/changes/ReportsCardStack";
@@ -74,10 +78,10 @@ const moreCards = [
 ];
 
 const DEFAULT_BENTO_CARDS = [
-  { title: "10+ Built-in Data Types", description: "Track Accuracy, Duration, Prompting Levels, Task Analysis, anecdotal notes, and more — all within one flexible system." },
-  { title: "Auto mastery detection", description: "AbleSpace automatically flags mastered goals, stalled progress, and students who may need intervention." },
-  { title: "Live progress charts", description: "Trendlines, forecasts, and real-time visualizations update instantly as your team logs data." },
-  { title: "Session-based data collection", description: "Start a session and collect goal data, attendance, accommodations, and notes from one screen." },
+  { title: "Track Any Goal or Behavior", description: "With 10+ measurement types — including Accuracy, Task Analysis, Partial Interval, Rubrics, and custom options — every goal gets tracked exactly the way it should." },
+  { title: "See Progress Before It's Obvious", description: "Automated mastery detection, trendlines, forecasts, and custom statistics give you a complete view of every student's progress — and where they're headed." },
+  { title: "Turn Paper Data Sheets Into Instant Graphs", description: "Upload any paper data sheet or Excel file — AbleSpace converts it to digital data and generates graphs and analysis automatically. No retyping, no manual entry." },
+  { title: "Go Beyond Basic Data Collection", description: "Phases, ABC Data, custom tracking fields, and multiple collection views — for BCBAs, SLPs, OTs, and teams managing complex behavioral or clinical data." },
 ];
 
 function BentoPlaceholder() {
@@ -96,6 +100,10 @@ export default function IEPDataCollectionSection({
   title = "Effortless Data Tracking",
   subtitle = "Whether you need quick progress monitoring or detailed behavioral tracking, AbleSpace adapts to the way your team already works.",
   topRowHeightClass = "lg:h-[380px]",
+  scrollDataTypes = false,
+  progressIllustration = false,
+  paperIllustration = false,
+  collectionIllustration = false,
 }: {
   showMore?: boolean;
   cards?: { title: string; description: string; image?: string; imageAlt?: string; imageFit?: "cover" | "contain"; textOnly?: boolean }[];
@@ -104,6 +112,10 @@ export default function IEPDataCollectionSection({
   title?: string;
   subtitle?: string;
   topRowHeightClass?: string;
+  scrollDataTypes?: boolean;
+  progressIllustration?: boolean;
+  paperIllustration?: boolean;
+  collectionIllustration?: boolean;
 }) {
   return (
     <section className="w-full bg-white pt-16 pb-16 sm:pt-24 sm:pb-24 px-4 sm:px-6 lg:px-8">
@@ -169,6 +181,18 @@ export default function IEPDataCollectionSection({
                       />
                     ) : cards[0].image === "" ? (
                       <BentoPlaceholder />
+                    ) : scrollDataTypes ? (
+                      <div className="relative h-full min-h-[280px] sm:-mx-6">
+                        <InfiniteSlider direction="vertical" speed={30} speedOnHover={10} gap={12} className="flex h-full justify-center">
+                          {DATA_TYPES.map((item) => (
+                            <div key={item.name} className="w-[296px] max-w-full">
+                              <DataTypeNotification {...item} />
+                            </div>
+                          ))}
+                        </InfiniteSlider>
+                        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#FCFCFC] to-transparent" />
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#FCFCFC] to-transparent" />
+                      </div>
                     ) : (
                       <div className="flex h-full flex-col">
                         <AnimatedList delay={1200}>
@@ -186,7 +210,7 @@ export default function IEPDataCollectionSection({
 
             {/* Card 2: Auto mastery detection (NARROW) */}
             <Card className={cn("relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 border-[#F7F7F7] bg-[#FCFCFC] shadow-none", topRowHeightClass)}>
-              <CardContent className={cn("pt-6", cards[1].image !== undefined && "flex flex-col lg:h-full")}>
+              <CardContent className={cn("pt-6", (cards[1].image !== undefined || progressIllustration) && "flex flex-col lg:h-full")}>
                 <div className="flex flex-col space-y-4">
                   <Image
                     src="/assets/icons/certificate-01.svg"
@@ -200,7 +224,11 @@ export default function IEPDataCollectionSection({
                     <p className="text-base text-[#9A938F]">{cards[1].description}</p>
                   </div>
                 </div>
-                {cards[1].image !== undefined ? (
+                {progressIllustration ? (
+                  <div className="mt-4 shrink-0">
+                    <MasteryForecast />
+                  </div>
+                ) : cards[1].image !== undefined ? (
                   <div className="mt-4 min-h-[160px] flex-1">
                     {cards[1].image ? (
                       <Image src={cards[1].image} alt={cards[1].imageAlt ?? cards[1].title} width={640} height={480} className="h-full w-full object-contain" />
@@ -238,7 +266,11 @@ export default function IEPDataCollectionSection({
                     <p className="text-base text-[#9A938F]">{cards[2].description}</p>
                   </div>
                 </div>
-                {cards[2].textOnly ? null : cards[2].image !== undefined ? (
+                {paperIllustration ? (
+                  <div className="mt-6">
+                    <PaperGraphLoop />
+                  </div>
+                ) : cards[2].textOnly ? null : cards[2].image !== undefined ? (
                   <div className="mt-6 h-[200px]">
                     {cards[2].image ? (
                       <Image src={cards[2].image} alt={cards[2].imageAlt ?? cards[2].title} width={640} height={480} className="h-full w-full object-contain" />
@@ -271,7 +303,11 @@ export default function IEPDataCollectionSection({
                   </div>
                 </div>
                 {!cards[3].textOnly &&
-                  (cards[3].image !== undefined ? (
+                  (collectionIllustration ? (
+                    <div className="relative mt-6 flex items-center sm:mt-0 sm:pl-6">
+                      <PhaseChange />
+                    </div>
+                  ) : cards[3].image !== undefined ? (
                     <div className="relative mt-6 h-[200px] sm:mt-0 sm:h-full sm:pl-6">
                       {cards[3].image ? (
                         <Image src={cards[3].image} alt={cards[3].imageAlt ?? cards[3].title} fill className="object-contain object-bottom" />
@@ -285,7 +321,7 @@ export default function IEPDataCollectionSection({
                     </div>
                   ))}
               </CardContent>
-              {!cards[3].textOnly && cards[3].image === undefined && (
+              {!cards[3].textOnly && cards[3].image === undefined && !collectionIllustration && (
                 <Image
                   src="/assets/changes/iep-data-collection-4-overlay.png"
                   alt="Calculator"

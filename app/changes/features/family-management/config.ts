@@ -60,7 +60,7 @@ const config: FeaturePageConfig = {
         {
           title: "Two-Way Communication",
           description:
-            "Share updates, notes, and milestones, and keep every conversation in one organized, FERPA-compliant place.",
+            "Communicate with families through a FERPA-compliant messaging system where teams share updates and parents can send questions and feedback in real time.",
           iconSrc: "/assets/icons/ai-sheets.svg",
           image: "",
           imageAlt: "Two-way family communication",
@@ -78,9 +78,9 @@ const config: FeaturePageConfig = {
         "Capture what happens each day and share it with families, so parents stay connected to everyday progress, not just meeting-day summaries.",
       cards: [
         {
-          title: "Daily Activity Logs",
+          title: "Fast Daily Log Entry",
           description:
-            "Capture activities, wins, and notes from each day in a simple log that families can follow at a glance.",
+            "Use saved templates to streamline daily logs across students and quickly capture daily session information in one place.",
           iconSrc: "/assets/icons/notebook-02.svg",
           image: "",
           imageAlt: "Daily activity logs",

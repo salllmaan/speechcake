@@ -37,7 +37,7 @@ export default function MedicaidBillingPage() {
       afterFaq={
         <Cta4
           title="Bill faster, stay compliant."
-          description="Auto-generate accurate Medicaid billing notes from your sessions and submit in a few clicks, no formatting, no manual work."
+          description="AbleSpace generates accurate Medicaid-compliant billing reports from session data, helping teams submit documentation quickly and reduce manual work."
           buttonText="Start Free Trial"
           buttonUrl="#"
           items={[

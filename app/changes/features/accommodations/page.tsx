@@ -25,11 +25,11 @@ export default function AccommodationsPage() {
           subtitle="Log, report, and sync accommodations in one place, so your documentation is always complete and defensible."
           cards={[
             {
-              title: "Effortless Logging",
+              title: "Accommodation Tracking",
               description:
-                "Log accommodations for multiple students at once, recording session name, date, time, and the specific support provided, all in one place.",
+                "Track accommodations for multiple students, document supports provided or refused, and maintain accurate records — all within AbleSpace.",
               image: "/assets/changes/features/accommodations/feature-1.png",
-              imageAlt: "Logging accommodations for multiple students",
+              imageAlt: "Tracking accommodations for multiple students",
             },
             {
               title: "Audit-Ready Records",
@@ -44,9 +44,9 @@ export default function AccommodationsPage() {
               image: "",
             },
             {
-              title: "Seamless Tracking",
+              title: "Reusable Templates",
               description:
-                "Track every accommodation across sessions automatically, with a complete, connected history.",
+                "Create reusable accommodation templates and apply them in a single click to save time and ensure consistent tracking.",
               image: "",
             },
           ]}
@@ -74,7 +74,7 @@ export default function AccommodationsPage() {
       afterFaq={
         <Cta4
           title="Make accommodations effortless."
-          description="Log, report, and sync every accommodation in one place, so your documentation stays complete and defensible."
+          description="Log, report, and sync accommodations in AbleSpace so your documentation stays complete, consistent, and ready for IEP compliance reviews."
           buttonText="Start Free Trial"
           buttonUrl="#"
           items={[

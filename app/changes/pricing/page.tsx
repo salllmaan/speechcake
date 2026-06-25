@@ -150,7 +150,7 @@ export default function PricingPage() {
                 Enterprise
               </span>
               <div>
-                <h2 className="text-xl font-bold tracking-tight text-[#111111]">Custom Plan</h2>
+                <h2 className="text-xl font-bold tracking-tight text-[#111111]">Pro Plan</h2>
                 <p className="mt-1 text-[14px] text-[#7C7572]">For Schools / Districts / Enterprises</p>
               </div>
               <Link
@@ -193,7 +193,7 @@ export default function PricingPage() {
                   Features
                 </div>
                 <div className="px-3 py-4 text-center text-[15px] font-bold text-[#111111]">Free</div>
-                <div className="px-3 py-4 text-center text-[15px] font-bold text-[#00A9F8]">Custom</div>
+                <div className="px-3 py-4 text-center text-[15px] font-bold text-[#00A9F8]">Pro</div>
               </div>
 
               {COMPARE.map((g) => (
@@ -271,7 +271,7 @@ export default function PricingPage() {
 
         <Cta4
           title="Start free, upgrade when you're ready."
-          description="Individuals start in minutes for $0. Schools and districts get a custom plan built around their rollout."
+          description="Individuals start in minutes for $0. Schools and districts get a Pro plan built around their rollout."
           buttonText="Sign Up for Free"
           buttonUrl="#"
           items={[
@@ -279,7 +279,7 @@ export default function PricingPage() {
             "AI-powered tracking & notes",
             "Auto-generated reports",
             "HIPAA & FERPA compliant",
-            "Admin portal & SSO (Custom)",
+            "Admin portal & SSO (Pro)",
           ]}
         />
       </main>
