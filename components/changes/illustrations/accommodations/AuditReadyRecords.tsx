@@ -22,14 +22,21 @@ export default function AuditReadyRecords() {
   }, [phase]);
 
   return (
-    <div className="flex h-[216px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
-      <div className="mb-2 flex items-center justify-between">
-        <p className="text-[12px] font-semibold text-[#111111]">Maya R. · Reading</p>
-        <span className="rounded-full bg-[#F0ECFB] px-2 py-0.5 text-[10px] font-semibold text-[#7A4FA8]">
+    <div className="flex h-[216px] flex-col overflow-hidden rounded-xl border border-[#EDEDEA] bg-white">
+      {/* Window chrome header */}
+      <div className="flex items-center gap-2 border-b border-[#F1F1EC] px-3 py-2">
+        <span className="flex gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ED6A5E]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#F5BF4F]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#61C554]" />
+        </span>
+        <span className="text-[12px] font-semibold text-[#3D4046]">Maya R. · Reading</span>
+        <span className="ml-auto rounded-full bg-[#E8F8EE] px-2 py-0.5 text-[10px] font-semibold text-[#1A7A4A]">
           IEP-2026
         </span>
       </div>
 
+      <div className="flex flex-1 flex-col p-3">
       <div className="space-y-2">
         <div className="rounded-lg border border-[#ECEBE7] bg-[#FCFCFC] px-3 py-2">
           <p className="text-[10px] font-medium uppercase tracking-wide text-[#9A938F]">
@@ -46,7 +53,7 @@ export default function AuditReadyRecords() {
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="rounded-md bg-[#E8F4FE] px-2 py-0.5 text-[12px] font-semibold text-[#0072C6]"
+              className="rounded-md bg-[#E8F8EE] px-2 py-0.5 text-[12px] font-semibold text-[#1A7A4A]"
             >
               {phase === "saved" ? "+ 100% (×2)" : "+ 50% (×1.5)"}
             </motion.span>
@@ -54,7 +61,7 @@ export default function AuditReadyRecords() {
               <motion.span
                 animate={{ opacity: [1, 0.2, 1] }}
                 transition={{ duration: 0.9, repeat: Infinity }}
-                className="h-3.5 w-px bg-[#00A9F8]"
+                className="h-3.5 w-px bg-[#4E9D5B]"
               />
             )}
           </div>
@@ -85,12 +92,13 @@ export default function AuditReadyRecords() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center justify-center rounded-lg bg-[#00A9F8] py-1.5 text-[11px] font-semibold text-white"
+              className="flex items-center justify-center rounded-lg bg-[#4E9D5B] py-1.5 text-[11px] font-semibold text-white"
             >
               {phase === "saving" ? "Saving…" : "Save record"}
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
       </div>
     </div>
   );

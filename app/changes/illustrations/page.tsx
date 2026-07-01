@@ -5,6 +5,7 @@ import Navbar from "@/components/changes/Navbar";
 import Footer from "@/components/Footer";
 import SectionChip from "@/components/SectionChip";
 import IEPDataCollectionSection from "@/components/changes/IEPDataCollectionSection";
+import CertVariations from "@/components/changes/illustrations/CertVariations";
 
 export const metadata: Metadata = {
   title: "Illustration Lab — AbleSpace",
@@ -27,6 +28,9 @@ export default function IllustrationsPage() {
     <div className="typescale-changes">
       <Navbar />
       <main className="relative z-10 bg-white">
+        {/* Certification badge — layout variations to compare and pick from */}
+        <CertVariations />
+
         {/* Same bento + illustrations as the changes page, with the updated copy.
             scrollDataTypes only here — card 1 runs a continuous vertical scroll loop
             instead of the build-up. The live changes page is unchanged. */}

@@ -4,6 +4,11 @@ import IEPDataCollectionSection from "@/components/changes/IEPDataCollectionSect
 import TestimonialsSection from "@/components/changes/TestimonialsSection";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import { Cta4 } from "@/components/changes/Cta4";
+import AuditReadyRecords from "@/components/changes/illustrations/accommodations/AuditReadyRecords";
+import CentralizedLog from "@/components/changes/illustrations/accommodations/CentralizedLog";
+import ReusableTemplates from "@/components/changes/illustrations/accommodations/ReusableTemplates";
+import AuditReadyReports from "@/components/changes/illustrations/accommodations/AuditReadyReports";
+import SyncIEPSystems from "@/components/changes/illustrations/accommodations/SyncIEPSystems";
 import config from "./config";
 
 export const metadata: Metadata = {
@@ -16,6 +21,10 @@ export default function AccommodationsPage() {
     <FeaturePage
       config={config}
       showMarquee={false}
+      illustrations={{
+        "Audit-Ready Reports": <AuditReadyReports />,
+        "Sync Seamlessly with IEP Systems": <SyncIEPSystems />,
+      }}
       afterTrustedBy={
         <IEPDataCollectionSection
           showMore={false}
@@ -35,19 +44,19 @@ export default function AccommodationsPage() {
               title: "Audit-Ready Records",
               description:
                 "Document and update student accommodations in seconds to support audit-ready records.",
-              image: "",
+              render: <AuditReadyRecords />,
             },
             {
               title: "Centralized Log",
               description:
                 "Maintain a centralized, compliant accommodation log accessible to authorized teams.",
-              image: "",
+              render: <CentralizedLog />,
             },
             {
               title: "Reusable Templates",
               description:
                 "Create reusable accommodation templates and apply them in a single click to save time and ensure consistent tracking.",
-              image: "",
+              render: <ReusableTemplates />,
             },
           ]}
         />
@@ -56,7 +65,7 @@ export default function AccommodationsPage() {
         <>
           <TestimonialsSection />
           <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-[1080px] px-16">
+            <div className="mx-auto max-w-[1080px] px-0 sm:px-8 lg:px-16">
               <LogoCloud
                 items={[
                   "Track Accommodations",

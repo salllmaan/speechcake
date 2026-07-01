@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Image from "next/image";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { MagicCard } from "@/components/magicui/magic-card";
@@ -13,6 +13,8 @@ export type Step = {
   /** Active-step image. Leave empty to show a placeholder. */
   srcImage?: string;
   srcAlt?: string;
+  /** Custom illustration node — takes priority over srcImage. */
+  render?: ReactNode;
 };
 
 const STEPS: Step[] = [
@@ -35,9 +37,9 @@ const STEPS: Step[] = [
   {
     title: "IEP Goals & Present Levels",
     content:
-      "Draft standards-aligned SMART IEP goals and present level statements tailored to each student's needs. Defensible, personalized, and ready to refine.",
+      "Draft standards-aligned SMART IEP goals and present levels for each student — defensible, personalized, and ready to refine.",
     iconSrc: "/assets/icons/certificate-01.svg",
-    srcImage: "/assets/landing-page/hero-ablespace-ai.avif",
+    srcImage: "/assets/final-assets/landing-page/ablespace-ai-3.png",
     srcAlt: "Ablespace AI suggesting an IEP goal aligned to state standards",
   },
   {
@@ -45,7 +47,7 @@ const STEPS: Step[] = [
     content:
       "AbleSpace surfaces student's struggles and strengths via informative graphs and summarized performance metrics.",
     iconSrc: "/assets/icons/ai-beautify.svg",
-    srcImage: "/assets/landing-page/hero-collaboration.avif",
+    srcImage: "/assets/final-assets/landing-page/ablespace-ai-4.png",
     srcAlt: "Insights panel highlighting student progress patterns",
   },
 ];
@@ -168,7 +170,9 @@ export default function AIFlowSection({
                   )}
                   aria-hidden={activeIndex !== i}
                 >
-                  {step.srcImage ? (
+                  {step.render ? (
+                    <div className="flex h-full w-full items-center justify-center p-6">{step.render}</div>
+                  ) : step.srcImage ? (
                     <Image
                       src={step.srcImage}
                       alt={step.srcAlt ?? step.title}

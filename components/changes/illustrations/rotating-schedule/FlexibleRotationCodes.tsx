@@ -22,9 +22,9 @@ const PATTERNS: Pattern[] = [
 ];
 
 const TONE: Record<string, { bg: string; text: string }> = {
-  A: { bg: "bg-[#E8F4FE]", text: "text-[#0072C6]" },
-  B: { bg: "bg-[#F0ECFB]", text: "text-[#7A4FA8]" },
-  C: { bg: "bg-[#E8F8EE]", text: "text-[#1A7A4A]" },
+  A: { bg: "bg-[#E8F8EE]", text: "text-[#1A7A4A]" },
+  B: { bg: "bg-[#E7F0E4]", text: "text-[#4E9D5B]" },
+  C: { bg: "bg-[#DEF0E2]", text: "text-[#2F8F52]" },
   D: { bg: "bg-[#FEF3E2]", text: "text-[#B5731A]" },
   E: { bg: "bg-[#FCEAF0]", text: "text-[#B5436A]" },
 };
@@ -48,7 +48,7 @@ export default function FlexibleRotationCodes() {
             <span
               key={p.code}
               className={`h-1.5 w-1.5 rounded-full transition-colors ${
-                i === idx ? "bg-[#00A9F8]" : "bg-[#E4E2DD]"
+                i === idx ? "bg-[#4E9D5B]" : "bg-[#E4E2DD]"
               }`}
             />
           ))}

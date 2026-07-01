@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 // A vertical timeline of sessions that staggers in on mount. Auto only.
 
 const EVENTS = [
-  { date: "Feb 3", type: "Speech", note: "Initial baseline · 54%", color: "#00A9F8", bg: "#E8F4FE" },
-  { date: "Feb 17", type: "Speech", note: "/r/ blends introduced", color: "#A769CD", bg: "#F0ECFB" },
-  { date: "Mar 2", type: "OT", note: "Fine-motor goal added", color: "#F2A93B", bg: "#FEF3E2" },
+  { date: "Feb 3", type: "Speech", note: "Initial baseline · 54%", color: "#A9D2B4", bg: "#EFF6EE" },
+  { date: "Feb 17", type: "Speech", note: "/r/ blends introduced", color: "#74B488", bg: "#E8F8EE" },
+  { date: "Mar 2", type: "OT", note: "Fine-motor goal added", color: "#4E9D5B", bg: "#E7F0E4" },
   { date: "Mar 16", type: "Speech", note: "Mastery 82% reached", color: "#1A7A4A", bg: "#E8F8EE" },
 ];
 

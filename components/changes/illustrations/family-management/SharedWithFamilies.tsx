@@ -28,7 +28,7 @@ export default function SharedWithFamilies() {
       <div className="flex items-center gap-2">
         {/* source: clinician log */}
         <div className="flex w-[34%] flex-col items-center gap-1 rounded-lg border border-[#ECEBE7] bg-[#FAFAF9] px-2 py-3">
-          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[#E8F4FE] text-[#0072C6]">
+          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[#E7F0E4] text-[#4E9D5B]">
             <NotebookPen className="h-3.5 w-3.5" strokeWidth={2.5} />
           </span>
           <p className="text-center text-[10px] font-semibold leading-tight text-[#111111]">Daily log saved</p>
@@ -37,7 +37,7 @@ export default function SharedWithFamilies() {
         <motion.span
           animate={{ x: [0, 4, 0] }}
           transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-          className="text-[#00A9F8]"
+          className="text-[#4E9D5B]"
         >
           <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
         </motion.span>
@@ -45,7 +45,7 @@ export default function SharedWithFamilies() {
         {/* destination: family portal feed */}
         <div className="min-w-0 flex-1 rounded-lg border border-[#ECEBE7] bg-[#FCFCFC] p-2">
           <div className="mb-1.5 flex items-center gap-1 px-0.5">
-            <Users className="h-3 w-3 text-[#7B4FA8]" strokeWidth={2.5} />
+            <Users className="h-3 w-3 text-[#4E9D5B]" strokeWidth={2.5} />
             <p className="text-[10px] font-semibold text-[#111111]">Family portal feed</p>
           </div>
           <div className="relative h-[58px] overflow-hidden">
@@ -56,10 +56,10 @@ export default function SharedWithFamilies() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.4 }}
-                className="absolute inset-0 rounded-md border border-[#E8F4FE] bg-[#F4FAFE] px-2 py-1.5"
+                className="absolute inset-0 rounded-md border border-[#D9EBDD] bg-[#F1FAF3] px-2 py-1.5"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[9px] font-semibold uppercase tracking-wide text-[#0072C6]">{LOGS[i].day}</span>
+                  <span className="text-[9px] font-semibold uppercase tracking-wide text-[#1A7A4A]">{LOGS[i].day}</span>
                   <span className="text-[9px] text-[#9A938F]">{LOGS[i].time}</span>
                 </div>
                 <p className="mt-0.5 text-[11px] leading-snug text-[#3D4046]">{LOGS[i].text}</p>

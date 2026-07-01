@@ -15,9 +15,9 @@ const DAYS_PER_WEEK = 5;
 const DAY_LABELS = ["M", "T", "W", "T", "F"];
 
 const TONE: Record<string, string> = {
-  A: "bg-[#E8F4FE] text-[#0072C6]",
-  B: "bg-[#F0ECFB] text-[#7A4FA8]",
-  C: "bg-[#E8F8EE] text-[#1A7A4A]",
+  A: "bg-[#E8F8EE] text-[#1A7A4A]",
+  B: "bg-[#E7F0E4] text-[#4E9D5B]",
+  C: "bg-[#DEF0E2] text-[#2F8F52]",
   D: "bg-[#FEF3E2] text-[#B5731A]",
   E: "bg-[#FCEAF0] text-[#B5436A]",
 };

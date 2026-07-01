@@ -32,19 +32,19 @@ export default function KeepEverythingInSync() {
         <motion.span
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="text-[#00A9F8]"
+          className="text-[#4E9D5B]"
         >
           <RefreshCw className="h-3.5 w-3.5" />
         </motion.span>
       </div>
 
-      <div className="mb-3 flex items-center gap-2 rounded-lg border border-[#9AD9F3] bg-[#E8F4FE] px-3 py-2">
-        <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#00A9F8] text-[11px] font-bold text-white">
+      <div className="mb-3 flex items-center gap-2 rounded-lg border border-[#A7D7B4] bg-[#E8F8EE] px-3 py-2">
+        <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#4E9D5B] text-[11px] font-bold text-white">
           AB
         </span>
         <div className="leading-tight">
-          <p className="text-[11px] font-semibold text-[#0072C6]">Rotating cycle</p>
-          <p className="text-[10px] text-[#5A8FB5]">Source of truth</p>
+          <p className="text-[11px] font-semibold text-[#1A7A4A]">Rotating cycle</p>
+          <p className="text-[10px] text-[#6BA579]">Source of truth</p>
         </div>
       </div>
 

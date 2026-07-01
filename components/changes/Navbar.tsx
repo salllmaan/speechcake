@@ -401,7 +401,7 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-1 flex-1">
             <ProductDropdown />
             <Link
-              href="#ai"
+              href="/changes/features/ablespace-ai"
               className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-[#5D636F] hover:text-[#111111] transition-colors rounded-md hover:bg-[#FAFAFA] whitespace-nowrap"
             >
               AbleSpace
@@ -495,7 +495,7 @@ export default function Navbar() {
 
             {/* AbleSpace AI */}
             <Link
-              href="#ai"
+              href="/changes/features/ablespace-ai"
               className="flex items-center gap-2 px-3 py-2.5 text-sm text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
               onClick={() => setMobileOpen(false)}
             >

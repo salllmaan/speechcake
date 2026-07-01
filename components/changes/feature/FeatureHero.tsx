@@ -4,15 +4,11 @@ import CTAButton from "@/components/CTAButton";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { HeroVideoDialog } from "@/components/magicui/hero-video-dialog";
+import { COMPLIANCE_BADGES } from "@/components/changes/complianceBadges";
 import type { FeaturePageConfig } from "./types";
 
 // Mirrors the /changes landing hero: animated grid backdrop, sparkle accent
 // headline, compliance badges, and the framed app mockup.
-const COMPLIANCE_BADGES = [
-  { src: "/assets/landing-page/Hipaa.avif", alt: "HIPAA Compliant" },
-  { src: "/assets/landing-page/ferpa.avif", alt: "FERPA Compliant" },
-  { src: "/assets/landing-page/iso.avif", alt: "ISO 27001 Certified" },
-];
 
 export default function FeatureHero({ hero }: { hero: FeaturePageConfig["hero"] }) {
   return (
@@ -63,7 +59,7 @@ export default function FeatureHero({ hero }: { hero: FeaturePageConfig["hero"] 
         {/* Compliance badges */}
         <div className="mb-16 flex flex-wrap items-center justify-center gap-4 sm:mb-20 sm:gap-5">
           {COMPLIANCE_BADGES.map((b) => (
-            <Image key={b.alt} src={b.src} alt={b.alt} width={80} height={36} className="h-8 w-auto object-contain sm:h-9" />
+            <Image key={b.alt} src={b.src} alt={b.alt} width={80} height={36} className="h-8 w-auto object-contain opacity-80 grayscale sm:h-9" />
           ))}
         </div>
 

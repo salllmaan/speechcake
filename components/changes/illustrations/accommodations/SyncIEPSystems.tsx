@@ -37,14 +37,14 @@ export default function SyncIEPSystems() {
           className="flex-shrink-0"
         >
           {phase === "syncing" ? (
-            <RefreshCw className="h-4 w-4 text-[#00A9F8]" />
+            <RefreshCw className="h-4 w-4 text-[#4E9D5B]" />
           ) : (
             <ArrowRight className="h-4 w-4 text-[#C4BDB6]" />
           )}
         </motion.div>
 
-        <div className="flex flex-1 items-center gap-1.5 rounded-lg border border-[#9AD9F3] bg-[#E8F4FE] px-2.5 py-1.5">
-          <span className="text-[10px] font-semibold text-[#0072C6]">AbleSpace</span>
+        <div className="flex flex-1 items-center gap-1.5 rounded-lg border border-[#D9EBDD] bg-[#E8F8EE] px-2.5 py-1.5">
+          <span className="text-[10px] font-semibold text-[#1A7A4A]">AbleSpace</span>
         </div>
       </div>
 

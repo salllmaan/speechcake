@@ -39,7 +39,7 @@ export default function TwoWayMessaging() {
     <div className="flex h-[224px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
       <div className="mb-2 flex items-center justify-between border-b border-[#EDEDEA] pb-2">
         <div className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E8F4FE] text-[11px] font-semibold text-[#0072C6]">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E7F0E4] text-[11px] font-semibold text-[#4E9D5B]">
             RC
           </span>
           <div className="leading-tight">
@@ -66,7 +66,7 @@ export default function TwoWayMessaging() {
                 className={`max-w-[78%] rounded-2xl px-2.5 py-1.5 text-[11px] leading-snug ${
                   m.from === "team"
                     ? "rounded-bl-sm bg-[#F1F0EC] text-[#3D4046]"
-                    : "rounded-br-sm bg-[#00A9F8] text-white"
+                    : "rounded-br-sm bg-[#4E9D5B] text-white"
                 }`}
               >
                 {m.text}

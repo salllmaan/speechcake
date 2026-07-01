@@ -3,6 +3,8 @@ import FeaturePage from "@/components/changes/feature/FeaturePage";
 import TestimonialsSection from "@/components/changes/TestimonialsSection";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import { Cta4 } from "@/components/changes/Cta4";
+import OneClickCopy from "@/components/changes/illustrations/medicaid-billing/OneClickCopy";
+import ZeroBusywork from "@/components/changes/illustrations/medicaid-billing/ZeroBusywork";
 import config from "./config";
 
 export const metadata: Metadata = {
@@ -15,11 +17,15 @@ export default function MedicaidBillingPage() {
     <FeaturePage
       config={config}
       showMarquee={false}
+      illustrations={{
+        "One-Click Copy & Paste": <OneClickCopy />,
+        "Zero Busywork": <ZeroBusywork />,
+      }}
       afterShowcases={
         <>
           <TestimonialsSection />
           <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-[1080px] px-16">
+            <div className="mx-auto max-w-[1080px] px-0 sm:px-8 lg:px-16">
               <LogoCloud
                 items={[
                   "Auto-Generated Notes",

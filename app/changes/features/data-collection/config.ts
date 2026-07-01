@@ -32,74 +32,74 @@ const config: FeaturePageConfig = {
           title: "Accuracy",
           description:
             "Track correct vs. incorrect responses. Record total attempts, accuracy percentages, and error patterns for clear progress insights.",
-          iconSrc: "/assets/icons/ai-beautify.svg",
+          iconSrc: "/assets/final-assets/icons/accuracy.svg",
         },
         {
           title: "Prompting Levels",
           description:
             "Measure how much assistance a student needs. Select from custom prompt levels or multiple-choice options.",
-          iconSrc: "/assets/icons/user-sharing.svg",
+          iconSrc: "/assets/final-assets/icons/prompting-levels.svg",
         },
         {
           title: "Task Analysis",
           description: "Break complex skills into step-by-step components and record mastery for each step.",
-          iconSrc: "/assets/icons/ai-sheets.svg",
+          iconSrc: "/assets/final-assets/icons/task-analysis.svg",
         },
         {
           title: "Task with Prompts",
           description: "Combine task analysis with prompting levels — track each step and the level of assistance provided.",
-          iconSrc: "/assets/icons/tablet-pen.svg",
+          iconSrc: "/assets/final-assets/icons/task-with-prompts.svg",
         },
         {
           title: "Rating Scale",
           description:
             "Use numeric or labeled scales (e.g., 1–5 or Never–Always) to measure consistency, quality, or frequency of a behavior.",
-          iconSrc: "/assets/icons/certificate-01.svg",
+          iconSrc: "/assets/final-assets/icons/rating-scale.svg",
         },
         {
           title: "Frequency",
           description: "Count how often a specific behavior or skill occurs within a session or time period.",
-          iconSrc: "/assets/icons/calendar-02.svg",
+          iconSrc: "/assets/final-assets/icons/frequency.svg",
         },
         {
           title: "Duration",
           description: "Record how long a student engages in an activity or displays a behavior.",
-          iconSrc: "/assets/icons/calendar-setting-02.svg",
+          iconSrc: "/assets/final-assets/icons/duration.svg",
         },
         {
           title: "Opportunity",
           description: "Track total opportunities, correct responses, and errors for any repeatable skill or activity.",
-          iconSrc: "/assets/icons/image-02.svg",
+          iconSrc: "/assets/final-assets/icons/opportunity.svg",
         },
         {
           title: "Anecdotal",
           description: "Document qualitative observations when quantitative tracking isn't possible.",
-          iconSrc: "/assets/icons/notebook-02.svg",
+          iconSrc: "/assets/final-assets/icons/anecdotal.svg",
         },
         {
           title: "Rubrics",
           description: "Rate student performance using custom rubric scales and descriptors.",
-          iconSrc: "/assets/icons/ai-sheets.svg",
+          iconSrc: "/assets/final-assets/icons/rubrics.svg",
         },
         {
           title: "Partial Interval",
           description: "Mark whether a behavior occurred at any point during each timed interval.",
-          iconSrc: "/assets/icons/calendar-02.svg",
+          iconSrc: "/assets/final-assets/icons/partial-interval.svg",
         },
         {
           title: "Whole Interval",
           description: "Mark whether a behavior lasted for the entire length of each timed interval.",
-          iconSrc: "/assets/icons/calendar-setting-02.svg",
+          iconSrc: "/assets/final-assets/icons/whole-interval.svg",
         },
         {
           title: "Rate",
           description: "Measure how often a behavior occurs per unit of time, such as responses per minute.",
-          iconSrc: "/assets/icons/ai-beautify.svg",
+          iconSrc: "/assets/final-assets/icons/rate.svg",
         },
         {
           title: "Custom Goal",
           description: "Combine multiple measurement types and create tailored tracking solutions that match how you actually work.",
-          iconSrc: "/assets/icons/ai-content-generator-01.svg",
+          iconSrc: "/assets/final-assets/icons/custom-goal.svg",
         },
       ],
     },

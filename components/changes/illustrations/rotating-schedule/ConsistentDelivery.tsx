@@ -20,7 +20,7 @@ export default function ConsistentDelivery() {
     <div className="flex h-[216px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
       <div className="mb-2.5 flex items-center justify-between">
         <p className="text-[12px] font-semibold text-[#111111]">Speech · every A day</p>
-        <span className="flex items-center gap-1 rounded-full bg-[#E8F4FE] px-2 py-0.5 text-[10px] font-semibold text-[#0072C6]">
+        <span className="flex items-center gap-1 rounded-full bg-[#E8F8EE] px-2 py-0.5 text-[10px] font-semibold text-[#1A7A4A]">
           On rhythm
         </span>
       </div>
@@ -46,17 +46,17 @@ export default function ConsistentDelivery() {
                   transition={{ duration: 0.3, delay: 0.05 + (w * 5 + i) * 0.05 }}
                   className={`flex flex-col items-center justify-center gap-0.5 rounded-md border ${
                     isFocus
-                      ? "border-[#9AD9F3] bg-[#E8F4FE]"
+                      ? "border-[#A7D7B4] bg-[#E8F8EE]"
                       : "border-[#ECEBE7] bg-[#FAFAF9]"
                   }`}
                 >
                   <span
-                    className={`text-[11px] font-bold ${isFocus ? "text-[#0072C6]" : "text-[#C4BDB6]"}`}
+                    className={`text-[11px] font-bold ${isFocus ? "text-[#1A7A4A]" : "text-[#C4BDB6]"}`}
                   >
                     {code}
                   </span>
                   {isFocus && (
-                    <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#00A9F8]">
+                    <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#4E9D5B]">
                       <Check className="h-2 w-2 text-white" strokeWidth={3.5} />
                     </span>
                   )}

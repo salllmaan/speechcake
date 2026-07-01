@@ -11,17 +11,17 @@ import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 // quick insight stats, an action point, and share/export affordances. Static.
 
 const DATA = [
-  { name: "Compliant", value: 18, color: "#00A9F8" },
-  { name: "Needs review", value: 4, color: "#A769CD" },
-  { name: "Flagged", value: 2, color: "#F0A4C0" },
+  { name: "Compliant", value: 18, color: "#4E9D5B" },
+  { name: "Needs review", value: 4, color: "#74B488" },
+  { name: "Flagged", value: 2, color: "#E191A0" },
 ];
 const TOTAL = DATA.reduce((s, d) => s + d.value, 0);
 const COMPLIANT = Math.round((DATA[0].value / TOTAL) * 100);
 
 const config = {
-  Compliant: { label: "Compliant", color: "#00A9F8" },
-  "Needs review": { label: "Needs review", color: "#A769CD" },
-  Flagged: { label: "Flagged", color: "#F0A4C0" },
+  Compliant: { label: "Compliant", color: "#4E9D5B" },
+  "Needs review": { label: "Needs review", color: "#74B488" },
+  Flagged: { label: "Flagged", color: "#E191A0" },
 } satisfies ChartConfig;
 
 export default function ReportsThatWork() {
@@ -29,7 +29,7 @@ export default function ReportsThatWork() {
     <div className="flex h-[224px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
       <div className="mb-1 flex items-center justify-between">
         <p className="text-[12px] font-semibold text-[#111111]">IEP Audit Report</p>
-        <span className="rounded-full bg-[#E8F4FE] px-2 py-0.5 text-[10px] font-semibold text-[#0072C6]">
+        <span className="rounded-full border border-[#D9EBDD] bg-[#E8F8EE] px-2 py-0.5 text-[10px] font-semibold text-[#1A7A4A]">
           Lincoln Elementary
         </span>
       </div>
@@ -75,7 +75,7 @@ export default function ReportsThatWork() {
       </div>
 
       <div className="mt-2 flex gap-2">
-        <button className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-[#00A9F8] py-1.5 text-[11px] font-semibold text-white">
+        <button className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-[#4E9D5B] py-1.5 text-[11px] font-semibold text-white">
           <Share2 className="h-3 w-3" /> Share report
         </button>
         <button className="flex items-center justify-center gap-1.5 rounded-lg border border-[#ECEBE7] px-2.5 py-1.5 text-[11px] font-semibold text-[#666666]">

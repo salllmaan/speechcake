@@ -31,7 +31,7 @@ export default function QuickLogging() {
         <div className="mx-auto mb-2 h-1 w-8 rounded-full bg-[#E3E0DA]" />
         <div className="rounded-[14px] bg-white p-2.5">
           <div className="mb-2 flex items-center gap-1.5">
-            <Smartphone className="h-3 w-3 text-[#00A9F8]" strokeWidth={2.5} />
+            <Smartphone className="h-3 w-3 text-[#4E9D5B]" strokeWidth={2.5} />
             <p className="text-[10px] font-semibold text-[#111111]">Quick log</p>
           </div>
           <p className="mb-2 text-[9px] text-[#9A938F]">Devon K. · 10:42 AM</p>
@@ -42,7 +42,7 @@ export default function QuickLogging() {
                 className="rounded-lg px-1.5 py-1.5 text-center text-[9px] font-semibold transition-colors"
                 style={
                   i === active
-                    ? { background: "#00A9F8", color: "#fff" }
+                    ? { background: "#4E9D5B", color: "#fff" }
                     : { background: "#F1F0EC", color: "#9A938F" }
                 }
               >

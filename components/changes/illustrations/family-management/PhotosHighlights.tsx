@@ -27,13 +27,13 @@ export default function PhotosHighlights() {
     <div className="rounded-xl border border-[#EDEDEA] bg-white p-3">
       {/* "photo" — a self-contained pastel scene, no external image */}
       <div className="relative mb-2 h-[112px] overflow-hidden rounded-lg border border-[#ECEBE7]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#E8F4FE] via-[#FCEAF0] to-[#FEF3E2]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#E8F8EE] via-[#FCEAF0] to-[#FEF3E2]" />
         <div className="absolute left-4 top-4 h-7 w-7 rounded-full bg-[#FEF3E2]" />
-        <div className="absolute bottom-0 left-0 right-0 h-7 bg-[#E8F8EE]" />
-        <div className="absolute bottom-5 left-7 h-6 w-3 rounded-t-full bg-[#A769CD]/70" />
-        <div className="absolute bottom-5 left-12 h-8 w-3 rounded-t-full bg-[#00A9F8]/70" />
+        <div className="absolute bottom-0 left-0 right-0 h-7 bg-[#E7F0E4]" />
+        <div className="absolute bottom-5 left-7 h-6 w-3 rounded-t-full bg-[#4E9D5B]/70" />
+        <div className="absolute bottom-5 left-12 h-8 w-3 rounded-t-full bg-[#74B488]/80" />
         <div className="absolute bottom-5 left-[68px] h-5 w-3 rounded-t-full bg-[#FF8F6C]/70" />
-        <span className="absolute left-2 top-2 flex items-center gap-1 rounded-full bg-white/85 px-1.5 py-0.5 text-[9px] font-semibold text-[#7B4FA8]">
+        <span className="absolute left-2 top-2 flex items-center gap-1 rounded-full bg-white/85 px-1.5 py-0.5 text-[9px] font-semibold text-[#1A7A4A]">
           <ImageIcon className="h-2.5 w-2.5" strokeWidth={2.5} /> Group time
         </span>
         <span className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-[#FEF3E2] px-1.5 py-0.5 text-[9px] font-semibold text-[#B5732B]">

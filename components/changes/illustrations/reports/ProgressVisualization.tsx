@@ -19,15 +19,15 @@ const DATA = [
 ];
 
 const config = {
-  reading: { label: "Reading", color: "#00A9F8" },
-  math: { label: "Math", color: "#A769CD" },
-  social: { label: "Social", color: "#F2A93B" },
+  reading: { label: "Reading", color: "#4E9D5B" },
+  math: { label: "Math", color: "#74B488" },
+  social: { label: "Social", color: "#A9D2B4" },
 } satisfies ChartConfig;
 
 const LEGEND = [
-  { label: "Reading", color: "#00A9F8" },
-  { label: "Math", color: "#A769CD" },
-  { label: "Social", color: "#F2A93B" },
+  { label: "Reading", color: "#4E9D5B" },
+  { label: "Math", color: "#74B488" },
+  { label: "Social", color: "#A9D2B4" },
 ];
 
 export default function ProgressVisualization() {
@@ -55,9 +55,9 @@ export default function ProgressVisualization() {
             strokeDasharray="2 4"
             label={{ value: "Mastery 80%", position: "insideTopRight", fill: "#9A938F", fontSize: 9 }}
           />
-          <Line dataKey="reading" type="monotone" stroke="#00A9F8" strokeWidth={2.5} dot={{ r: 3, fill: "#fff", stroke: "#00A9F8", strokeWidth: 2 }} activeDot={false} isAnimationActive={false} />
-          <Line dataKey="math" type="monotone" stroke="#A769CD" strokeWidth={2.5} dot={{ r: 3, fill: "#fff", stroke: "#A769CD", strokeWidth: 2 }} activeDot={false} isAnimationActive={false} />
-          <Line dataKey="social" type="monotone" stroke="#F2A93B" strokeWidth={2.5} dot={{ r: 3, fill: "#fff", stroke: "#F2A93B", strokeWidth: 2 }} activeDot={false} isAnimationActive={false} />
+          <Line dataKey="reading" type="monotone" stroke="#4E9D5B" strokeWidth={2.5} dot={{ r: 3, fill: "#fff", stroke: "#4E9D5B", strokeWidth: 2 }} activeDot={false} isAnimationActive={false} />
+          <Line dataKey="math" type="monotone" stroke="#74B488" strokeWidth={2.5} dot={{ r: 3, fill: "#fff", stroke: "#74B488", strokeWidth: 2 }} activeDot={false} isAnimationActive={false} />
+          <Line dataKey="social" type="monotone" stroke="#A9D2B4" strokeWidth={2.5} dot={{ r: 3, fill: "#fff", stroke: "#A9D2B4", strokeWidth: 2 }} activeDot={false} isAnimationActive={false} />
         </LineChart>
       </ChartContainer>
     </div>

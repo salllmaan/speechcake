@@ -12,6 +12,7 @@ import SectionChip from "@/components/SectionChip";
 import CTAButton from "@/components/CTAButton";
 import { Cta4 } from "@/components/changes/Cta4";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
+import { COMPLIANCE_BADGES } from "@/components/changes/complianceBadges";
 
 export const metadata: Metadata = {
   title: "Schools & Districts — AbleSpace",
@@ -22,12 +23,6 @@ export const metadata: Metadata = {
 const featureIcon = (src: string) => (
   <Image src={src} alt="" width={24} height={24} className="m-auto size-6" />
 );
-
-const COMPLIANCE_BADGES = [
-  { src: "/assets/landing-page/Hipaa.avif", alt: "HIPAA Compliant" },
-  { src: "/assets/landing-page/ferpa.avif", alt: "FERPA Compliant" },
-  { src: "/assets/landing-page/iso.avif", alt: "ISO 27001 Certified" },
-];
 
 const TARGET_USERS = [
   "Special Education Teachers",
@@ -108,7 +103,7 @@ export default function SchoolsDistrictsPage() {
             </div>
             <div className="mb-16 flex flex-wrap items-center justify-center gap-4 sm:mb-20 sm:gap-5">
               {COMPLIANCE_BADGES.map((b) => (
-                <Image key={b.alt} src={b.src} alt={b.alt} width={80} height={36} className="h-8 w-auto object-contain sm:h-9" />
+                <Image key={b.alt} src={b.src} alt={b.alt} width={80} height={36} className="h-8 w-auto object-contain opacity-80 grayscale sm:h-9" />
               ))}
             </div>
             <div className="mx-auto max-w-5xl rounded-2xl bg-[#FAFAF9] p-3">

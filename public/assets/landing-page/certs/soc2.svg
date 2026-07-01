@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" fill="none">
+  <defs>
+    <linearGradient id="soc2g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3E83D8"/>
+      <stop offset="1" stop-color="#1E4FA3"/>
+    </linearGradient>
+  </defs>
+  <!-- ribbon tails -->
+  <path d="M42 92 L34 142 L52 129 L60 140 Z" fill="#C9982E"/>
+  <path d="M78 92 L86 142 L68 129 L60 140 Z" fill="#E8B84B"/>
+  <!-- medallion -->
+  <circle cx="60" cy="56" r="48" fill="url(#soc2g)"/>
+  <circle cx="60" cy="56" r="47" stroke="#ffffff" stroke-width="2" opacity="0.55"/>
+  <circle cx="60" cy="56" r="39" stroke="#ffffff" stroke-width="1.4" stroke-dasharray="3 3.5" opacity="0.4"/>
+  <!-- SOC 2 -->
+  <text x="60" y="36" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="1">SOC 2</text>
+  <!-- check -->
+  <path d="M50 58 l7 7 l15 -17" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- TYPE II -->
+  <text x="60" y="90" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="600" letter-spacing="2">TYPE II</text>
+</svg>

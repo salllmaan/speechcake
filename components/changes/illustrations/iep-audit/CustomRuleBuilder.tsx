@@ -44,9 +44,9 @@ export default function CustomRuleBuilder() {
     <div className="flex h-[224px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
       <div className="mb-2 flex items-center justify-between">
         <p className="flex items-center gap-1.5 text-[12px] font-semibold text-[#111111]">
-          <Sparkles className="h-3.5 w-3.5 text-[#A769CD]" /> New audit rule
+          <Sparkles className="h-3.5 w-3.5 text-[#4E9D5B]" /> New audit rule
         </p>
-        <span className="rounded-full bg-[#F0ECFB] px-2 py-0.5 text-[10px] font-semibold text-[#7A4FA8]">
+        <span className="rounded-full border border-[#D9EBDD] bg-[#E8F8EE] px-2 py-0.5 text-[10px] font-semibold text-[#1A7A4A]">
           Coming soon
         </span>
       </div>
@@ -61,8 +61,8 @@ export default function CustomRuleBuilder() {
               key={key}
               className="rounded-lg border px-3 py-1.5 transition-colors"
               style={{
-                borderColor: active ? "#9AD9F3" : "#ECEBE7",
-                backgroundColor: active ? "#F4FBFF" : "#FCFCFC",
+                borderColor: active ? "#9ED4AC" : "#ECEBE7",
+                backgroundColor: active ? "#F1FAF3" : "#FCFCFC",
               }}
             >
               <p className="text-[9px] font-medium uppercase tracking-wide text-[#9A938F]">
@@ -85,7 +85,7 @@ export default function CustomRuleBuilder() {
                   <motion.span
                     animate={{ opacity: [1, 0.2, 1] }}
                     transition={{ duration: 0.9, repeat: Infinity }}
-                    className="ml-1 h-3.5 w-px bg-[#00A9F8]"
+                    className="ml-1 h-3.5 w-px bg-[#4E9D5B]"
                   />
                 )}
               </div>
@@ -114,7 +114,7 @@ export default function CustomRuleBuilder() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="flex h-full items-center justify-center rounded-lg bg-[#A769CD] text-[11px] font-semibold text-white"
+              className="flex h-full items-center justify-center rounded-lg bg-[#4E9D5B] text-[11px] font-semibold text-white"
             >
               Build rule
             </motion.div>

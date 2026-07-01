@@ -24,10 +24,7 @@ export default function AutoMinutes() {
   const [step, setStep] = useState(0);
 
   useEffect(() => {
-    if (step >= SESSIONS.length) {
-      const r = setTimeout(() => setStep(0), 2200);
-      return () => clearTimeout(r);
-    }
+    if (step >= SESSIONS.length) return; // runs once, then stops (no loop)
     const t = setTimeout(() => setStep((s) => s + 1), 900);
     return () => clearTimeout(t);
   }, [step]);

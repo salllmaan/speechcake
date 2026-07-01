@@ -7,10 +7,10 @@ import { CalendarClock } from "lucide-react";
 // A sorted deadline list with urgency progress bars (closer = fuller/redder). Static.
 
 const ITEMS = [
-  { student: "Noah B.", kind: "Annual IEP", due: "in 3 days", pct: 92, color: "#E8612C", track: "#FCEAE2" },
-  { student: "Mia L.", kind: "Reevaluation", due: "in 9 days", pct: 70, color: "#F2A93B", track: "#FEF3E2" },
-  { student: "Ethan R.", kind: "Progress review", due: "in 21 days", pct: 42, color: "#00A9F8", track: "#E8F4FE" },
-  { student: "Zoe P.", kind: "Annual IEP", due: "in 38 days", pct: 24, color: "#A769CD", track: "#F0ECFB" },
+  { student: "Noah B.", kind: "Annual IEP", due: "in 3 days", pct: 92, color: "#D77A92", track: "#FCEAF0" },
+  { student: "Mia L.", kind: "Reevaluation", due: "in 9 days", pct: 70, color: "#E0A23B", track: "#FEF3E2" },
+  { student: "Ethan R.", kind: "Progress review", due: "in 21 days", pct: 42, color: "#4E9D5B", track: "#E7F0E4" },
+  { student: "Zoe P.", kind: "Annual IEP", due: "in 38 days", pct: 24, color: "#74B488", track: "#E8F8EE" },
 ];
 
 export default function UpcomingDeadlines() {

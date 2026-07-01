@@ -4,6 +4,16 @@ import IEPDataCollectionSection from "@/components/changes/IEPDataCollectionSect
 import TestimonialsSection from "@/components/changes/TestimonialsSection";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import { Cta4 } from "@/components/changes/Cta4";
+import ProgressVisualization from "@/components/changes/illustrations/reports/ProgressVisualization";
+import AttendanceTrends from "@/components/changes/illustrations/reports/AttendanceTrends";
+import SessionLevelDetail from "@/components/changes/illustrations/reports/SessionLevelDetail";
+import SessionTimeline from "@/components/changes/illustrations/reports/SessionTimeline";
+import ProvidedVsRefused from "@/components/changes/illustrations/reports/ProvidedVsRefused";
+import UpcomingDeadlines from "@/components/changes/illustrations/reports/UpcomingDeadlines";
+import GoalSpecificLayouts from "@/components/changes/illustrations/reports/GoalSpecificLayouts";
+import FullStudentProfile from "@/components/changes/illustrations/reports/FullStudentProfile";
+import ChronologicalNotes from "@/components/changes/illustrations/reports/ChronologicalNotes";
+import DeliveredVsRequired from "@/components/changes/illustrations/reports/DeliveredVsRequired";
 import config from "./config";
 
 export const metadata: Metadata = {
@@ -20,6 +30,7 @@ type ReportSection = {
     title: string;
     description: string;
     image?: string;
+    render?: React.ReactNode;
     textOnly?: boolean;
   }[];
 };
@@ -42,7 +53,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Progress Visualization",
         description:
           "Monitor student progress across goals with visual trends and outcome data.",
-        image: "",
+        render: <ProgressVisualization />,
       },
       {
         title: "AI-Generated Progress Notes",
@@ -75,7 +86,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Attendance Trends",
         description:
           "Spot patterns in participation and flag students with recurring absences at a glance.",
-        image: "",
+        render: <AttendanceTrends />,
       },
       {
         title: "Makeup Session Tracking",
@@ -108,7 +119,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Session-Level Detail",
         description:
           "Drill into accuracy, prompting levels, and observations captured during that one session.",
-        image: "",
+        render: <SessionLevelDetail />,
       },
       {
         title: "Goal Data Snapshot",
@@ -141,7 +152,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Session Timeline",
         description:
           "Follow a student's journey across weeks and months with a chronological view of all sessions.",
-        image: "",
+        render: <SessionTimeline />,
       },
       {
         title: "Service Type Breakdown",
@@ -174,7 +185,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Provided vs Refused",
         description:
           "Clearly log what was offered and what the student declined, keeping documentation defensible.",
-        image: "",
+        render: <ProvidedVsRefused />,
       },
       {
         title: "Per-Goal Accommodations",
@@ -207,7 +218,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Upcoming Deadlines",
         description:
           "See what's due this week, this month, and beyond, sorted by urgency.",
-        image: "",
+        render: <UpcomingDeadlines />,
       },
       {
         title: "Overdue Alerts",
@@ -240,7 +251,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Goal-Specific Layouts",
         description:
           "Sheets adapt to each data type, including accuracy, duration, prompting, and task analysis.",
-        image: "",
+        render: <GoalSpecificLayouts />,
       },
       {
         title: "Print or Go Digital",
@@ -273,7 +284,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Full Student Profile",
         description:
           "Key details, services, and team members gathered into a single shareable view.",
-        image: "",
+        render: <FullStudentProfile />,
       },
       {
         title: "Goals & Accommodations",
@@ -306,7 +317,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Chronological Notes",
         description:
           "Read observations and anecdotal notes in order, with full context for each session.",
-        image: "",
+        render: <ChronologicalNotes />,
       },
       {
         title: "Goal-Linked Notes",
@@ -339,7 +350,7 @@ const REPORT_SECTIONS: ReportSection[] = [
         title: "Delivered vs Required",
         description:
           "Instantly see who is on track and who is falling short of mandated time.",
-        image: "",
+        render: <DeliveredVsRequired />,
       },
       {
         title: "Service Gap Alerts",
@@ -382,7 +393,7 @@ export default function ReportsPage() {
         <>
           <TestimonialsSection />
           <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-[1080px] px-16">
+            <div className="mx-auto max-w-[1080px] px-0 sm:px-8 lg:px-16">
               <LogoCloud
                 items={[
                   "Goal Progress",

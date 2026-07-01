@@ -18,7 +18,7 @@ const DATA = [
   { month: "Feb", rate: 84 },
 ];
 
-const config = { rate: { label: "Attendance", color: "#00A9F8" } } satisfies ChartConfig;
+const config = { rate: { label: "Attendance", color: "#4E9D5B" } } satisfies ChartConfig;
 
 export default function AttendanceTrends() {
   return (
@@ -36,7 +36,7 @@ export default function AttendanceTrends() {
           <YAxis hide domain={[0, 100]} />
           <Bar dataKey="rate" radius={[4, 4, 0, 0]} isAnimationActive={false}>
             {DATA.map((d) => (
-              <Cell key={d.month} fill={d.rate < 75 ? "#F2A93B" : "#9AD9F3"} />
+              <Cell key={d.month} fill={d.rate < 75 ? "#E8C07A" : "#74B488"} />
             ))}
           </Bar>
         </BarChart>

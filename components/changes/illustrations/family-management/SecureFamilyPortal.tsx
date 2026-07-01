@@ -25,10 +25,19 @@ export default function SecureFamilyPortal() {
   }, []);
 
   return (
-    <div className="rounded-xl border border-[#EDEDEA] bg-white p-3">
+    <div className="overflow-hidden rounded-xl border border-[#EDEDEA] bg-white">
+      <div className="flex items-center gap-2 border-b border-[#F1F1EC] px-3 py-2">
+        <span className="flex gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ED6A5E]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#F5BF4F]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#61C554]" />
+        </span>
+        <span className="text-[12px] font-semibold text-[#3D4046]">Family portal</span>
+      </div>
+      <div className="p-3">
       <div className="mb-2.5 flex items-center justify-between rounded-lg border border-[#ECEBE7] bg-[#FAFAF9] px-2.5 py-2">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F0ECFB] text-[#7B4FA8]">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E7F0E4] text-[#4E9D5B]">
             <Lock className="h-3.5 w-3.5" strokeWidth={2.5} />
           </span>
           <div className="leading-tight">
@@ -56,7 +65,7 @@ export default function SecureFamilyPortal() {
           >
             <span className="text-[12px] text-[#3D4046]">{a.name}</span>
             {a.granted ? (
-              <span className="flex items-center gap-1 rounded-full bg-[#E8F4FE] px-2 py-0.5 text-[10px] font-semibold text-[#0072C6]">
+              <span className="flex items-center gap-1 rounded-full bg-[#E8F8EE] px-2 py-0.5 text-[10px] font-semibold text-[#1A7A4A]">
                 <Eye className="h-2.5 w-2.5" strokeWidth={2.5} /> Visible
               </span>
             ) : (
@@ -66,6 +75,7 @@ export default function SecureFamilyPortal() {
             )}
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

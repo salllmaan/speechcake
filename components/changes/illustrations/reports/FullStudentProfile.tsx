@@ -7,22 +7,22 @@ import { GraduationCap, Users } from "lucide-react";
 // A composed profile card: header, service chips, team avatars. Static.
 
 const SERVICES = [
-  { label: "Speech", bg: "#E8F4FE", color: "#0072C6" },
-  { label: "OT", bg: "#E8F8EE", color: "#1A7A4A" },
-  { label: "Counseling", bg: "#F0ECFB", color: "#7A4FA8" },
+  { label: "Speech", bg: "#E7F0E4", color: "#1A7A4A" },
+  { label: "OT", bg: "#E8F8EE", color: "#4E9D5B" },
+  { label: "Counseling", bg: "#FEF3E2", color: "#B5731A" },
 ];
 
 const TEAM = [
-  { initials: "JP", role: "SLP", bg: "#00A9F8" },
-  { initials: "RK", role: "OT", bg: "#A769CD" },
-  { initials: "DM", role: "Case mgr", bg: "#F2A93B" },
+  { initials: "JP", role: "SLP", bg: "#4E9D5B" },
+  { initials: "RK", role: "OT", bg: "#74B488" },
+  { initials: "DM", role: "Case mgr", bg: "#A9D2B4" },
 ];
 
 export default function FullStudentProfile() {
   return (
     <div className="flex h-[224px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
       <div className="flex items-center gap-3">
-        <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#E8F4FE] text-[15px] font-bold text-[#0072C6]">
+        <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#E7F0E4] text-[15px] font-bold text-[#4E9D5B]">
           SC
         </div>
         <div className="min-w-0 flex-1">

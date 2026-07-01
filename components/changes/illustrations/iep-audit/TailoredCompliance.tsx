@@ -13,7 +13,7 @@ type Priority = "High" | "Medium" | "Low";
 const PRIORITY_STYLE: Record<Priority, { bg: string; text: string }> = {
   High: { bg: "#FCEAF0", text: "#B5436A" },
   Medium: { bg: "#FEF3E2", text: "#B5731A" },
-  Low: { bg: "#E8F4FE", text: "#0072C6" },
+  Low: { bg: "#E8F8EE", text: "#1A7A4A" },
 };
 
 const RULES: { label: string; priority: Priority }[] = [
@@ -28,7 +28,7 @@ export default function TailoredCompliance() {
     <div className="flex h-[224px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
       <div className="mb-2 flex items-center justify-between">
         <p className="text-[12px] font-semibold text-[#111111]">District audit rules</p>
-        <span className="rounded-full bg-[#F0ECFB] px-2 py-0.5 text-[10px] font-semibold text-[#7A4FA8]">
+        <span className="rounded-full border border-[#D9EBDD] bg-[#E8F8EE] px-2 py-0.5 text-[10px] font-semibold text-[#1A7A4A]">
           12 active
         </span>
       </div>
@@ -52,7 +52,7 @@ export default function TailoredCompliance() {
                 {rule.priority}
               </span>
               <Pencil
-                className={`h-3 w-3 flex-shrink-0 ${i === 0 ? "text-[#00A9F8]" : "text-[#C4BDB6]"}`}
+                className={`h-3 w-3 flex-shrink-0 ${i === 0 ? "text-[#4E9D5B]" : "text-[#C4BDB6]"}`}
               />
             </div>
           );
@@ -60,7 +60,7 @@ export default function TailoredCompliance() {
       </div>
 
       <button className="mt-2 flex items-center justify-center gap-1.5 rounded-lg border border-dashed border-[#D8D4CC] py-1.5 text-[11px] font-semibold text-[#9A938F]">
-        <span className="text-[13px] leading-none text-[#00A9F8]">+</span> Add custom rule
+        <span className="text-[13px] leading-none text-[#4E9D5B]">+</span> Add custom rule
       </button>
     </div>
   );

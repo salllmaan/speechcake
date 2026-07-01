@@ -9,16 +9,16 @@ import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 // Donut chart of accommodation outcomes with a centered total. Static.
 
 const DATA = [
-  { name: "Provided", value: 42, fill: "#00A9F8" },
-  { name: "Modified", value: 9, fill: "#A769CD" },
-  { name: "Refused", value: 5, fill: "#F2A93B" },
+  { name: "Provided", value: 42, fill: "#4E9D5B" },
+  { name: "Modified", value: 9, fill: "#74B488" },
+  { name: "Refused", value: 5, fill: "#E191A0" },
 ];
 const TOTAL = DATA.reduce((s, d) => s + d.value, 0);
 
 const config = {
-  Provided: { label: "Provided", color: "#00A9F8" },
-  Modified: { label: "Modified", color: "#A769CD" },
-  Refused: { label: "Refused", color: "#F2A93B" },
+  Provided: { label: "Provided", color: "#4E9D5B" },
+  Modified: { label: "Modified", color: "#74B488" },
+  Refused: { label: "Refused", color: "#E191A0" },
 } satisfies ChartConfig;
 
 export default function ProvidedVsRefused() {

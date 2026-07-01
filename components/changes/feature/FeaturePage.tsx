@@ -22,12 +22,15 @@ export default function FeaturePage({
   afterShowcases,
   afterFaq,
   showMarquee = true,
+  illustrations,
 }: {
   config: FeaturePageConfig;
   afterTrustedBy?: ReactNode;
   afterShowcases?: ReactNode;
   afterFaq?: ReactNode;
   showMarquee?: boolean;
+  /** Map of card title → custom illustration node, applied across all showcases. */
+  illustrations?: Record<string, ReactNode>;
 }) {
   return (
     <div className="typescale-changes">
@@ -40,7 +43,7 @@ export default function FeaturePage({
         {afterTrustedBy}
 
         {config.showcases.map((showcase, i) => (
-          <FeatureShowcase key={`${showcase.title}-${i}`} showcase={showcase} />
+          <FeatureShowcase key={`${showcase.title}-${i}`} showcase={showcase} illustrations={illustrations} />
         ))}
 
         {afterShowcases}

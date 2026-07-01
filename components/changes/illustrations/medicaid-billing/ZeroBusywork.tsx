@@ -42,14 +42,14 @@ export default function ZeroBusywork() {
             <span className="ml-1 text-[13px] font-semibold text-[#9A938F]">hrs</span>
           </p>
         </div>
-        <span className="flex items-center gap-1 rounded-full bg-[#F0ECFB] px-2 py-0.5 text-[10px] font-semibold text-[#7B4FA8]">
+        <span className="flex items-center gap-1 rounded-full bg-[#E8F8EE] px-2 py-0.5 text-[10px] font-semibold text-[#1A7A4A]">
           <Sparkles className="h-2.5 w-2.5" /> Automated
         </span>
       </div>
 
       <div className="mb-2.5 h-1.5 w-full overflow-hidden rounded-full bg-[#F1F0EC]">
         <motion.div
-          className="h-full rounded-full bg-gradient-to-r from-[#00A0EB] to-[#46C9FF]"
+          className="h-full rounded-full bg-gradient-to-r from-[#4E9D5B] to-[#74B488]"
           animate={{ width: `${(done / TASKS.length) * 100}%` }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
@@ -65,8 +65,8 @@ export default function ZeroBusywork() {
             >
               <motion.span
                 animate={{
-                  background: resolved ? "#00A9F8" : "#ffffff",
-                  borderColor: resolved ? "#00A9F8" : "#D9D9D6",
+                  background: resolved ? "#4E9D5B" : "#ffffff",
+                  borderColor: resolved ? "#4E9D5B" : "#D9D9D6",
                 }}
                 className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-md border"
               >

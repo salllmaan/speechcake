@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import SectionChip from "@/components/SectionChip";
@@ -56,7 +57,7 @@ function DataTypeNotification({ name, description, icon, color }: DataType) {
 
 const moreCards = [
   {
-    title: "Service Minutes",
+    title: "Service Minutes Tracking",
     subtitle: "Smart scheduling and automatic attendance adjustments keep your logs accurate. Customize service types and generate audit-ready reports in seconds.",
     mockup: "/assets/changes/iep-data-collection-5.png",
   },
@@ -66,7 +67,7 @@ const moreCards = [
     mockup: "/assets/final/landing-page/iep-data-collection-reports.png",
   },
   {
-    title: "Accommodations",
+    title: "Accommodations Tracking",
     subtitle: "Manage & track accommodations in one place. Log what was provided and what was refused — so your documentation is always complete and defensible.",
     mockup: "/assets/changes/iep-data-collection-7.png",
   },
@@ -92,6 +93,26 @@ function BentoPlaceholder() {
   );
 }
 
+// Bento card icons tinted to a single muted tone via CSS mask (shared SVGs stay untouched).
+function BentoIcon({ src }: { src: string }) {
+  return (
+    <span
+      aria-hidden
+      className="size-6 bg-[#7C7572]"
+      style={{
+        maskImage: `url(${src})`,
+        WebkitMaskImage: `url(${src})`,
+        maskSize: "contain",
+        WebkitMaskSize: "contain",
+        maskRepeat: "no-repeat",
+        WebkitMaskRepeat: "no-repeat",
+        maskPosition: "center",
+        WebkitMaskPosition: "center",
+      }}
+    />
+  );
+}
+
 export default function IEPDataCollectionSection({
   showMore = true,
   cards = DEFAULT_BENTO_CARDS,
@@ -106,7 +127,7 @@ export default function IEPDataCollectionSection({
   collectionIllustration = false,
 }: {
   showMore?: boolean;
-  cards?: { title: string; description: string; image?: string; imageAlt?: string; imageFit?: "cover" | "contain"; textOnly?: boolean }[];
+  cards?: { title: string; description: string; image?: string; imageAlt?: string; imageFit?: "cover" | "contain"; textOnly?: boolean; render?: ReactNode }[];
   chip?: string;
   chipIconSrc?: string;
   title?: string;
@@ -154,13 +175,7 @@ export default function IEPDataCollectionSection({
                   )}
                 >
                   <div className="relative z-10 flex flex-col space-y-4">
-                    <Image
-                      src="/assets/icons/ai-sheets.svg"
-                      alt=""
-                      width={24}
-                      height={24}
-                      className="size-6"
-                    />
+                    <BentoIcon src="/assets/icons/ai-sheets.svg" />
                     <div className="space-y-2">
                       <h2 className="text-lg font-semibold text-[#111111]">{cards[0].title}</h2>
                       <p className="text-base text-[#9A938F]">{cards[0].description}</p>
@@ -172,7 +187,9 @@ export default function IEPDataCollectionSection({
                       cards[0].image && "-mb-6",
                     )}
                   >
-                    {cards[0].image ? (
+                    {cards[0].render ? (
+                      <div className="flex h-full items-center justify-center">{cards[0].render}</div>
+                    ) : cards[0].image ? (
                       <Image
                         src={cards[0].image}
                         alt={cards[0].imageAlt ?? cards[0].title}
@@ -210,21 +227,17 @@ export default function IEPDataCollectionSection({
 
             {/* Card 2: Auto mastery detection (NARROW) */}
             <Card className={cn("relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 border-[#F7F7F7] bg-[#FCFCFC] shadow-none", topRowHeightClass)}>
-              <CardContent className={cn("pt-6", (cards[1].image !== undefined || progressIllustration) && "flex flex-col lg:h-full")}>
+              <CardContent className={cn("pt-6", (cards[1].image !== undefined || progressIllustration || cards[1].render) && "flex flex-col lg:h-full")}>
                 <div className="flex flex-col space-y-4">
-                  <Image
-                    src="/assets/icons/certificate-01.svg"
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="size-6"
-                  />
+                  <BentoIcon src="/assets/icons/certificate-01.svg" />
                   <div className="relative z-10 space-y-2">
                     <h2 className="text-lg font-semibold text-[#111111]">{cards[1].title}</h2>
                     <p className="text-base text-[#9A938F]">{cards[1].description}</p>
                   </div>
                 </div>
-                {progressIllustration ? (
+                {cards[1].render ? (
+                  <div className="mt-4 flex-1">{cards[1].render}</div>
+                ) : progressIllustration ? (
                   <div className="mt-4 shrink-0">
                     <MasteryForecast />
                   </div>
@@ -254,19 +267,15 @@ export default function IEPDataCollectionSection({
             <Card className={cn("relative col-span-full overflow-hidden sm:col-span-3 border-[#F7F7F7] bg-[#FCFCFC] shadow-none", cards[2].textOnly ? "lg:col-span-3" : "lg:col-span-2 lg:h-[440px]")}>
               <CardContent className="pt-6">
                 <div className="flex flex-col space-y-4">
-                  <Image
-                    src="/assets/icons/ai-beautify.svg"
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="size-6"
-                  />
+                  <BentoIcon src="/assets/icons/ai-beautify.svg" />
                   <div className="relative z-10 space-y-2">
                     <h2 className="text-lg font-semibold text-[#111111]">{cards[2].title}</h2>
                     <p className="text-base text-[#9A938F]">{cards[2].description}</p>
                   </div>
                 </div>
-                {paperIllustration ? (
+                {cards[2].render ? (
+                  <div className="mt-6">{cards[2].render}</div>
+                ) : paperIllustration ? (
                   <div className="mt-6">
                     <PaperGraphLoop />
                   </div>
@@ -290,20 +299,18 @@ export default function IEPDataCollectionSection({
             <Card className={cn("relative col-span-full overflow-hidden border-[#F7F7F7] bg-[#FCFCFC] shadow-none", cards[3].textOnly ? "lg:col-span-3" : "lg:col-span-4 lg:h-[440px]")}>
               <CardContent className={cards[3].textOnly ? "pt-6" : "grid pt-6 sm:grid-cols-2 lg:h-full"}>
                 <div className="relative z-10 flex flex-col space-y-4">
-                  <Image
-                    src="/assets/icons/calendar-03.svg"
-                    alt=""
-                    width={24}
-                    height={24}
-                    className="size-6"
-                  />
+                  <BentoIcon src="/assets/icons/calendar-03.svg" />
                   <div className="space-y-2">
                     <h2 className="text-lg font-semibold text-[#111111]">{cards[3].title}</h2>
                     <p className="text-base text-[#9A938F]">{cards[3].description}</p>
                   </div>
                 </div>
                 {!cards[3].textOnly &&
-                  (collectionIllustration ? (
+                  (cards[3].render ? (
+                    <div className="relative mt-6 flex items-center sm:mt-0 sm:pl-6">
+                      {cards[3].render}
+                    </div>
+                  ) : collectionIllustration ? (
                     <div className="relative mt-6 flex items-center sm:mt-0 sm:pl-6">
                       <PhaseChange />
                     </div>
@@ -317,7 +324,7 @@ export default function IEPDataCollectionSection({
                     </div>
                   ) : (
                     <div className="relative mt-6 flex items-center justify-center sm:mt-0 sm:pl-6">
-                      <Iphone src="/assets/changes/iep-data-collection-4-calendar.png" className="w-40" />
+                      <Iphone src="/assets/final-assets/landing-page/iep-data-collection-4.png" className="w-40" />
                     </div>
                   ))}
               </CardContent>

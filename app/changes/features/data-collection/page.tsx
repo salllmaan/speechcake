@@ -17,13 +17,13 @@ export default function DataCollectionPage() {
     <FeaturePage
       config={config}
       showMarquee={false}
-      afterTrustedBy={<IEPDataCollectionSection showMore={false} />}
+      afterTrustedBy={<IEPDataCollectionSection showMore={false} scrollDataTypes progressIllustration paperIllustration />}
       afterShowcases={
         <>
           <AIFlowSection accent="Powered by AI" heading="Smart IEP Data Collection" />
           <TestimonialsSection />
           <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-[1080px] px-16">
+            <div className="mx-auto max-w-[1080px] px-0 sm:px-8 lg:px-16">
               <LogoCloud
                 items={[
                   "10+ Measurement Types",

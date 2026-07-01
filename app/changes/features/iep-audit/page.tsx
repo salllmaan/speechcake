@@ -4,6 +4,10 @@ import IEPDataCollectionSection from "@/components/changes/IEPDataCollectionSect
 import TestimonialsSection from "@/components/changes/TestimonialsSection";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import { Cta4 } from "@/components/changes/Cta4";
+import TailoredCompliance from "@/components/changes/illustrations/iep-audit/TailoredCompliance";
+import CustomRuleBuilder from "@/components/changes/illustrations/iep-audit/CustomRuleBuilder";
+import ReportsThatWork from "@/components/changes/illustrations/iep-audit/ReportsThatWork";
+import InstantDetection from "@/components/changes/illustrations/iep-audit/InstantDetection";
 import config from "./config";
 
 export const metadata: Metadata = {
@@ -29,13 +33,13 @@ export default function IEPAuditPage() {
               title: "Tailored Compliance",
               description:
                 "Easily add, edit, and prioritize custom audit rules to match your school or district's unique requirements.",
-              image: "",
+              render: <TailoredCompliance />,
             },
             {
               title: "Custom Rule Builder",
               description:
                 "Coming soon — create custom rules for specific audit criteria, then edit or update them anytime.",
-              image: "",
+              render: <CustomRuleBuilder />,
             },
             {
               title: "Priority Levels",
@@ -60,13 +64,13 @@ export default function IEPAuditPage() {
               title: "Reports That Work for You",
               description:
                 "Turn audit results into detailed, shareable reports instantly, complete with insights and action points.",
-              image: "",
+              render: <ReportsThatWork />,
             },
             {
               title: "Instant Detection, Clear Resolution",
               description:
                 "AI identifies potential compliance issues within IEPs, from missing details to misaligned goals, and flags them for review.",
-              image: "",
+              render: <InstantDetection />,
             },
             {
               title: "Review Statuses at a Glance",
@@ -88,7 +92,7 @@ export default function IEPAuditPage() {
         <>
           <TestimonialsSection />
           <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-[1080px] px-16">
+            <div className="mx-auto max-w-[1080px] px-0 sm:px-8 lg:px-16">
               <LogoCloud
                 items={[
                   "Custom Audit Rules",

@@ -53,7 +53,7 @@ export default function OneClickCopy() {
         transition={{ duration: 0.3 }}
         className="mt-2.5 flex items-center justify-center gap-1.5 rounded-lg py-2 text-[12px] font-semibold transition-colors"
         style={{
-          background: copied ? "#E8F8EE" : "#00A9F8",
+          background: copied ? "#E8F8EE" : "#4E9D5B",
           color: copied ? "#1A7A4A" : "#ffffff",
         }}
       >

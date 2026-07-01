@@ -20,7 +20,7 @@ function Toggle({ on }: { on: boolean }) {
   return (
     <span
       className="relative inline-flex h-4 w-7 items-center rounded-full transition-colors"
-      style={{ background: on ? "#00A9F8" : "#E3E0DA" }}
+      style={{ background: on ? "#4E9D5B" : "#E3E0DA" }}
     >
       <motion.span
         layout
@@ -43,7 +43,7 @@ export default function ControlledSharing() {
   return (
     <div className="rounded-xl border border-[#EDEDEA] bg-white p-3">
       <div className="mb-2.5 flex items-center gap-2">
-        <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#F0ECFB] text-[#7B4FA8]">
+        <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#E7F0E4] text-[#4E9D5B]">
           <Sliders className="h-3.5 w-3.5" strokeWidth={2.5} />
         </span>
         <div className="leading-tight">

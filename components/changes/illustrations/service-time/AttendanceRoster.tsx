@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Check, Minus, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
-// Card 1 — "Attendance Tracking"
-// A live session roster where each student is marked Present / Absent / Not Tracked
-// straight from the session. One row auto-cycles its status so the act of marking
-// attendance is felt. Passive, no interaction needed.
+// Card — "Attendance Tracking"
+// Matches the service-time bento mockup style: window-chrome card, green-tint student
+// avatars, and Present / Absent / Not Tracked shown as a colored dot + label. One row
+// auto-cycles its status. Passive, no interaction needed.
 
 type Status = "present" | "absent" | "untracked";
 
@@ -18,28 +17,32 @@ const ROSTER: { name: string; grade: string; status: Status }[] = [
   { name: "Ava S.", grade: "Gr 5 · Counseling", status: "untracked" },
 ];
 
-const STATUS_CYCLE: Status[] = ["present", "absent", "untracked"];
+const CYCLE: Status[] = ["present", "absent", "untracked"];
 
-const STYLES: Record<Status, { label: string; bg: string; text: string; icon: typeof Check }> = {
-  present: { label: "Present", bg: "#E8F8EE", text: "#1A7A4A", icon: Check },
-  absent: { label: "Absent", bg: "#FCEAF0", text: "#B5436A", icon: X },
-  untracked: { label: "Not Tracked", bg: "#F0ECFB", text: "#7B4FA8", icon: Minus },
+const DOT: Record<Status, { label: string; dot: string }> = {
+  present: { label: "Present", dot: "#74B488" },
+  absent: { label: "Absent", dot: "#E191A0" },
+  untracked: { label: "Not Tracked", dot: "#C4C4C4" },
 };
 
-function Chip({ status }: { status: Status }) {
-  const s = STYLES[status];
-  const Icon = s.icon;
+function StatusLabel({ status }: { status: Status }) {
+  const s = DOT[status];
   return (
-    <motion.span
-      key={status}
-      initial={{ opacity: 0, scale: 0.92 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.3 }}
-      className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold"
-      style={{ background: s.bg, color: s.text }}
-    >
-      <Icon className="h-2.5 w-2.5" strokeWidth={3} /> {s.label}
-    </motion.span>
+    <div className="flex w-[92px] justify-end">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={status}
+          initial={{ opacity: 0, y: 3 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -3 }}
+          transition={{ duration: 0.22, ease: "easeOut" }}
+          className="flex items-center gap-1.5 text-[11px] font-medium text-[#3D4046]"
+        >
+          <span className="h-2 w-2 rounded-full" style={{ background: s.dot }} />
+          {s.label}
+        </motion.span>
+      </AnimatePresence>
+    </div>
   );
 }
 
@@ -47,36 +50,38 @@ export default function AttendanceRoster() {
   const [cycle, setCycle] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setCycle((c) => c + 1), 1700);
+    const t = setInterval(() => setCycle((c) => c + 1), 2200);
     return () => clearInterval(t);
   }, []);
 
   return (
-    <div className="rounded-xl border border-[#EDEDEA] bg-white p-3">
-      <div className="mb-2.5 flex items-center justify-between">
-        <p className="text-[12px] font-semibold text-[#111111]">Tuesday · Group Session</p>
-        <span className="text-[10px] font-medium text-[#9A938F]">9:30 AM</span>
+    <div className="overflow-hidden rounded-2xl border border-[#ECEBE7] bg-white">
+      {/* Window chrome header */}
+      <div className="flex items-center gap-2 border-b border-[#F1F1EC] px-3.5 py-2.5">
+        <span className="flex gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#E5938E]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#E8C57E]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#8FBF9A]" />
+        </span>
+        <span className="text-[12px] font-semibold text-[#3D4046]">Service time</span>
+        <span className="ml-auto text-[10px] font-medium text-[#9A938F]">Tue · 9:30 AM</span>
       </div>
-      <div className="space-y-1.5">
+
+      <div className="divide-y divide-[#F4F4EF]">
         {ROSTER.map((r, i) => {
-          // Last row cycles its status; others stay fixed.
-          const status: Status =
-            i === ROSTER.length - 1 ? STATUS_CYCLE[cycle % STATUS_CYCLE.length] : r.status;
+          const status = i === ROSTER.length - 1 ? CYCLE[cycle % CYCLE.length] : r.status;
           return (
-            <div
-              key={r.name}
-              className="flex items-center justify-between rounded-lg border border-[#ECEBE7] bg-[#FCFCFC] px-2.5 py-2"
-            >
+            <div key={r.name} className="flex items-center justify-between px-3.5 py-2.5">
               <div className="flex items-center gap-2.5">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E8F4FE] text-[11px] font-semibold text-[#0072C6]">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#E7F0E4] text-[12px] font-bold text-[#4E9D5B]">
                   {r.name.charAt(0)}
                 </span>
                 <div className="leading-tight">
-                  <p className="text-[12px] font-semibold text-[#111111]">{r.name}</p>
-                  <p className="text-[10px] text-[#9A938F]">{r.grade}</p>
+                  <p className="text-[12.5px] font-semibold text-[#111111]">{r.name}</p>
+                  <p className="text-[10.5px] text-[#9A938F]">{r.grade}</p>
                 </div>
               </div>
-              <Chip status={status} />
+              <StatusLabel status={status} />
             </div>
           );
         })}

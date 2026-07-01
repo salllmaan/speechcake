@@ -4,6 +4,13 @@ import IEPDataCollectionSection from "@/components/changes/IEPDataCollectionSect
 import TestimonialsSection from "@/components/changes/TestimonialsSection";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import { Cta4 } from "@/components/changes/Cta4";
+import FlexibleRotationCodes from "@/components/changes/illustrations/rotating-schedule/FlexibleRotationCodes";
+import ServiceFocusPerDay from "@/components/changes/illustrations/rotating-schedule/ServiceFocusPerDay";
+import ConsistentDelivery from "@/components/changes/illustrations/rotating-schedule/ConsistentDelivery";
+import QuickSetup from "@/components/changes/illustrations/rotating-schedule/QuickSetup";
+import ApplyingRotatingSchedules from "@/components/changes/illustrations/rotating-schedule/ApplyingRotatingSchedules";
+import KeepEverythingInSync from "@/components/changes/illustrations/rotating-schedule/KeepEverythingInSync";
+import HolidayAwareCycles from "@/components/changes/illustrations/rotating-schedule/HolidayAwareCycles";
 import config from "./config";
 
 export const metadata: Metadata = {
@@ -37,19 +44,19 @@ export default function RotatingSchedulePage() {
                 title: "Flexible Rotation Codes",
                 description:
                   "Use rotation codes like AB, ABCDE, or A2B2C2D2E2 to match any cycle your program runs, however simple or complex.",
-                image: "",
+                render: <FlexibleRotationCodes />,
               },
               {
                 title: "Service Focus per Day",
                 description:
                   "Assign a subject or service focus to each rotation day, like Speech on A days, so providers always know what's scheduled.",
-                image: "",
+                render: <ServiceFocusPerDay />,
               },
               {
                 title: "Consistent Delivery",
                 description:
                   "Maintain rhythm and predictability in service delivery, so every student gets the right support on the right day.",
-                image: "",
+                render: <ConsistentDelivery />,
               },
             ]}
           />
@@ -64,25 +71,25 @@ export default function RotatingSchedulePage() {
                 title: "Quick Setup",
                 description:
                   "Create and manage cycles in just a few clicks. Add a cycle, include holidays, set start and end dates, and save in seconds.",
-                image: "",
+                render: <QuickSetup />,
               },
               {
                 title: "Applying Rotating Schedules",
                 description:
                   "Activate your schedule directly in the AbleSpace Calendar to keep all your sessions aligned.",
-                image: "",
+                render: <ApplyingRotatingSchedules />,
               },
               {
                 title: "Keep Everything in Sync",
                 description:
                   "Save time, reduce scheduling chaos, and ensure seamless coordination across sessions.",
-                image: "",
+                render: <KeepEverythingInSync />,
               },
               {
                 title: "Holiday-Aware Cycles",
                 description:
                   "Built-in holiday handling skips non-school days automatically, so your rotation always lands on the right date.",
-                image: "",
+                render: <HolidayAwareCycles />,
               },
             ]}
           />
@@ -92,7 +99,7 @@ export default function RotatingSchedulePage() {
         <>
           <TestimonialsSection />
           <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-[1080px] px-16">
+            <div className="mx-auto max-w-[1080px] px-0 sm:px-8 lg:px-16">
               <LogoCloud
                 items={[
                   "Rotation Codes",

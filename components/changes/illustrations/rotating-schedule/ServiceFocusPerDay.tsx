@@ -8,17 +8,17 @@ import { motion } from "framer-motion";
 // assigned service focus. Static map, gentle row-in stagger on mount.
 
 const ROWS = [
-  { day: "A", focus: "Speech Therapy", tone: "blue" },
-  { day: "B", focus: "Occupational Therapy", tone: "purple" },
-  { day: "C", focus: "Reading Intervention", tone: "green" },
+  { day: "A", focus: "Speech Therapy", tone: "greenStrong" },
+  { day: "B", focus: "Occupational Therapy", tone: "greenSoft" },
+  { day: "C", focus: "Reading Intervention", tone: "greenMid" },
   { day: "D", focus: "Social Skills Group", tone: "amber" },
   { day: "E", focus: "Counseling", tone: "pink" },
 ] as const;
 
 const TONE: Record<string, { bg: string; text: string }> = {
-  blue: { bg: "bg-[#E8F4FE]", text: "text-[#0072C6]" },
-  purple: { bg: "bg-[#F0ECFB]", text: "text-[#7A4FA8]" },
-  green: { bg: "bg-[#E8F8EE]", text: "text-[#1A7A4A]" },
+  greenStrong: { bg: "bg-[#E8F8EE]", text: "text-[#1A7A4A]" },
+  greenSoft: { bg: "bg-[#E7F0E4]", text: "text-[#4E9D5B]" },
+  greenMid: { bg: "bg-[#DEF0E2]", text: "text-[#2F8F52]" },
   amber: { bg: "bg-[#FEF3E2]", text: "text-[#B5731A]" },
   pink: { bg: "bg-[#FCEAF0]", text: "text-[#B5436A]" },
 };

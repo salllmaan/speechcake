@@ -5,10 +5,10 @@
 // Stat cards + horizontal prompting-distribution bars + an observation note. Static.
 
 const PROMPTS = [
-  { label: "Independent", pct: 60, color: "#00A9F8", bg: "#E8F4FE" },
-  { label: "Verbal", pct: 25, color: "#A769CD", bg: "#F0ECFB" },
-  { label: "Gestural", pct: 10, color: "#F2A93B", bg: "#FEF3E2" },
-  { label: "Physical", pct: 5, color: "#9A938F", bg: "#F1F0EC" },
+  { label: "Independent", pct: 60, color: "#4E9D5B", bg: "#E7F0E4" },
+  { label: "Verbal", pct: 25, color: "#74B488", bg: "#E8F8EE" },
+  { label: "Gestural", pct: 10, color: "#A9D2B4", bg: "#EFF6EE" },
+  { label: "Physical", pct: 5, color: "#C4C4C4", bg: "#F1F0EC" },
 ];
 
 export default function SessionLevelDetail() {
@@ -31,7 +31,7 @@ export default function SessionLevelDetail() {
           <p className="mt-0.5 text-[9px] text-[#9A938F]">Trials</p>
         </div>
         <div className="rounded-lg border border-[#ECEBE7] bg-[#FCFCFC] px-2 py-1.5">
-          <p className="text-[18px] font-extrabold leading-none text-[#00A9F8]">23</p>
+          <p className="text-[18px] font-extrabold leading-none text-[#4E9D5B]">23</p>
           <p className="mt-0.5 text-[9px] text-[#9A938F]">Correct</p>
         </div>
       </div>

@@ -9,29 +9,34 @@ import { Lock, Users } from "lucide-react";
 // quiet "authorized team" indicator. Subtle row-in stagger on mount.
 
 const ROWS = [
-  { student: "Maya R.", accom: "Extended time", who: "Patel", tone: "blue" },
-  { student: "Devon K.", accom: "Visual schedule", who: "Cho", tone: "purple" },
+  { student: "Maya R.", accom: "Extended time", who: "Patel", tone: "green" },
+  { student: "Devon K.", accom: "Visual schedule", who: "Cho", tone: "amber" },
   { student: "Aisha N.", accom: "Frequent breaks", who: "Lewis", tone: "green" },
-  { student: "Liam T.", accom: "Read-aloud", who: "Patel", tone: "amber" },
+  { student: "Liam T.", accom: "Read-aloud", who: "Patel", tone: "pink" },
 ] as const;
 
 const TONE: Record<string, { bg: string; text: string }> = {
-  blue: { bg: "bg-[#E8F4FE]", text: "text-[#0072C6]" },
-  purple: { bg: "bg-[#F0ECFB]", text: "text-[#7A4FA8]" },
   green: { bg: "bg-[#E8F8EE]", text: "text-[#1A7A4A]" },
   amber: { bg: "bg-[#FEF3E2]", text: "text-[#B5731A]" },
+  pink: { bg: "bg-[#FCEAF0]", text: "text-[#B5436A]" },
 };
 
 export default function CentralizedLog() {
   return (
-    <div className="flex h-[216px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
-      <div className="mb-2 flex items-center justify-between">
-        <p className="text-[12px] font-semibold text-[#111111]">Accommodation log</p>
-        <span className="flex items-center gap-1 rounded-full border border-[#ECEBE7] bg-[#FAFAF9] px-2 py-0.5 text-[10px] font-medium text-[#666666]">
+    <div className="flex h-[216px] flex-col overflow-hidden rounded-xl border border-[#EDEDEA] bg-white">
+      <div className="flex items-center gap-2 border-b border-[#F1F1EC] px-3 py-2">
+        <span className="flex gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ED6A5E]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#F5BF4F]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#61C554]" />
+        </span>
+        <span className="text-[12px] font-semibold text-[#3D4046]">Accommodation log</span>
+        <span className="ml-auto flex items-center gap-1 rounded-full border border-[#ECEBE7] bg-[#FAFAF9] px-2 py-0.5 text-[10px] font-medium text-[#3D4046]">
           <Lock className="h-2.5 w-2.5" /> Authorized team
         </span>
       </div>
 
+      <div className="flex flex-1 flex-col p-3">
       <div className="grid grid-cols-[1fr_1.1fr_auto] gap-2 border-b border-[#EDEDEA] pb-1.5 text-[9px] font-semibold uppercase tracking-wide text-[#9A938F]">
         <span>Student</span>
         <span>Accommodation</span>
@@ -58,6 +63,7 @@ export default function CentralizedLog() {
 
       <div className="mt-auto flex items-center gap-1.5 pt-2 text-[10px] text-[#9A938F]">
         <Users className="h-3 w-3" /> 28 students · 1 shared log
+      </div>
       </div>
     </div>
   );

@@ -28,7 +28,7 @@ export default function FastDailyLog() {
   return (
     <div className="rounded-xl border border-[#EDEDEA] bg-white p-3">
       <div className="mb-2 flex items-center gap-2">
-        <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#E8F4FE] text-[#0072C6]">
+        <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#E7F0E4] text-[#4E9D5B]">
           <FileText className="h-3.5 w-3.5" strokeWidth={2.5} />
         </span>
         <p className="text-[12px] font-semibold text-[#111111]">New daily log · Maya R.</p>
@@ -44,7 +44,7 @@ export default function FastDailyLog() {
             className="rounded-full border px-2.5 py-1 text-[11px] font-medium transition-colors"
             style={
               i === active
-                ? { background: "#E8F4FE", borderColor: "#9AD9F3", color: "#0072C6" }
+                ? { background: "#E8F8EE", borderColor: "#D9EBDD", color: "#1A7A4A" }
                 : { background: "#FCFCFC", borderColor: "#ECEBE7", color: "#9A938F" }
             }
           >

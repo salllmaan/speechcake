@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import SectionChip from "@/components/SectionChip";
 import { MagicCard } from "@/components/magicui/magic-card";
@@ -30,15 +31,17 @@ function CardText({ card }: { card: ShowcaseCard }) {
   );
 }
 
-function CardBody({ card }: { card: ShowcaseCard }) {
-  const showImageArea = !!card.image || !!card.imageContain;
+function CardBody({ card, custom }: { card: ShowcaseCard; custom?: ReactNode }) {
+  const showImageArea = !!card.image || !!card.imageContain || !!custom;
   return (
     <>
       <div className={cn("flex flex-col space-y-2.5 px-6 pt-6", !showImageArea && "pb-6")}>
         <CardText card={card} />
       </div>
       {showImageArea &&
-        (card.imageContain ? (
+        (custom ? (
+          <div className="mt-5 w-full flex-1 overflow-hidden px-5 pb-5">{custom}</div>
+        ) : card.imageContain ? (
           <div className="mt-5 w-full flex-1 overflow-hidden">
             {card.image ? (
               <Image src={card.image} alt={card.imageAlt ?? card.title} width={1000} height={1000} className="block h-auto w-full" />
@@ -59,7 +62,14 @@ function CardBody({ card }: { card: ShowcaseCard }) {
   );
 }
 
-export default function FeatureShowcase({ showcase }: { showcase: ShowcaseSection }) {
+export default function FeatureShowcase({
+  showcase,
+  illustrations,
+}: {
+  showcase: ShowcaseSection;
+  /** Optional map of card title → custom illustration node (replaces the image). */
+  illustrations?: Record<string, ReactNode>;
+}) {
   const grid = showcase.layout === "grid";
   const centered = grid && !!showcase.centered;
   const glow = !!showcase.glow;
@@ -98,8 +108,9 @@ export default function FeatureShowcase({ showcase }: { showcase: ShowcaseSectio
 
         <div className={containerClass}>
           {showcase.cards.map((card, i) => {
+            const custom = illustrations?.[card.title];
             const horizontal = !!card.imageRight || !!card.imageLeft;
-            const wantsImage = !!card.image || !!card.imageContain || horizontal;
+            const wantsImage = !!card.image || !!card.imageContain || horizontal || !!custom;
             const reduced = !!card.imageContain || horizontal;
             const heightClass = wantsImage ? (reduced ? "h-[306px] lg:h-[324px]" : "h-[340px] lg:h-[360px]") : "";
 
@@ -112,7 +123,9 @@ export default function FeatureShowcase({ showcase }: { showcase: ShowcaseSectio
               );
               const imageCol = (
                 <div className="flex items-center justify-center p-5 sm:p-6">
-                  {card.image ? (
+                  {custom ? (
+                    <div className="w-full">{custom}</div>
+                  ) : card.image ? (
                     <Image
                       src={card.image}
                       alt={card.imageAlt ?? card.title}
@@ -160,7 +173,7 @@ export default function FeatureShowcase({ showcase }: { showcase: ShowcaseSectio
                   gradientSize={240}
                 >
                   <div className="flex h-full flex-col overflow-hidden rounded-[14px] bg-[#FAFAF9]">
-                    <CardBody card={card} />
+                    <CardBody card={card} custom={custom} />
                   </div>
                 </MagicCard>
               );
@@ -171,7 +184,7 @@ export default function FeatureShowcase({ showcase }: { showcase: ShowcaseSectio
                 key={`${card.title}-${i}`}
                 className={cn("flex flex-col overflow-hidden rounded-2xl border border-[#F2F2F1] bg-[#FAFAF9]", heightClass, itemClass(card))}
               >
-                <CardBody card={card} />
+                <CardBody card={card} custom={custom} />
               </div>
             );
           })}

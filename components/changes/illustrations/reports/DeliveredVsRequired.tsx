@@ -12,9 +12,9 @@ const ROWS = [
 ];
 
 function status(pct: number) {
-  if (pct >= 90) return { label: "On track", bar: "#00A9F8", track: "#E8F4FE", chipBg: "#E8F8EE", chipText: "#1A7A4A" };
-  if (pct >= 70) return { label: "At risk", bar: "#F2A93B", track: "#FEF3E2", chipBg: "#FEF3E2", chipText: "#B5731A" };
-  return { label: "Behind", bar: "#E8612C", track: "#FCEAE2", chipBg: "#FCEAF0", chipText: "#B5436A" };
+  if (pct >= 90) return { label: "On track", bar: "#4E9D5B", track: "#E7F0E4", chipBg: "#E8F8EE", chipText: "#1A7A4A" };
+  if (pct >= 70) return { label: "At risk", bar: "#E0A23B", track: "#FEF3E2", chipBg: "#FEF3E2", chipText: "#B5731A" };
+  return { label: "Behind", bar: "#D77A92", track: "#FCEAF0", chipBg: "#FCEAF0", chipText: "#B5436A" };
 }
 
 export default function DeliveredVsRequired() {

@@ -23,15 +23,15 @@ export default function ReusableTemplates() {
 
   return (
     <div className="flex h-[216px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
-      <div className="mb-2 flex items-center justify-between rounded-lg border border-[#F0ECFB] bg-[#F0ECFB] px-2.5 py-1.5">
+      <div className="mb-2 flex items-center justify-between rounded-lg border border-[#D9EBDD] bg-[#E8F8EE] px-2.5 py-1.5">
         <div className="flex items-center gap-1.5">
-          <Copy className="h-3.5 w-3.5 text-[#7A4FA8]" />
-          <span className="text-[11px] font-semibold text-[#7A4FA8]">Testing supports</span>
+          <Copy className="h-3.5 w-3.5 text-[#1A7A4A]" />
+          <span className="text-[11px] font-semibold text-[#1A7A4A]">Testing supports</span>
         </div>
         <motion.span
           animate={applied >= 1 && applied <= TEMPLATE.length ? { scale: [1, 0.92, 1] } : {}}
           transition={{ duration: 0.3 }}
-          className="flex items-center gap-1 rounded-md bg-[#A769CD] px-1.5 py-0.5 text-[9px] font-semibold text-white"
+          className="flex items-center gap-1 rounded-md bg-[#4E9D5B] px-1.5 py-0.5 text-[9px] font-semibold text-white"
         >
           <Zap className="h-2.5 w-2.5" /> Apply
         </motion.span>
@@ -48,7 +48,7 @@ export default function ReusableTemplates() {
             <div
               key={item}
               className={`flex items-center gap-2 rounded-lg border px-2.5 py-2 transition-colors ${
-                on ? "border-[#D8C9EC] bg-[#F7F3FD]" : "border-[#ECEBE7] bg-[#FAFAF9]"
+                on ? "border-[#D7E9D9] bg-[#F1FAF3]" : "border-[#ECEBE7] bg-[#FAFAF9]"
               }`}
             >
               <motion.span
@@ -56,7 +56,7 @@ export default function ReusableTemplates() {
                 animate={{ scale: on ? 1 : 0.6, opacity: on ? 1 : 0.4 }}
                 transition={{ duration: 0.25 }}
                 className={`flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full ${
-                  on ? "bg-[#A769CD] text-white" : "bg-[#E4E2DC]"
+                  on ? "bg-[#4E9D5B] text-white" : "bg-[#E4E2DC]"
                 }`}
               >
                 {on && <Check className="h-2.5 w-2.5" strokeWidth={3} />}

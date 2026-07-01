@@ -29,7 +29,8 @@ export default function ChangesHome() {
       <main className="relative z-10 bg-white">
         <HeroSection />
         <TrustedBySection />
-        <IEPDataCollectionSection />
+        {/* Cards 1–3 use the new interactive illustrations; card 4 keeps its original visual. */}
+        <IEPDataCollectionSection scrollDataTypes progressIllustration paperIllustration />
         <CollaborationHero
           chipLabel="Everything in one place"
           chipIconSrc="/assets/icons/star.svg"
@@ -63,7 +64,7 @@ export default function ChangesHome() {
         <AIFlowSection />
         <SchoolsDistrictsFeatures />
         <section className="w-full bg-white px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-[1080px] px-16">
+          <div className="mx-auto max-w-[1080px] px-0 sm:px-8 lg:px-16">
             <LogoCloud />
           </div>
         </section>

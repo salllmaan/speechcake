@@ -74,7 +74,8 @@ export default function ServiceFilters() {
         })}
       </div>
 
-      <div className="min-h-[124px] space-y-1.5">
+      {/* Fixed to the all-records height so filtering never changes the card height. */}
+      <div className="h-[172px] space-y-1.5 overflow-hidden">
         <AnimatePresence initial={false} mode="popLayout">
           {visible.map((r) => {
             const chip = SERVICE_CHIP[r.service];

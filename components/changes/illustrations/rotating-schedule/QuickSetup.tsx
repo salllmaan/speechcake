@@ -31,7 +31,7 @@ export default function QuickSetup() {
   return (
     <div className="flex h-[216px] flex-col rounded-xl border border-[#EDEDEA] bg-white p-3">
       <div className="mb-2.5 flex items-center gap-1.5">
-        <Calendar className="h-3.5 w-3.5 text-[#00A9F8]" />
+        <Calendar className="h-3.5 w-3.5 text-[#4E9D5B]" />
         <p className="text-[12px] font-semibold text-[#111111]">New rotating schedule</p>
       </div>
 
@@ -62,7 +62,7 @@ export default function QuickSetup() {
         animate={saved ? { scale: [1, 0.97, 1] } : {}}
         transition={{ duration: 0.3 }}
         className={`mt-2.5 flex items-center justify-center gap-1.5 rounded-lg py-2 text-[12px] font-semibold transition-colors ${
-          saved ? "bg-[#E8F8EE] text-[#1A7A4A]" : "bg-[#00A9F8] text-white"
+          saved ? "bg-[#E8F8EE] text-[#1A7A4A]" : "bg-[#4E9D5B] text-white"
         }`}
       >
         {saved ? (

@@ -41,7 +41,7 @@ export default function InstantDetection() {
           className="rounded-full px-2 py-0.5 text-[10px] font-semibold"
           style={
             scanning
-              ? { backgroundColor: "#E8F4FE", color: "#0072C6" }
+              ? { backgroundColor: "#E8F8EE", color: "#1A7A4A" }
               : { backgroundColor: "#FCEAF0", color: "#B5436A" }
           }
         >
@@ -106,8 +106,8 @@ export default function InstantDetection() {
               className="pointer-events-none absolute inset-x-0 top-0 h-8"
               style={{
                 background:
-                  "linear-gradient(to bottom, rgba(0,169,248,0) 0%, rgba(0,169,248,0.16) 70%, rgba(0,169,248,0.5) 100%)",
-                borderBottom: "2px solid #00A9F8",
+                  "linear-gradient(to bottom, rgba(78,157,91,0) 0%, rgba(78,157,91,0.16) 70%, rgba(78,157,91,0.5) 100%)",
+                borderBottom: "2px solid #4E9D5B",
               }}
             />
           )}

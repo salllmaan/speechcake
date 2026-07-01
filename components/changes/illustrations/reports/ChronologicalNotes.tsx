@@ -10,15 +10,15 @@ const NOTES = [
   {
     date: "Mar 18",
     tag: "Observation",
-    bg: "#E8F4FE",
-    color: "#0072C6",
+    bg: "#E7F0E4",
+    color: "#1A7A4A",
     text: "Initiated greeting with two peers unprompted during centers.",
   },
   {
     date: "Mar 11",
     tag: "Anecdotal",
-    bg: "#F0ECFB",
-    color: "#7A4FA8",
+    bg: "#E8F8EE",
+    color: "#4E9D5B",
     text: "Self-corrected /s/ sound after a single cue. Confidence growing.",
   },
   {

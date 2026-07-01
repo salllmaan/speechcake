@@ -7,12 +7,7 @@ import CTAButton from "@/components/CTAButton";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { HeroVideoDialog } from "@/components/magicui/hero-video-dialog";
-
-const COMPLIANCE_BADGES = [
-  { src: "/assets/landing-page/Hipaa.avif", alt: "HIPAA Compliant" },
-  { src: "/assets/landing-page/ferpa.avif", alt: "FERPA Compliant" },
-  { src: "/assets/landing-page/iso.avif",   alt: "ISO 27001 Certified" },
-];
+import ComplianceStrip from "@/components/changes/ComplianceStrip";
 
 const TABS = [
   { label: "IEP Goal Tracking",             icon: "/assets/landing-page/tab/iep-goal-tracking.svg",           mockup: "/assets/landing-page/hero-iep-data-tracking.avif" },
@@ -90,11 +85,9 @@ export default function HeroSection() {
           <CTAButton href="#schools" variant="secondary" className="w-full sm:w-auto sm:min-w-[200px]">Book a Demo</CTAButton>
         </div>
 
-        {/* Compliance badges */}
-        <div className="flex items-center justify-center gap-4 sm:gap-5 flex-wrap mb-20 sm:mb-24">
-          {COMPLIANCE_BADGES.map((b) => (
-            <Image key={b.alt} src={b.src} alt={b.alt} width={80} height={36} className="object-contain h-8 sm:h-9 w-auto" />
-          ))}
+        {/* Compliance badges — Variation 5 (divider-separated colour seals) */}
+        <div className="mb-20 flex justify-center sm:mb-24">
+          <ComplianceStrip />
         </div>
 
         {/* Feature tabs */}
@@ -107,12 +100,12 @@ export default function HeroSection() {
             <Image src="/assets/icons/arrow-left-04.svg" alt="" width={18} height={18} />
           </button>
 
-          <div className="flex items-center justify-center gap-1.5 bg-[#FAFAF9] rounded-xl px-2 py-2 w-full">
+          <div className="flex w-full items-center gap-1.5 overflow-x-auto rounded-xl bg-[#FAFAF9] px-2 py-2 lg:justify-center [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {TABS.map((tab, i) => (
               <button
                 key={tab.label}
                 onClick={() => setActiveTab(i)}
-                className={`flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                className={`flex flex-shrink-0 items-center justify-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
                   activeTab === i
                     ? "bg-white text-[#111111] shadow-sm border border-[#E8E8E8]"
                     : "text-[#777777] hover:text-[#111111] hover:bg-white/60 border border-transparent"

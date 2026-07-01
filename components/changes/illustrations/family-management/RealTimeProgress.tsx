@@ -21,7 +21,7 @@ const DATA = [
   { d: "Tue", v: 88 },
 ];
 
-const config = { v: { label: "Accuracy", color: "#00A9F8" } } satisfies ChartConfig;
+const config = { v: { label: "Accuracy", color: "#4E9D5B" } } satisfies ChartConfig;
 
 export default function RealTimeProgress() {
   const [live, setLive] = useState(true);
@@ -41,7 +41,7 @@ export default function RealTimeProgress() {
         <motion.span
           animate={{ opacity: live ? 1 : 0.5 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-1 rounded-full bg-[#E8F4FE] px-2 py-0.5 text-[10px] font-semibold text-[#0072C6]"
+          className="flex items-center gap-1 rounded-full bg-[#E8F8EE] px-2 py-0.5 text-[10px] font-semibold text-[#1A7A4A]"
         >
           <Zap className="h-2.5 w-2.5" strokeWidth={3} /> Just updated
         </motion.span>
@@ -56,8 +56,8 @@ export default function RealTimeProgress() {
         <AreaChart data={DATA} margin={{ top: 6, right: 6, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="rtp-fill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#9AD9F3" stopOpacity={0.4} />
-              <stop offset="100%" stopColor="#9AD9F3" stopOpacity={0} />
+              <stop offset="0%" stopColor="#74B488" stopOpacity={0.4} />
+              <stop offset="100%" stopColor="#74B488" stopOpacity={0} />
             </linearGradient>
           </defs>
           <CartesianGrid vertical={false} stroke="#EDEDEA" strokeDasharray="3 3" />
@@ -66,10 +66,10 @@ export default function RealTimeProgress() {
           <Area
             dataKey="v"
             type="monotone"
-            stroke="#00A9F8"
+            stroke="#4E9D5B"
             strokeWidth={2.5}
             fill="url(#rtp-fill)"
-            dot={{ r: 3, fill: "#fff", stroke: "#00A9F8", strokeWidth: 2 }}
+            dot={{ r: 3, fill: "#fff", stroke: "#4E9D5B", strokeWidth: 2 }}
             activeDot={false}
             isAnimationActive={false}
           />
