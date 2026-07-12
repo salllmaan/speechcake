@@ -17,11 +17,12 @@ const META: Record<SheetKey, { label: string; bg: string; color: string }> = {
   task: { label: "Task Analysis", bg: "#E8F8EE", color: "#1A7A4A" },
 };
 
+const ACCURACY_CELLS = ["+", "+", "−", "+", "+", "+", "−", "+", "+", "+", "+", "−"];
+
 function AccuracyGrid() {
-  const cells = ["+", "+", "−", "+", "+", "+", "−", "+", "+", "+", "+", "−"];
   return (
     <div className="grid grid-cols-6 gap-1.5">
-      {cells.map((c, i) => (
+      {ACCURACY_CELLS.map((c, i) => (
         <div
           key={i}
           className={`flex h-7 items-center justify-center rounded-md border text-[13px] font-bold ${
@@ -35,15 +36,16 @@ function AccuracyGrid() {
   );
 }
 
+const DURATION_ROWS = [
+  { t: "Trial 1", v: "0:42" },
+  { t: "Trial 2", v: "1:05" },
+  { t: "Trial 3", v: "0:58" },
+];
+
 function DurationRows() {
-  const rows = [
-    { t: "Trial 1", v: "0:42" },
-    { t: "Trial 2", v: "1:05" },
-    { t: "Trial 3", v: "0:58" },
-  ];
   return (
     <div className="space-y-1.5">
-      {rows.map((r) => (
+      {DURATION_ROWS.map((r) => (
         <div key={r.t} className="flex items-center justify-between rounded-md border border-[#ECEBE7] bg-[#FCFCFC] px-3 py-1.5">
           <span className="text-[11px] text-[#666666]">{r.t}</span>
           <span className="font-[family-name:var(--font-eb-garamond)] text-[15px] font-semibold text-[#4E9D5B]">{r.v}</span>
@@ -53,15 +55,16 @@ function DurationRows() {
   );
 }
 
+const PROMPT_LEVELS = ["FP", "PP", "G", "V", "I"];
+
 function PromptingScale() {
-  const levels = ["FP", "PP", "G", "V", "I"];
   return (
     <div className="space-y-2">
       {["Greets peer", "Asks for help"].map((g, gi) => (
         <div key={g}>
           <p className="mb-1 text-[10px] text-[#666666]">{g}</p>
           <div className="flex gap-1.5">
-            {levels.map((l, i) => (
+            {PROMPT_LEVELS.map((l, i) => (
               <div
                 key={l}
                 className={`flex h-7 flex-1 items-center justify-center rounded-md text-[11px] font-semibold ${
@@ -78,16 +81,17 @@ function PromptingScale() {
   );
 }
 
+const TASK_STEPS = [
+  { s: "Wets hands", done: true },
+  { s: "Applies soap", done: true },
+  { s: "Scrubs 20s", done: true },
+  { s: "Rinses & dries", done: false },
+];
+
 function TaskSteps() {
-  const steps = [
-    { s: "Wets hands", done: true },
-    { s: "Applies soap", done: true },
-    { s: "Scrubs 20s", done: true },
-    { s: "Rinses & dries", done: false },
-  ];
   return (
     <div className="space-y-1.5">
-      {steps.map((st, i) => (
+      {TASK_STEPS.map((st, i) => (
         <div key={st.s} className="flex items-center gap-2.5 rounded-md border border-[#ECEBE7] bg-[#FCFCFC] px-2.5 py-1.5">
           <span
             className={`flex h-4 w-4 items-center justify-center rounded-md text-[10px] font-bold ${

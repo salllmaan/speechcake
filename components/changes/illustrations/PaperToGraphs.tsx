@@ -121,6 +121,7 @@ export default function PaperToGraphs() {
       </div>
 
       <button
+        type="button"
         onClick={phase === "chart" ? reset : convert}
         disabled={phase === "scanning"}
         className={`mt-3 flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-semibold transition-colors disabled:opacity-60 ${

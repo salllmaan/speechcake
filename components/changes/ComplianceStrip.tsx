@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-// Certification / compliance strip — "Variation 5": full-colour seals separated by
-// thin vertical dividers inside a soft bordered container. Single source of truth;
-// add/remove one badge here and every strip updates. Wraps cleanly to any count.
+// Certification / compliance strip — "tile" treatment: each seal sits in its own
+// chamfered (angle-cut) tile on a warm beige band, full colour, with an optional
+// trust caption below. Single source of truth; add/remove one badge here and the
+// whole strip re-flows. Wraps cleanly to any count.
 const BADGES = [
   { src: "/assets/landing-page/certs/hipaa.png", alt: "HIPAA Compliant" },
   { src: "/assets/landing-page/certs/ferpa.png", alt: "FERPA Compliant" },
@@ -13,23 +14,44 @@ const BADGES = [
   { src: "/assets/landing-page/certs/soc2.svg", alt: "SOC 2 Type II Certified" },
 ];
 
-export default function ComplianceStrip({ className = "" }: { className?: string }) {
+// Chamfer top-right + bottom-left corners for the angled-tile look.
+const TILE_CLIP =
+  "polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px))";
+
+export default function ComplianceStrip({
+  className = "",
+  caption = "Trusted by 50,000+ special education professionals across the U.S.",
+}: {
+  className?: string;
+  caption?: string;
+}) {
   return (
-    <div
-      className={`mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-x-6 gap-y-4 rounded-xl border border-[#ECEBE7] bg-white px-6 py-4 ${className}`}
-    >
-      {BADGES.map((b, i) => (
-        <div key={b.alt} className="flex items-center gap-6">
-          {i > 0 && <span className="h-8 w-px bg-[#ECEBE7]" />}
-          <Image
-            src={b.src}
-            alt={b.alt}
-            width={120}
-            height={120}
-            className="h-11 w-auto object-contain opacity-80 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-          />
+    <div className={`w-full ${className}`}>
+      <div className="mx-auto w-fit max-w-full rounded-3xl bg-gradient-to-b from-[#F3ECDE] to-[#EFE7D6] px-5 py-6 sm:px-8 sm:py-8">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          {BADGES.map((b) => (
+            <div
+              key={b.alt}
+              style={{ clipPath: TILE_CLIP }}
+              className="flex h-[104px] w-[104px] flex-shrink-0 items-center justify-center bg-[#E4DBCA]/70 p-3 transition-transform duration-300 hover:-translate-y-0.5 sm:h-[116px] sm:w-[116px]"
+            >
+              <Image
+                src={b.src}
+                alt={b.alt}
+                width={140}
+                height={140}
+                className="h-full w-auto object-contain"
+              />
+            </div>
+          ))}
         </div>
-      ))}
+
+        {caption && (
+          <p className="mx-auto mt-6 max-w-xl text-center text-sm font-medium text-[#5C5344] sm:text-base">
+            {caption}
+          </p>
+        )}
+      </div>
     </div>
   );
 }

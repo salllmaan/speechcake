@@ -9,6 +9,7 @@ function FAQItem({ question, answer }: FaqItem) {
   return (
     <div className="overflow-hidden rounded-2xl bg-[#F5F5F3] px-6">
       <button
+        type="button"
         onClick={() => setOpen(!open)}
         className="flex w-full items-center justify-between gap-4 py-5 text-left"
         aria-expanded={open}
@@ -32,7 +33,7 @@ export default function FeatureFAQ({ title = "Frequently Asked Questions", items
         </div>
         <div className="mx-auto max-w-[720px] space-y-3">
           {items.map((faq) => (
-            <FAQItem key={faq.question} {...faq} />
+            <FAQItem {...faq} key={faq.question} />
           ))}
         </div>
       </div>

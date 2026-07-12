@@ -41,6 +41,7 @@ function FAQItem({ question, answer }: FAQ) {
   return (
     <div className="bg-[#F5F5F3] rounded-2xl px-6 overflow-hidden">
       <button
+        type="button"
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between text-left py-5 gap-4"
       >
@@ -77,7 +78,7 @@ export default function FAQSection() {
 
         <div className="max-w-[720px] mx-auto space-y-3">
           {FAQS.map((faq) => (
-            <FAQItem key={faq.question} {...faq} />
+            <FAQItem {...faq} key={faq.question} />
           ))}
         </div>
 

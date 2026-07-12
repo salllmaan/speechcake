@@ -52,7 +52,7 @@ function CardBody({ card, custom }: { card: ShowcaseCard; custom?: ReactNode }) 
         ) : (
           <div className="relative mt-5 w-full flex-1 overflow-hidden">
             {card.image ? (
-              <Image src={card.image} alt={card.imageAlt ?? card.title} fill className="object-cover object-top" />
+              <Image src={card.image} alt={card.imageAlt ?? card.title} fill sizes="(max-width: 640px) 100vw, 600px" className="object-cover object-top" />
             ) : (
               <Placeholder />
             )}

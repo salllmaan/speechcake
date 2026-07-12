@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 };
 
 const FEATURE_SHOWCASES = [
-  { label: "Reports", href: "/changes/illustrations/reports", count: 10 },
-  { label: "Family Management", href: "/changes/illustrations/family-management", count: 8 },
-  { label: "Rotating Schedule", href: "/changes/illustrations/rotating-schedule", count: 7 },
-  { label: "Accommodations", href: "/changes/illustrations/accommodations", count: 5 },
-  { label: "Service Time", href: "/changes/illustrations/service-time", count: 4 },
-  { label: "IEP Audit", href: "/changes/illustrations/iep-audit", count: 4 },
-  { label: "Medicaid Billing", href: "/changes/illustrations/medicaid-billing", count: 2 },
+  { label: "Reports", href: "/illustrations/reports", count: 10 },
+  { label: "Family Management", href: "/illustrations/family-management", count: 8 },
+  { label: "Rotating Schedule", href: "/illustrations/rotating-schedule", count: 7 },
+  { label: "Accommodations", href: "/illustrations/accommodations", count: 5 },
+  { label: "Service Time", href: "/illustrations/service-time", count: 4 },
+  { label: "IEP Audit", href: "/illustrations/iep-audit", count: 4 },
+  { label: "Medicaid Billing", href: "/illustrations/medicaid-billing", count: 2 },
 ];
 
 export default function IllustrationsPage() {

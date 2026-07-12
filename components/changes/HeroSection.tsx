@@ -93,6 +93,7 @@ export default function HeroSection() {
         {/* Feature tabs */}
         <div className="mx-auto max-w-5xl mb-4 flex items-center gap-2">
           <button
+            type="button"
             onClick={() => setActiveTab((i) => (i === 0 ? TABS.length - 1 : i - 1))}
             aria-label="Previous tab"
             className="hidden sm:flex flex-shrink-0 w-12 h-12 rounded-full border border-[#E8E8E8] bg-white items-center justify-center hover:bg-[#F5F5F5] transition-colors shadow-sm"
@@ -104,6 +105,7 @@ export default function HeroSection() {
             {TABS.map((tab, i) => (
               <button
                 key={tab.label}
+                type="button"
                 onClick={() => setActiveTab(i)}
                 className={`flex flex-shrink-0 items-center justify-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
                   activeTab === i
@@ -129,6 +131,7 @@ export default function HeroSection() {
           </div>
 
           <button
+            type="button"
             onClick={() => setActiveTab((i) => (i === TABS.length - 1 ? 0 : i + 1))}
             aria-label="Next tab"
             className="hidden sm:flex flex-shrink-0 w-12 h-12 rounded-full border border-[#E8E8E8] bg-white items-center justify-center hover:bg-[#F5F5F5] transition-colors shadow-sm"

@@ -19,6 +19,7 @@ export function FaqAccordion({ items, startOpen = -1 }: { items: FAQ[]; startOpe
             }`}
           >
             <button
+              type="button"
               onClick={() => setOpen(isOpen ? -1 : i)}
               className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
               aria-expanded={isOpen}

@@ -72,7 +72,7 @@ export const FeatureGrid = React.forwardRef<HTMLElement, FeatureGridProps>(
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
-              <FeatureCard key={`${feature.title}-${index}`} {...feature} />
+              <FeatureCard {...feature} key={`${feature.title}-${index}`} />
             ))}
             {children}
           </div>

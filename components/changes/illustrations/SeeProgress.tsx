@@ -89,6 +89,7 @@ export default function SeeProgress() {
       </ChartContainer>
 
       <button
+        type="button"
         onClick={() => setForecast((f) => !f)}
         className={`mt-2 flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-semibold transition-colors ${
           forecast

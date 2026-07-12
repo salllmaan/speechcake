@@ -37,19 +37,19 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     img: "/assets/navbar/product/data types.svg",
     href: "#",
     children: [
-      { label: "Data Collection",  img: "/assets/navbar/product/data types.svg",        href: "/changes/features/data-collection" },
-      { label: "Service Time",      img: "/assets/navbar/product/service-time.svg",      href: "/changes/features/service-time" },
-      { label: "Accommodations",    img: "/assets/navbar/product/accommodations.svg",    href: "/changes/features/accommodations" },
-      { label: "Rotating Schedule", img: "/assets/navbar/product/rotating-schedule.svg", href: "/changes/features/rotating-schedule" },
-      { label: "Reports",           img: "/assets/navbar/product/reports.svg",           href: "/changes/features/reports" },
-      { label: "Collaboration",     img: "/assets/navbar/product/user-square.svg",       href: "/changes/features/collaboration" },
+      { label: "Data Collection",  img: "/assets/navbar/product/data types.svg",        href: "/features/data-collection" },
+      { label: "Service Time",      img: "/assets/navbar/product/service-time.svg",      href: "/features/service-time" },
+      { label: "Accommodations",    img: "/assets/navbar/product/accommodations.svg",    href: "/features/accommodations" },
+      { label: "Rotating Schedule", img: "/assets/navbar/product/rotating-schedule.svg", href: "/features/rotating-schedule" },
+      { label: "Reports",           img: "/assets/navbar/product/reports.svg",           href: "/features/reports" },
+      { label: "Collaboration",     img: "/assets/navbar/product/user-square.svg",       href: "/features/collaboration" },
     ],
   },
   {
     label: "IEP Audit",
     desc: "Review student IEPs for compliance, missing sections, and due date accuracy.",
     img: "/assets/navbar/product/iep-audit.svg",
-    href: "/changes/features/iep-audit",
+    href: "/features/iep-audit",
     children: [],
     spotlightBlurb: "Catch missing sections and looming due dates before they become compliance risks.",
     spotlightImage: "/assets/changes/iep-data-collection-8.png",
@@ -58,7 +58,7 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     label: "Medicaid Billing",
     desc: "Generate billing-ready documentation and submission notes from session data.",
     img: "/assets/navbar/product/billing.svg",
-    href: "/changes/features/medicaid-billing",
+    href: "/features/medicaid-billing",
     children: [],
     spotlightBlurb: "Turn session data into compliant, submission-ready billing notes automatically.",
     spotlightImage: "/assets/final/landing-page/iep-data-collection-billing.png",
@@ -78,7 +78,7 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
     label: "Family Management",
     desc: "Keep families in the loop with secure, real-time visibility into progress.",
     img: "/assets/navbar/product/user-square.svg",
-    href: "/changes/features/family-management",
+    href: "/features/family-management",
     children: [],
     spotlightBlurb: "Give families secure, real-time visibility into goals, daily progress, and updates — you control exactly what they see.",
     spotlightImage: "/assets/changes/documentation-02.png",
@@ -86,11 +86,11 @@ const PRODUCT_CATEGORIES: ProductCategory[] = [
 ];
 
 const RESOURCES_ITEMS = [
-  { label: "Tutorials",  desc: "Step-by-step guides to get started fast.",    img: "/assets/navbar/resources/tutorials.svg",  href: "/changes/tutorials", badge: null },
-  { label: "Blog",       desc: "Tips, updates, and special ed insights.",      img: "/assets/navbar/resources/blog.svg",        href: "/changes/blog",      badge: null },
-  { label: "FAQs",       desc: "Answers to the most common questions.",        img: "/assets/navbar/resources/faqs.svg",        href: "/changes/faqs",      badge: null },
+  { label: "Tutorials",  desc: "Step-by-step guides to get started fast.",    img: "/assets/navbar/resources/tutorials.svg",  href: "/tutorials", badge: null },
+  { label: "Blog",       desc: "Tips, updates, and special ed insights.",      img: "/assets/navbar/resources/blog.svg",        href: "/blog",      badge: null },
+  { label: "FAQs",       desc: "Answers to the most common questions.",        img: "/assets/navbar/resources/faqs.svg",        href: "/faqs",      badge: null },
   { label: "Courses",    desc: "Deep-dive learning for your whole team.",      img: "/assets/navbar/resources/courses.svg",     href: "#",                  badge: "Coming Soon" },
-  { label: "Reviews",    desc: "See what 20,000+ educators are saying.",       img: "/assets/navbar/resources/reviews.svg",     href: "/changes/reviews",   badge: null },
+  { label: "Reviews",    desc: "See what 20,000+ educators are saying.",       img: "/assets/navbar/resources/reviews.svg",     href: "/reviews",   badge: null },
 ];
 
 const CONTACT_ITEMS = [
@@ -100,11 +100,11 @@ const CONTACT_ITEMS = [
 ];
 
 const NAV_LINKS_BEFORE = [
-  { label: "Schools/Districts", href: "/changes/schools-districts" },
+  { label: "Schools/Districts", href: "/schools-districts" },
 ];
 
 const NAV_LINKS_AFTER = [
-  { label: "Pricing", href: "/changes/pricing" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 // ── mask icon (tintable via CSS — default #707685, hover #00A9F8 on group hover) ─
@@ -156,6 +156,7 @@ function useHoverDropdown() {
 function DropdownTrigger({ label, open }: { label: string; open: boolean }) {
   return (
     <button
+      type="button"
       className={`flex items-center gap-1 px-3 py-1.5 text-sm font-medium transition-colors rounded-md ${
         open ? "text-[#111111] bg-[#FAFAFA]" : "text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA]"
       }`}
@@ -266,7 +267,7 @@ function ProductDropdown() {
                 </div>
                 {cat.spotlightImage && (
                   <div className="relative mt-4 w-full flex-1">
-                    <Image src={cat.spotlightImage} alt={cat.label} fill className="object-contain object-bottom" />
+                    <Image src={cat.spotlightImage} alt={cat.label} fill sizes="300px" className="object-contain object-bottom" />
                   </div>
                 )}
               </Link>
@@ -278,7 +279,7 @@ function ProductDropdown() {
           {/* Right — promo card + CTA links */}
           <div className="flex w-[284px] flex-shrink-0 flex-col gap-3 p-4">
             <Link
-              href="/changes/schools-districts"
+              href="/schools-districts"
               onClick={close}
               className="group flex flex-1 flex-col overflow-hidden rounded-2xl bg-[#FBF3E7]"
             >
@@ -287,6 +288,7 @@ function ProductDropdown() {
                   src="/assets/final/landing-page/schools-and-districts.png"
                   alt="The AbleSpace admin dashboard showing district-wide data and providers"
                   fill
+                  sizes="284px"
                   className="object-cover object-top"
                 />
               </div>
@@ -401,7 +403,7 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-1 flex-1">
             <ProductDropdown />
             <Link
-              href="/changes/features/ablespace-ai"
+              href="/features/ablespace-ai"
               className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-[#5D636F] hover:text-[#111111] transition-colors rounded-md hover:bg-[#FAFAFA] whitespace-nowrap"
             >
               AbleSpace
@@ -444,6 +446,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
+            type="button"
             className="md:hidden ml-auto p-2 rounded-md hover:bg-[#FAFAFA] transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
@@ -460,6 +463,7 @@ export default function Navbar() {
 
             {/* Product accordion */}
             <button
+              type="button"
               onClick={() => setMobileProductOpen(!mobileProductOpen)}
               className="flex items-center justify-between px-3 py-2.5 text-sm text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
             >
@@ -495,7 +499,7 @@ export default function Navbar() {
 
             {/* AbleSpace AI */}
             <Link
-              href="/changes/features/ablespace-ai"
+              href="/features/ablespace-ai"
               className="flex items-center gap-2 px-3 py-2.5 text-sm text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
               onClick={() => setMobileOpen(false)}
             >
@@ -505,7 +509,7 @@ export default function Navbar() {
 
             {/* Schools/Districts */}
             <Link
-              href="/changes/schools-districts"
+              href="/schools-districts"
               className="px-3 py-2.5 text-sm text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
               onClick={() => setMobileOpen(false)}
             >
@@ -514,6 +518,7 @@ export default function Navbar() {
 
             {/* Resources accordion */}
             <button
+              type="button"
               onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
               className="flex items-center justify-between px-3 py-2.5 text-sm text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
             >
@@ -542,7 +547,7 @@ export default function Navbar() {
             )}
 
             <Link
-              href="/changes/pricing"
+              href="/pricing"
               className="px-3 py-2.5 text-sm text-[#5D636F] hover:text-[#111111] hover:bg-[#FAFAFA] rounded-md transition-colors"
               onClick={() => setMobileOpen(false)}
             >

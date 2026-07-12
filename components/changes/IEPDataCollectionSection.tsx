@@ -194,6 +194,7 @@ export default function IEPDataCollectionSection({
                         src={cards[0].image}
                         alt={cards[0].imageAlt ?? cards[0].title}
                         fill
+                        sizes="(max-width: 640px) 100vw, 600px"
                         className={cards[0].imageFit === "contain" ? "object-contain object-bottom" : "object-cover object-bottom"}
                       />
                     ) : cards[0].image === "" ? (
@@ -317,7 +318,7 @@ export default function IEPDataCollectionSection({
                   ) : cards[3].image !== undefined ? (
                     <div className="relative mt-6 h-[200px] sm:mt-0 sm:h-full sm:pl-6">
                       {cards[3].image ? (
-                        <Image src={cards[3].image} alt={cards[3].imageAlt ?? cards[3].title} fill className="object-contain object-bottom" />
+                        <Image src={cards[3].image} alt={cards[3].imageAlt ?? cards[3].title} fill sizes="(max-width: 640px) 100vw, 600px" className="object-contain object-bottom" />
                       ) : (
                         <BentoPlaceholder />
                       )}
@@ -377,6 +378,7 @@ export default function IEPDataCollectionSection({
                     src={card.mockup}
                     alt={card.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, 600px"
                     className="rounded-xl object-cover object-top"
                   />
                 )}

@@ -75,10 +75,10 @@ export default function ReportsThatWork() {
       </div>
 
       <div className="mt-2 flex gap-2">
-        <button className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-[#4E9D5B] py-1.5 text-[11px] font-semibold text-white">
+        <button type="button" className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-[#4E9D5B] py-1.5 text-[11px] font-semibold text-white">
           <Share2 className="h-3 w-3" /> Share report
         </button>
-        <button className="flex items-center justify-center gap-1.5 rounded-lg border border-[#ECEBE7] px-2.5 py-1.5 text-[11px] font-semibold text-[#666666]">
+        <button type="button" className="flex items-center justify-center gap-1.5 rounded-lg border border-[#ECEBE7] px-2.5 py-1.5 text-[11px] font-semibold text-[#666666]">
           <Download className="h-3 w-3" /> PDF
         </button>
       </div>

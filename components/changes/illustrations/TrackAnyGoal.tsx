@@ -27,6 +27,7 @@ function Accuracy() {
           </p>
         </div>
         <button
+          type="button"
           onClick={() => {
             setCorrect(0);
             setIncorrect(0);
@@ -38,12 +39,14 @@ function Accuracy() {
       </div>
       <div className="mt-4 flex gap-2.5">
         <button
+          type="button"
           onClick={() => setCorrect((c) => c + 1)}
           className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#E8F8EE] py-3 text-sm font-semibold text-[#1A7A4A] transition-transform active:scale-[0.97]"
         >
           <Check className="h-4 w-4" /> Correct
         </button>
         <button
+          type="button"
           onClick={() => setIncorrect((c) => c + 1)}
           className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-[#FCEAF0] py-3 text-sm font-semibold text-[#B5436A] transition-transform active:scale-[0.97]"
         >
@@ -72,6 +75,7 @@ function TaskAnalysis() {
         {STEPS.map((step, i) => (
           <button
             key={step}
+            type="button"
             onClick={() => setDone((d) => d.map((v, j) => (j === i ? !v : v)))}
             className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left transition-colors hover:bg-[#FAFAF9]"
           >
@@ -102,6 +106,7 @@ function Rubric() {
         {RUBRIC.map((label, i) => (
           <button
             key={label}
+            type="button"
             onClick={() => setLevel(i)}
             aria-label={label}
             className={`h-9 flex-1 rounded-md text-[13px] font-semibold transition-colors ${
@@ -137,6 +142,7 @@ function Interval() {
         {cells.map((on, i) => (
           <button
             key={i}
+            type="button"
             onClick={() => setCells((c) => c.map((v, j) => (j === i ? !v : v)))}
             aria-label={`Interval ${i + 1}`}
             className={`h-9 rounded-md border text-[11px] font-medium transition-colors ${

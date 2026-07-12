@@ -59,7 +59,7 @@ export default function TailoredCompliance() {
         })}
       </div>
 
-      <button className="mt-2 flex items-center justify-center gap-1.5 rounded-lg border border-dashed border-[#D8D4CC] py-1.5 text-[11px] font-semibold text-[#9A938F]">
+      <button type="button" className="mt-2 flex items-center justify-center gap-1.5 rounded-lg border border-dashed border-[#D8D4CC] py-1.5 text-[11px] font-semibold text-[#9A938F]">
         <span className="text-[13px] leading-none text-[#4E9D5B]">+</span> Add custom rule
       </button>
     </div>

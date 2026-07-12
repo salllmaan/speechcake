@@ -91,7 +91,7 @@ function CustomFields() {
             </span>
           </div>
         ))}
-        <button className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-[#D9D9D6] py-2 text-[12px] font-medium text-[#9A938F] transition-colors hover:border-[#00A9F8] hover:text-[#00A9F8]">
+        <button type="button" className="flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-[#D9D9D6] py-2 text-[12px] font-medium text-[#9A938F] transition-colors hover:border-[#00A9F8] hover:text-[#00A9F8]">
           <Plus className="h-3.5 w-3.5" /> Add field
         </button>
       </div>
