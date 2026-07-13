@@ -20,16 +20,22 @@ const TRUSTED_BY_LOGOS = [
   alt,
 }));
 
-export default function TrustedBySection({ heading }: { heading?: string }) {
+export default function TrustedBySection({
+  heading,
+  className = "w-full bg-white py-12",
+}: {
+  heading?: string;
+  className?: string;
+}) {
   return (
-    <section className="w-full bg-white py-12">
+    <section className={className}>
       {heading && (
         <p className="mx-auto mb-8 max-w-3xl px-4 text-center text-sm font-medium uppercase tracking-[0.08em] text-[#9A938F]">
           {heading}
         </p>
       )}
       <div className="mx-auto max-w-7xl px-2 sm:px-4 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black,transparent)]">
-        <InfiniteSlider gap={72} reverse speed={80} speedOnHover={25}>
+        <InfiniteSlider gap={72} reverse speed={50} speedOnHover={25}>
           {TRUSTED_BY_LOGOS.map((logo) => (
             <Image
               key={logo.src}

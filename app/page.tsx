@@ -3,7 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/changes/Navbar";
 
 import HeroSection from "@/components/changes/HeroSection";
-import TrustedBySection from "@/components/changes/TrustedBySection";
+import ComplianceStrip from "@/components/changes/ComplianceStrip";
 import IEPDataCollectionSection from "@/components/changes/IEPDataCollectionSection";
 import NotesSection from "@/components/changes/NotesSection";
 import AIFlowSection from "@/components/changes/AIFlowSection";
@@ -28,7 +28,10 @@ export default function ChangesHome() {
       <Navbar />
       <main className="relative z-10 bg-white">
         <HeroSection />
-        <TrustedBySection />
+        {/* Compliance badges — swapped with the trusted-by marquee (now inside the hero) */}
+        <section className="w-full bg-white px-4 py-12 sm:px-6 lg:px-8">
+          <ComplianceStrip />
+        </section>
         {/* Cards 1–3 use the new interactive illustrations; card 4 keeps its original visual. */}
         <IEPDataCollectionSection scrollDataTypes progressIllustration paperIllustration />
         <CollaborationHero

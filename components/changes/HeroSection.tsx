@@ -7,7 +7,7 @@ import CTAButton from "@/components/CTAButton";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { HeroVideoDialog } from "@/components/magicui/hero-video-dialog";
-import ComplianceStrip from "@/components/changes/ComplianceStrip";
+import TrustedBySection from "@/components/changes/TrustedBySection";
 
 const TABS = [
   { label: "IEP Goal Tracking",             icon: "/assets/landing-page/tab/iep-goal-tracking.svg",           mockup: "/assets/landing-page/hero-iep-data-tracking.avif" },
@@ -85,9 +85,9 @@ export default function HeroSection() {
           <CTAButton href="#schools" variant="secondary" className="w-full sm:w-auto sm:min-w-[200px]">Book a Demo</CTAButton>
         </div>
 
-        {/* Compliance badges — Variation 5 (divider-separated colour seals) */}
-        <div className="mb-20 flex justify-center sm:mb-24">
-          <ComplianceStrip />
+        {/* Trusted-by school logos — marquee (swapped with compliance badges) */}
+        <div className="mt-24 mb-20 sm:mt-32 sm:mb-24">
+          <TrustedBySection className="w-full" />
         </div>
 
         {/* Feature tabs */}
